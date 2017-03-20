@@ -1,0 +1,47 @@
+{% extends "blog-master.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+            {% for post in posts %}
+                    <!-- start post -->
+                    <div class="post">
+                        <!-- start photo -->
+                        <div class="photo">
+                            <img src="../static/assets/img/blog/post-1.png" alt="UkieWeb">
+                        </div>
+                        <!-- end photo -->
+                        <!-- start title post -->
+                        <h3 class="title title-blog"> {{ post.title }} </h3>
+                        <!-- end title post -->
+                        <div class="entry-byline">
+                            <i class="fa fa-user"></i>
+                            <span class="entry-author right-border">
+
+                                    <span>Nick</span>
+
+                            </span>
+                            <i class="fa fa-clock-o"></i>
+                            <time class="entry-published right-border">{{ post.date }}</time>
+                            <i class="fa fa-comment"></i>
+                            <span class="comments-link">{{ post.comments }} Comments</span>
+                        </div>
+                        <!-- start desc post -->
+                        <p>{{ post.desc }}</p>
+                        <!-- end desc post -->
+                        <a href="/view" class="btn hover-animate btn-color-hover">Read More</a>
+                    </div>
+                    <!-- end post -->
+              {% endfor %}
+{% endblock %}
+{% block categories %}
+      {% for category in categories %}
+          <li class="cat-item cat-item-6"><a href="#">{{ category.category }}</a></li>
+      {% endfor %}
+{% endblock %}
+{% block recent_posts %}
+      {% for post in posts %}
+          <li><a href="#">{{ post.title }}</a></li>
+      {% endfor %}
+{% endblock %}
