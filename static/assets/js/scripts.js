@@ -103,7 +103,7 @@ $(document).ready(function () {
      Preloader
      ----------------------------------------------------------------------
      */
-    
+
     $(".loader").delay(400).fadeOut();
     $(".animationload").delay(400).fadeOut("fast");
 
@@ -443,24 +443,12 @@ $(document).ready(function () {
      ----------------------------------------------------------------------
      */
 
-    var style = ('#stylesheet-new');
-    $('.new-colour').on("click", function (el) {
-        el.preventDefault();
-        var id = $(this).attr('href');
 
-        $.cookie("colour-scheme", id);
-
-        $(style).attr('href', '../static/assets/css/colour-scheme/' + id + '.css');
-        $(style).attr('data-color', colour_scheme);
-        $.cookie("colour-skills", $(this).attr('data-color'));
-    });
 
     $('.new-bg').on("click", function (el) {
         el.preventDefault();
         var color = $(this).attr('data-bg');
-
         $.cookie("colour-bg", color);
-
         $(style).attr('data-bg', color);
         $("body").css('background-color', color);
     });
