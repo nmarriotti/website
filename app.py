@@ -54,7 +54,7 @@ def profile():
 @app.route('/blog')
 def blog():
 	# render the blog page
-	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()))
+	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()), title = 'Blog')
 
 @app.route('/view')
 def view():
@@ -91,26 +91,9 @@ def logout():
     session['logged_in'] = False
     return redirect(url_for('home'))
 
-@app.route(TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
+@app.route("/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
 def Hello_World():
-    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0],  nextLink = TOPIC_DICT["Python"][1][1], nextTitle = TOPIC_DICT["Python"][1][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT)
-
-
-
-
-@app.route(TOPIC_DICT["Python"][1][1], methods=['GET', 'POST'])
-def IfElse_Statement():
-    return render_template("tutorials/Python/if-else-statement.html", curLink = TOPIC_DICT["Python"][1][1], curTitle=TOPIC_DICT["Python"][1][0],  nextLink = TOPIC_DICT["Python"][2][1], nextTitle = TOPIC_DICT["Python"][2][0], curTopic = "Python", title = TOPIC_DICT["Python"][1][0], TOPIC_DICT = TOPIC_DICT)
-
-
-
-
-@app.route(TOPIC_DICT["Python"][2][1], methods=['GET', 'POST'])
-def For_Loop():
-    return render_template("tutorials/Python/for-loop.html", curLink = TOPIC_DICT["Python"][2][1], curTitle=TOPIC_DICT["Python"][2][0],  nextLink = TOPIC_DICT["Python"][3][1], nextTitle = TOPIC_DICT["Python"][3][0], curTopic = "Python", title = TOPIC_DICT["Python"][2][0], TOPIC_DICT = TOPIC_DICT)
-
-
-
+    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 if __name__ == "__main__":
     app.run(debug=True)

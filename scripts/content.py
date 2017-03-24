@@ -1,14 +1,10 @@
 def TutorialCategories():
-    TUTORIAL_CAT = {"Types":[["Python","/tutorials/python","p-1.png"],
-["Visual Basic","/tutorials/vb","visual_studio.png"]]}
+    TUTORIAL_CAT = {"Types":[["Python","/tutorials/python","p-1.png"]]}
 
     return TUTORIAL_CAT
 
 def Content():
-    TOPIC_DICT = {"Python":[["Hello World!","/hello-world"],
-    ["If/Else Statement","/if-else-statement"],
-    ["For Loop","/for-loop"],
-    ["While Loop","/while-loop"]]}
+    TOPIC_DICT = {"Python":[["Hello World!","hello-world"]]}
 
     return TOPIC_DICT
 

@@ -40,15 +40,16 @@
         </ol>
         <div class="row">
     <!-- Start Portfolio section -->
-    <div class="portfolio-section padding-block">
+    <div class="portfolio-section">
+
         <!-- start container -->
               {% for t in TOPIC_DICT[title] %}
-              <a href="{{t[1]}}" class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span> {{t[0]}}</a>
+              <a href="/{{title.lower()}}/{{t[1]}}" class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span> {{t[0]}}</a>
               {% endfor %}
             </div>
             <!-- end row -->
         </div>
-        <!-- end container -->
+        <!-- end container --><br><br>
     </div>
     <!-- End Portfolio section -->
 
