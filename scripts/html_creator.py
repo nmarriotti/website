@@ -6,9 +6,16 @@ TOPIC_DICT = Content()
 HTML_TEMPLATE = """
 {% extends "tutorial-master.html" %}
 {% block content %}
-<!--       <pre class="prettyprint">              width="750" height="423"    -->
 
-	  <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/OIuXVZuHXXo" frameborder="0" allowfullscreen></iframe></div>
+	  <div class="embed-responsive embed-responsive-16by9">VIDEO EMBED</div>
+
+	  <p></p>
+	  <p></p>
+
+
+<pre class="line-numbers"><code class="language-python">
+PYTHON CODE
+</code></pre>
 
 	  <p></p>
 	  <p></p>
@@ -16,24 +23,12 @@ HTML_TEMPLATE = """
 	  <p></p>
 
 
-	  <kbd data-toggle="collapse" data-target="#consoleinfo" aria-expanded="false" aria-controls="consoleinfo">console</kbd>
-
-		<div class="collapse" id="consoleinfo">
-		  <div class="well">
-			<p>When someone refers to "the console," they are referring to where information from your program is ouput. You will see an example of "output to console" below. If you want this message to go away, just click again on the "console" button that you originally clicked on.</p>
-		  </div>
-		</div>
+<pre class="command-line"><code class="language-bash">
+COMMAND PROMPT CODE HERE
+</code></pre>
 
 
-
-		<div class="row">
-      <pre class="brush: py;">
-def HelloWorld():
-    print("Hello World")
-  </pre>
-		<div class="col l6">
-<p>EXPLANATION</p></div></div>
-
+	  <p></p>
 
 
 <div class="post-pagination">

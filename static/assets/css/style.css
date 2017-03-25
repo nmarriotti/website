@@ -29,14 +29,23 @@ Author:	Ukieweb
 /* ------------------
     General setting
 --------------------*/
-* {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    font-weight: 300;
+p {
+  font-size: 18px;
+  padding: 10px 5px 15px 20px;
+}
+
+pre,code {
+  background-color: #fff;
+  font-size: 20px;
+}
+
+a {
+  font-weight: 500;
 }
 
 body {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin: 0 auto;
 }
 
@@ -565,6 +574,9 @@ a.icons-menu-button:focus,
     padding: 17px 0;
     border-top-width: 1px;
     border-top-style: solid;
+    width:100%;
+    bottom:0;
+    position:relative;
 }
 
 .footer a {
@@ -2278,8 +2290,3 @@ a.icons-menu-button:focus,
 .fc-calendar .fc-row > div, .fc-calendar .fc-body, .fc-calendar .fc-row {
     border: none;
 }
-
-
-
-
-

@@ -6,8 +6,6 @@
 </div>
 <!-- End load page -->
 
-<div id="wraper">
-
     <!-- Start Head section -->
     <header class="head-blog">
         <div class="slider_container">
@@ -79,18 +77,6 @@
                     {% block content %}
                     {% endblock %}
                     <!-- end post -->
-                    <br><br><br><br>
-                    <div id="disqus_thread"></div>
-                      <script>
-                          (function() { // DON'T EDIT BELOW THIS LINE
-                              var d = document, s = d.createElement('script');
-                              s.src = 'https://nickmarriotti.disqus.com/embed.js';
-                              s.setAttribute('data-timestamp', +new Date());
-                              (d.head || d.body).appendChild(s);
-                          })();
-                      </script>
-                      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-4">
                     <!-- start slidebar -->
@@ -105,6 +91,21 @@
                     </aside>
                     <!-- end slidebar -->
                 </div>
+
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                  <br><br><br><br>
+                  <div id="disqus_thread"></div>
+                    <script>
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://nickmarriotti.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<br><br><br>
+                </div>
             </div>
             <!-- end row -->
         </div>
@@ -113,10 +114,10 @@
     <!-- End Blog section -->
 
     <!-- Start Footer section -->
-    {% include 'includes/footer.html' %}
+
     <!-- End Footer section -->
 
-</div>
+
 
 <!-- Scroll to Top -->
 <a href="#" class="btn hover-animate scrollToTop"><i class="fa fa-angle-up"></i></a>
@@ -157,7 +158,7 @@
         </div>
     </div>
     <!-- End row -->
-</div>
+
 <!-- End Style Contact Form -->
 
 <!-- Scripts -->
@@ -174,9 +175,7 @@
 <script src="../static/assets/js/modernizr.custom.js" type="text/javascript"></script>
 <script src="../static/assets/js/contact_scripts.js" type="text/javascript"></script>
 <script src="../static/assets/js/scripts.js" type="text/javascript"></script>
-<script type="text/javascript" src="../static/assets/js/syntaxhighlighter/shCore.js"></script>
-<script type="text/javascript" src="../static/assets/js/syntaxhighlighter/shBrushPython.js"></script>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
+<script type="text/javascript" src="../static/assets/js/prism.js"></script>
 
 </body>
 </html>

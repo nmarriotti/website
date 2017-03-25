@@ -5,31 +5,35 @@
 
 	  <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/OIuXVZuHXXo" frameborder="0" allowfullscreen></iframe></div>
 
-	  <p></p>
-	  <p></p>
-	  <p></p>
-	  <p></p>
+	  <p>The Hello World application is the most basic tutorial for any programming
+			 language. In this tutorial we will learn how to setup a basic Python script and
+			 output the string "Hello World!" to the console."</p>
 
 
-	  <kbd data-toggle="collapse" data-target="#consoleinfo" aria-expanded="false" aria-controls="consoleinfo">console</kbd>
+	  <p>Lets begin by creating a file: <code>HelloWorld.py</code>
+<pre class="line-numbers"><code class="language-python">
+def main():
+    print("Hello World!")
 
-		<div class="collapse" id="consoleinfo">
-		  <div class="well">
-			<p>When someone refers to "the console," they are referring to where information from your program is ouput. You will see an example of "output to console" below. If you want this message to go away, just click again on the "console" button that you originally clicked on.</p>
-		  </div>
-		</div>
+if __name__ == "__main__":
+    main()</code></pre>
+
+	  <p>In the above code, we defined a method called main. <code>def main():</code>.
+			 A method is simply a block of code that can do something. Inside that method we are
+			 telling Python to print the string "Hello World!" to the console.</p>
+		<p><code>if __name__ == "__main__":</code> This statement is used so that this script
+		    can be run directly.</p>
+<br>
+	  <p> Save the file and in the console type: <code>python HelloWorld.py</code>.
+			You should see output similar to the example below.</p>
+
+<pre class="command-line"><code class="language-bash">
+				$ python HelloWorld.py<br />
+				Hello World!
+</code></pre>
 
 
-
-		<div class="row">
-      <pre class="brush: py;">
-def HelloWorld():
-    print("Hello World")
-  </pre>
-		<div class="col l6">
-<p>EXPLANATION</p></div></div>
-
-
+		</script>
 
 <div class="post-pagination">
    {% if nextTitle != "None" %}
@@ -42,5 +46,3 @@ def HelloWorld():
 
 
 {% endblock %}
-
-

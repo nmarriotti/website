@@ -14,6 +14,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
+  font-size: 20px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -25,7 +26,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 main,
@@ -33,6 +33,11 @@ menu,
 nav,
 section,
 summary {
+  display: block;
+}
+
+footer {
+  min-height:100%;
   display: block;
 }
 audio,
@@ -1590,6 +1595,8 @@ pre code {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  min-height:100%;
+position:relative;
 }
 @media (min-width: 768px) {
   .container {
