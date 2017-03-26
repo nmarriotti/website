@@ -1,12 +1,20 @@
-from flask import Flask, flash, render_template, request, redirect, url_for, g, session
+from flask import Flask, flash, render_template, request, redirect, url_for, g, session, send_from_directory
 from functools import wraps
 from models.models import *
 from scripts.content import *
+from werkzeug.utils import secure_filename
+import os
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'MOV', 'mp4'])
 
 TUTORIAL_CAT = TutorialCategories()
 TOPIC_DICT = Content()
+BLOG_TOPIC_DICT = BlogContent()
 
 app = Flask(__name__, static_url_path='/static')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'some_secret'
 
 @app.before_request
@@ -54,19 +62,45 @@ def profile():
 @app.route('/blog')
 def blog():
 	# render the blog page
-	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()), title = 'Blog')
+	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()), title = 'Blog', BLOG_TOPIC_DICT=BLOG_TOPIC_DICT)
 
 @app.route('/view')
 def view():
 	# render the view post page
 	return render_template('view.html', title='Viewing Post')
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+@app.route('/dashboard/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash(filename + ' Uploaded!')
+            return render_template('dashboard/upload.html', title='Dashboard', filename = filename)
+    return render_template('dashboard/upload.html', title='Dashboard')
+
 @app.route('/dashboard')
 def dashboard():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-        return render_template('dashboard.html')
+        return render_template('dashboard.html', title='Dashboard')
 
 @app.route('/login', methods=['GET', 'POST'])
 def do_admin_login():
@@ -74,7 +108,7 @@ def do_admin_login():
         if request.form['password'] == 'password' and request.form['username'] == 'admin':
             session['logged_in'] = True
             session['user'] = request.form['username']
-            return render_template('dashboard.html')
+            return redirect(url_for('dashboard'))
         else:
             flash('Invalid username and/or password!')
             return render_template('login.html')
@@ -94,6 +128,10 @@ def logout():
 @app.route("/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
 def Hello_World():
     return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
+@app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
+def First_Blog_Post():
+    return render_template("blog/first-blog-post.html", curLink = BLOG_TOPIC_DICT["blog"][0][1], curTitle=BLOG_TOPIC_DICT["blog"][0][0], curTopic = "blog", title = BLOG_TOPIC_DICT["blog"][0][0], BLOG_TOPIC_DICT = BLOG_TOPIC_DICT, nextTitle= "None")
 
 if __name__ == "__main__":
     app.run(debug=True)

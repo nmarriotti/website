@@ -3,16 +3,18 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
-            {% for post in posts %}
+              {% for t in BLOG_TOPIC_DICT["blog"][:5] %}
                     <!-- start post -->
                     <div class="post">
                         <!-- start photo -->
+                        {% if t[4] != "none" %}
                         <div class="photo">
-                            <img src="../static/assets/img/blog/post-1.png" alt="UkieWeb">
+                            <img src="{{ url_for('static', filename='assets/img/blog/') }}{{ t[4] }}" alt="{{ t[0] }}">
                         </div>
+                        {% endif %}
                         <!-- end photo -->
                         <!-- start title post -->
-                        <h3 class="title title-blog"> {{ post.title }} </h3>
+                        <h3 class="title title-blog"> {{ t[0] }} </h3>
                         <!-- end title post -->
                         <div class="entry-byline">
                             <i class="fa fa-user"></i>
@@ -22,17 +24,16 @@
 
                             </span>
                             <i class="fa fa-clock-o"></i>
-                            <time class="entry-published right-border">{{ post.date }}</time>
-                            <i class="fa fa-comment"></i>
-                            <span class="comments-link">{{ post.comments }} Comments</span>
+                            <time class="entry-published right-border">{{ t[2] }}</time>
                         </div>
                         <!-- start desc post -->
-                        <p>{{ post.desc }}</p>
+                        <p>{{ t[3] }}</p>
                         <!-- end desc post -->
-                        <a href="/view" class="btn hover-animate btn-color-hover">Read More</a>
+                        <a href="/blog/{{ t[1] }}" class="btn hover-animate btn-color-hover">Read More</a>
                     </div>
                     <!-- end post -->
               {% endfor %}
+
 {% endblock %}
 {% block categories %}
       {% for category in categories %}
@@ -40,7 +41,4 @@
       {% endfor %}
 {% endblock %}
 {% block recent_posts %}
-      {% for post in posts %}
-          <li><a href="#">{{ post.title }}</a></li>
-      {% endfor %}
 {% endblock %}

@@ -865,7 +865,7 @@ a.icons-menu-button:focus,
     margin-bottom: 10px;
 }
 
-.skills .progress-bar {
+.skills {
     border-width: 1px;
     border-style: solid;
     line-height: 8px;
@@ -883,7 +883,7 @@ a.icons-menu-button:focus,
     overflow: visible;
 }
 
-.skills .progress-bar span {
+.skills span {
     display: block;
     width: 45px;
     height: 45px;

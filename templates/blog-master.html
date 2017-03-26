@@ -76,30 +76,12 @@
                     <!-- start slidebar -->
 
                     <aside class="widget widget_categories">
-                        <h3 class="widget-title">Categories</h3>
+                        <h3 class="widget-title">Older Posts</h3>
                         <ul>
-
+                          {% for t in BLOG_TOPIC_DICT["blog"] %}
+                          <li><a href="/blog/{{t[1]}}">{{t[0]}}</a></li>
+                          {% endfor %}
                         </ul>
-                    </aside>
-
-                    <aside class="widget widget_recent_entries">
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <ul>
-                          {% block recent_posts %}
-                          {% endblock %}
-                        </ul>
-                    </aside>
-
-                    <aside class="widget widget_tag_cloud">
-                        <h3 class="widget-title">Tags</h3>
-                        <div class="tagcloud">
-                            <a href="#" class="hover-animate">Web</a>
-                            <a href="#" class="hover-animate">Illustrations</a>
-                            <a href="#" class="hover-animate">Graphic design</a>
-                            <a href="#" class="hover-animate">Applications</a>
-                            <a href="#" class="hover-animate">Photo</a>
-                            <a href="#" class="hover-animate">UkieWeb</a>
-                        </div>
                     </aside>
 
                     <!-- end slidebar -->
@@ -112,43 +94,7 @@
     <!-- End Blog section -->
 
     <!-- Start Footer section -->
-
-    <footer class="footer">
-        <!-- start container -->
-        <div class="container">
-            <!-- start row -->
-            <div class="row">
-                <!-- start phone number -->
-                <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <a href="#" class="hover-animate">
-                        <span class="ukie-icons hover-animate"><i class="fa fa-phone"></i></span> +1-724-718-4004
-                    </a>
-                </div>
-                <!-- end phone number -->
-                <!-- start email -->
-                <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <a href="#" class="hover-animate">
-                        <span class="ukie-icons hover-animate"><i class="fa fa-paper-plane"></i></span> nmarriotti@gmail.com
-                    </a>
-                </div>
-                <!-- end email -->
-                <!-- start address -->
-                <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <a href="#" class="hover-animate">
-                        <span class="ukie-icons hover-animate"><i class="fa fa-map-marker"></i></span> Oak Harbor, WA
-                    </a>
-                </div>
-                <!-- end address -->
-                <!-- start Copyright -->
-                <div class="col-xs-12 col-sm-6 col-lg-3 text-right">
-                    <span class="copyright">Copyright © 2017 All right reserved</span>
-                </div>
-                <!-- end Copyright -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </footer>
+    {% include 'includes/footer.html' %}
     <!-- End Footer section -->
 
 </div>

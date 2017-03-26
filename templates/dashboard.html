@@ -1,4 +1,11 @@
-{% if session['logged_in'] %}
-<p>Logged in as: {{ session['user'] }} <a href="/logout">Logout</a></p>
-Admin Dashboard
-{% endif %}
+{% extends "dashboard/dashboard-master.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+        <p> This is the main dashboard page </p> 
+   
+
+{% endblock %}				
+       
