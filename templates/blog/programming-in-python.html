@@ -1,0 +1,26 @@
+
+{% extends "blog-view-master.html" %}
+{% block content %}
+
+<h6>Posted on 3/26/2017</h6>
+
+    {% if "none" != "none" %}
+        <div class="photo">
+        	<img src="{{ url_for('static', filename='assets/img/blog/none') }}" alt="none">
+        </div>
+    {% endif %}
+
+
+	  <p>I decided to make this website because I love learning different programming languages.
+    After watching an hour long YouTube video on Flask web development I decided to give it a go.
+    I recently began using Python and it's crazy how easy it is to use.</p>
+
+	  <p>I will be writing tutorials for everything I learn so I can reference back to them and
+	     help others who may need it. I plan on creating tutorials for Python, Visual Basic, C++, Java
+       and for Microsoft Windows.</p>
+
+    <p>If there is something your stuggling with and would like me to write a tutorial just click the
+      contact button and let me know.</p>
+
+
+{% endblock %}

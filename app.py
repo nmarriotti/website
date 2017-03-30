@@ -62,7 +62,7 @@ def profile():
 @app.route('/blog')
 def blog():
 	# render the blog page
-	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()), title = 'Blog', BLOG_TOPIC_DICT=BLOG_TOPIC_DICT)
+	return render_template('blog.html', posts=Post.select().order_by(Post.date.desc()), categories=Post.select(Post.category).distinct().order_by(Post.category.asc()), title = 'Blog', BLOG_TOPIC_DICT=BLOG_TOPIC_DICT, TUTORIAL_CAT = TUTORIAL_CAT)
 
 @app.route('/view')
 def view():
@@ -130,8 +130,8 @@ def Hello_World():
     return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
-def First_Blog_Post():
-    return render_template("blog/first-blog-post.html", curLink = BLOG_TOPIC_DICT["blog"][0][1], curTitle=BLOG_TOPIC_DICT["blog"][0][0], curTopic = "blog", title = BLOG_TOPIC_DICT["blog"][0][0], BLOG_TOPIC_DICT = BLOG_TOPIC_DICT, nextTitle= "None")
+def Programming_in_Python():
+    return render_template("blog/programming-in-python.html", curLink = BLOG_TOPIC_DICT["blog"][0][1], curTitle=BLOG_TOPIC_DICT["blog"][0][0], curTopic = "blog", title = BLOG_TOPIC_DICT["blog"][0][0], BLOG_TOPIC_DICT = BLOG_TOPIC_DICT, TUTORIAL_CAT = TUTORIAL_CAT, nextTitle= "None")
 
 if __name__ == "__main__":
     app.run(debug=True)

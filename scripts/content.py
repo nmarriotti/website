@@ -10,8 +10,7 @@ def Content():
 
 def BlogContent():
 	                            # TITLE            URL                DATE         description                                                      image
-    BLOG_TOPIC_DICT = {"blog":[["First Blog Post","first-blog-post", "12/25/2017", "This is where the description of the blog entry needs to go.", "post-1.png"],
-    ["Second Blog Post","first-blog-post", "12/25/2017", "This is where the description of the blog entry needs to go.", "post-1.png"]]}
+    BLOG_TOPIC_DICT = {"blog":[["Programming in Python","programming-in-python", "3/26/2017", "Just talking about what made me want to make this website and what kind of tutorials I am going to post in the future.", "none"]]}
 
     return BLOG_TOPIC_DICT
 
