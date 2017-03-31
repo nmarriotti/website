@@ -50,7 +50,7 @@ def resume():
 @app.route('/tutorials/', defaults= {'title':1})
 def tutorials(title):
     if title == 1:
-        return render_template("portfolio.html", title='Tutorials', TUTORIAL_CAT = TUTORIAL_CAT)
+        return render_template("portfolio.html", title='Tutorials', TUTORIAL_CAT = TUTORIAL_CAT, count=0, TOPIC_DICT = TOPIC_DICT)
     else:
         return render_template(title+".html", title=str.title(title), TOPIC_DICT = TOPIC_DICT)
 
