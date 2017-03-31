@@ -1,0 +1,63 @@
+
+{% extends "tutorial-master.html" %}
+{% block content %}
+
+	  <p>In this tutorial we will learn how to write a basic Hello World console
+	  program. This tutorial assumes you already have a C++ IDE installed and a compiler
+	  configured.</p>
+
+	  <p>Begin by creating a file <code>hello.cpp</code></p>
+
+		<p>Copy and paste the following code.</p>
+
+		<pre class="line-numbers"><code class="language-cpp">
+			  #include "iostream"
+				using namespace std;
+
+				int main() {
+					cout << "Hello World!\n";
+					return 0;
+				}
+		</code></pre>
+
+
+	  <p>So what is that code doing? Well first we tell C++ that we want it to include
+		all of the functions included in the <code>iostream</code> library by writing
+	  <code>#include "iostream"</code></p>
+
+	  <p><code>using namespace std</code> is optional but it allows use to write I/O statements with a little less code. For example:</p>
+
+		<pre class="line-numbers"><code class="language-cpp">
+				// Without using namespace std
+        std::cout << "Hello World!\n";
+		</code></pre>
+
+
+		<p><code>int main()</code> is a required function. It is where your "main"
+			program begins. Without it your program will not compile properly. We will
+			talk about functions and return statements such as <code>return 0;</code> in a later tutorial.</p>
+
+		<p><code>cout << "Hello World!\n";</code> is what we want to display on the screen and we tell the compiler that
+			by using the <code>cout</code> command. All strings must be placed in double quotations as well. The <code>\n</code>
+			is a line terminator (newline) and tells the compiler that the next statement we output needs to be on the
+			next line.
+
+	  <p>Now let's compile and run our program. You should get the following output.</p>
+
+		<pre class="command-line"><code class="language-bash">
+						Hello World!
+		</code></pre>
+
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
