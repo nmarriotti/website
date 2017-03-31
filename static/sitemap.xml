@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.nickmarriotti.com/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/profile</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/blog</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/contact</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/python/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/c/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/c++/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/java/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/visual%20basic/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/microsoft%20windows/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/miscellaneous/</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/blog/programming-in-python</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/python/hello-world</loc>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.nickmarriotti.com/c++/hello-world</loc>
+  <changefreq>hourly</changefreq>
+</url>
+</urlset>

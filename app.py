@@ -137,6 +137,11 @@ def Cpp_Hello_World():
 def Programming_in_Python():
     return render_template("blog/programming-in-python.html", curLink = BLOG_TOPIC_DICT["blog"][0][1], curTitle=BLOG_TOPIC_DICT["blog"][0][0], curTopic = "blog", title = BLOG_TOPIC_DICT["blog"][0][0], BLOG_TOPIC_DICT = BLOG_TOPIC_DICT, TUTORIAL_CAT = TUTORIAL_CAT, nextTitle= "None")
 
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
