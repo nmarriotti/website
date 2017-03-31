@@ -5,6 +5,13 @@ TOPIC_DICT = Content()
 
 HTML_TEMPLATE = """
 {% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="KEYWORDS GO HERE" />
+<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
 {% block content %}
 
 	  <div class="embed-responsive embed-responsive-16by9">VIDEO EMBED</div>
@@ -29,7 +36,7 @@ COMMAND PROMPT CODE HERE
 
 
 	  <p></p>
-
+<br>
 <!-- Ad -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ad_responsive -->

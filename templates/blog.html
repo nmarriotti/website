@@ -1,7 +1,11 @@
 {% extends "blog-master.html" %}
-{% block head %}
-{{ super() }}
+
+{% block metatags %}
+<meta name="keywords" content="nmarriotti, programming, portfolio, tutorials, blog, python, visual basic" />
+<meta name="description" content="Programming tutorials and personal blog for Nick Marriotti" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 {% endblock %}
+
 {% block content %}
               {% for t in BLOG_TOPIC_DICT["blog"][:5] %}
                     <!-- start post -->

@@ -5,6 +5,13 @@ BLOG_TOPIC_DICT = BlogContent()
 
 HTML_TEMPLATE = """
 {% extends "blog-view-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="KEYWORDS GO HERE" />
+<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
 {% block content %}
 
 <!-- Ad -->
