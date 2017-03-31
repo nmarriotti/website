@@ -4,7 +4,8 @@ def TutorialCategories():
     return TUTORIAL_CAT
 
 def Content():
-    TOPIC_DICT = {"Python":[["Hello World!","hello-world"]]}
+    TOPIC_DICT = {"Python":[["Hello World!","hello-world"]],
+    "C++":[["Hello World!","hello-world"]]}
 
     return TOPIC_DICT
 
