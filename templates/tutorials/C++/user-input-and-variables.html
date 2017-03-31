@@ -1,0 +1,107 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C++, user, input, tutorial, how-to, how to, nickmarriotti" />
+<meta name="description" content="Lets learn how to get user input and set variables as these are a vital part of any program regardless of the language." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	  <p>In the last tutorial we output a string to the console, but what about user
+			input? How can we capture that and store it? It's actually very easy and we'll
+			do so using a variable.</p>
+
+	  <h3>What is a variable?</h3>
+		<p>Imagine your moving and are packing up some boxes. You start in the kitchen
+			and label the box "Kitchen Appliances". Seeing that label would tell you that only kitchen
+			appliances should go in that box right? Variables are very similar to a labeled box.
+			They're containers that can only hold certain types of information, aka Data Types
+			which we will learn in the next tutorial.
+
+		<p>Lets get coding! Create a file <code>input.cpp</code></p>
+
+
+<pre class="line-numbers"><code class="language-cpp">
+#include "iostream"
+using namespace std;
+
+int main() {
+
+	string name;
+
+	cout << "What is your name? ";
+	cin >> name;
+
+	cout << "Hello, " << name << "!" << endl;
+
+	return 0;
+}
+</code></pre>
+
+	  <h3>What's that code doing?</h3>
+	  <p>We created a string variable by typing <code>string name;</code>.
+			A string is a data type treated as text such as "Hello World!"</p>
+
+	  <p><code>cout << "What is your name? ";</code> We ask the user a question.</p>
+
+	  <p><code>cin >> name;</code> Here we used the <code>cin</code> command with the
+		arrows >> pointing towards our name variable. So with this line we are getting the value
+		that is stored in the <code>name</code> variable.</p>
+
+		<p><code>cout << "Hello, " << name << "!" << endl;</code> Here we output the
+			word "Hello" and we want to get what was stored in our <code>name</code> variable.
+		  We add an exclamation point and end the line <code>endl;</code></p>
+
+		<h3>Testing it out!</h3>
+		<p>Save your code, compile, and run it. Type your name in when asked and press Enter.
+			You should see the following output:</p>
+
+
+<pre class="command-line" data-output="2"><code class="language-bash">
+What is your name? Nick
+Hello, Nick
+</code></pre>
+
+	  <p>In the next tutorial we will learn about the various data types in C++.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}

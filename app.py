@@ -125,13 +125,29 @@ def logout():
     session['logged_in'] = False
     return redirect(url_for('home'))
 
+
+
+
+
 @app.route("/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
 def Hello_World():
     return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
+
+
+
+
 @app.route("/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
-def Cpp_Hello_World():
-    return render_template("tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+def Creating_a_Hello_World_program_in_Cpp():
+    return render_template("tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0],  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT)
+
+@app.route("/c++/"+TOPIC_DICT["C++"][1][1], methods=['GET', 'POST'])
+def Getting_user_input_and_variables():
+    return render_template("tutorials/C++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
+
+
+
 
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
 def Programming_in_Python():

@@ -55,11 +55,11 @@
     <div class="portfolio-section">
 
         <!-- start container -->
-        <ul>
-              {% for t in TOPIC_DICT[title] %}
-              <a href="/{{title.lower()}}/{{t[1]}}"><span class="glyphicon glyphicon-list-alt"></span> {{t[0]}}</a>
-              {% endfor %}
-        </ul>
+        <div class="list-group">
+          {% for t in TOPIC_DICT[title] %}
+          <a href="/{{title.lower()}}/{{t[1]}}" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span> {{t[0]}}</a>
+          {% endfor %}
+        </div>
             </div>
             <!-- end row -->
         </div>
