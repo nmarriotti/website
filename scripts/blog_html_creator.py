@@ -7,6 +7,19 @@ HTML_TEMPLATE = """
 {% extends "blog-view-master.html" %}
 {% block content %}
 
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
 <h6>Posted on DATEPOSTED</h6>
 
     {% if "STATUS" != "none" %}
