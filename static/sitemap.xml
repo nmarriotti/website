@@ -59,15 +59,15 @@
   <changefreq>hourly</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/python/hello-world</loc>
+  <loc>http://www.nickmarriotti.com/tutorials/python/hello-world</loc>
   <changefreq>hourly</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/c++/hello-world</loc>
+  <loc>http://www.nickmarriotti.com/tutorials/c++/hello-world</loc>
   <changefreq>hourly</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/c++/user-input-and-variables</loc>
+  <loc>http://www.nickmarriotti.com/tutorials/c++/user-input-and-variables</loc>
   <changefreq>hourly</changefreq>
 </url>
 </urlset>
