@@ -137,13 +137,13 @@ def Hello_World():
 
 
 
-@app.route("/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Creating_a_Hello_World_program_in_Cpp():
-    return render_template("tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0],  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("/tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0],  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT)
 
-@app.route("/c++/"+TOPIC_DICT["C++"][1][1], methods=['GET', 'POST'])
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][1][1], methods=['GET', 'POST'])
 def Getting_user_input_and_variables():
-    return render_template("tutorials/C++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("/tutorials/C++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 
