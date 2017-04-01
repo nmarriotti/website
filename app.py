@@ -129,7 +129,7 @@ def logout():
 
 
 
-@app.route("/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
 def Hello_World():
     return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][0][1], curTitle=TOPIC_DICT["Python"][0][0], curTopic = "Python", title = TOPIC_DICT["Python"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
