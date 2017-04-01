@@ -29,6 +29,7 @@ for each_topic in BLOG_TOPIC_DICT:
             CURRENTTITLE = eachele[0].replace("-","_").replace(" ","_").replace(",","").replace("/","").replace(")","").replace("(","").replace(".","").replace("!","").replace(":","-").replace("'","")
             CURRENTINDEX = str(index_counter)
             index_counter += 1
+            NEXTINDEX = str(index_counter)
             try:
                 if eachele[index_counter]:
                     print( FUNC_TEMPLATE.replace("CURRENTTOPICLOW",CURRENTTOPIC.lower()).replace("CURRENTTOPIC",CURRENTTOPIC).replace("CURRENTINDEX",CURRENTINDEX).replace("CURRENTTITLE",CURRENTTITLE).replace("CURRENTHTML",CURRENTHTML).replace("NEXTINDEX",NEXTINDEX) )
