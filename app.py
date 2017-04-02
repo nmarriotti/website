@@ -136,6 +136,9 @@ def Hello_World():
 
 
 
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
+def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
+    return render_template("tutorials/C++/installing-compiler-and-codeblocks-ide.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0],  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT)
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Creating_a_Hello_World_program_in_Cpp():

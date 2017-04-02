@@ -1,0 +1,103 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C++, compiler, MinGW, IDE, Installing, program, Code::Blocks, download" />
+<meta name="description" content="To get started programming in C++ we need to download a compiler and an IDE. For this tutorial we will use MinGW and Code::Blocks." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	  <p>Welcome to my first tutorial on C++. In this tutorial we will be downloading
+			MinGW which includes the C++ compiler and Code::Blocks, a free open source
+			Integrated Development Environment (IDE) and setting up our first project.</p>
+
+		<h3>Required Downloads</h3>
+			<a target="_blank" href="https://downloads.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fmingw%2Ffiles%2FInstaller%2F&ts=1491120314&use_mirror=superb-dca2"><span class="glyphicon glyphicon-download"></span> Minimalist GNU for Windows</a>
+			<br><a target="_blank" href="http://sourceforge.net/projects/codeblocks/files/Binaries/16.01/Windows/codeblocks-16.01-setup.exe"><span class="glyphicon glyphicon-download"></span> Code::Blocks IDE</a>
+
+		<h3>Installing MinGW</h3>
+		<p>Open the MinGW installer and click <strong>Install</strong>. You can leave the default
+		   install location and other settings. Click <strong>continue</strong></p>
+
+		<p>Under the Basic Setup options, you will want to mark the packages shown below for installation:
+			<ul>
+				<li>mingw32-base</li>
+				<li>mingw32-gcc-g++</li>
+				<li>mingw32-gcc-objc</li>
+				<li>msys-base</li>
+			</ul></p>
+
+			<img src="{{ url_for('static', filename='assets/img/tutorials/installing_compiler_and_ide/mingw_install.jpg')}}" alt="MinGW installation" class="img-rounded img-responsive">
+
+			<p>Once those are selected click <strong>Installation>Apply Updates</strong>.
+			When the installation has finished it's time to install Code::Blocks.</p>
+
+			<h3>Installing Code::Blocks IDE</h3>
+			<p>Open the Code::Blocks <strong>setup.exe</strong> file and keep clicking next through the
+				installation until it is complete. You can leave all the defaults. You should then see a screen that shows
+				the detected compilers. It should show (GNU Compiler) as detected.</p>
+
+			<p>That's it! Now let's start our first project.</p>
+
+			<h3>Creating our first C++ Project</h3>
+			<p>Open Code::Blocks. Click <strong>File > New > Project</strong> and select <strong>Console Application</strong></p>
+
+		<img src="{{ url_for('static', filename='assets/img/tutorials/installing_compiler_and_ide/1.jpg')}}" alt="Setting up project in Code::Blocks" class="img-rounded img-responsive">
+
+		<p>Click next and when asked what language you wish to use, select <strong>C++</strong>.
+			Give your project a name and we are ready to run the default Hello World program Code::Blocks
+			has setup for us.</p>
+
+		<p>One the left of the screen expand <strong>Sources</strong> and double click your <strong>main.cpp</strong> file.</p>
+
+<img src="{{ url_for('static', filename='assets/img/tutorials/installing_compiler_and_ide/2.jpg')}}" alt="Code::Blocks source file" class="img-rounded img-responsive">
+
+		<p>You will learn more about the Hello World program in the next tutorial.
+			For now let's build and run this program. At the top of the screen click
+			<strong>Build > Build and Run</strong> or press F9.</p>
+
+<img src="{{ url_for('static', filename='assets/img/tutorials/installing_compiler_and_ide/3.jpg')}}" alt="Running the Hello World program" class="img-rounded img-responsive">
+
+<p>Congratulation! You just setup the C++ compiler, IDE and ran your first program!</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
