@@ -1,0 +1,90 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="Microsoft, Windows, terminal, linux, mingw, commands, ls, cmd, msys, environment, variables, PATH" />
+<meta name="description" content="Want to use linux terminal commands in Microsoft Windows? I'll show you how using MinGW in this tutorial." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+<p>Wouldn't it be nice if the Microsoft Windows command prompt could function just like
+the linux terminal? Well it can! In this tutorial we'll download Minimalist GNU for Windows
+and edit your systems environment variables to allow us to use commands such as <strong>ls</strong>
+in Microsoft Windows.</p>
+
+<h3>Required Downloads</h3>
+	<a target="_blank" href="https://downloads.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fmingw%2Ffiles%2FInstaller%2F&ts=1491120314&use_mirror=superb-dca2"><span class="glyphicon glyphicon-download"></span> Minimalist GNU for Windows</a>
+
+<h3>Installing MinGW</h3>
+<p>Open the MinGW installer and click <strong>Install</strong>. You can leave the default
+	 install location and other settings. Click <strong>continue</strong>. For this tutorial
+	 we will be installing in the <strong>C:\</strong> drive.</p>
+
+<p>Under the Basic Setup options, you will want to mark the following package for installation:
+	<ul>
+		<li>msys-base</li>
+	</ul></p>
+
+	<img src="{{ url_for('static', filename='assets/img/tutorials/windows_linux_commands/mingw_msys_base.jpg')}}" alt="MinGW installation" class="img-rounded img-responsive">
+
+	<p>Once those are selected click <strong>Installation>Apply Updates</strong>.</p>
+
+		<h3>Edit PATH Environment Variable</h3>
+	  <p>Click the Windows <strong>Start</strong> and type in <strong>Environment</strong>. You will want
+		to click <strong>Edit System Environment Variables</strong>.</p>
+
+	  <img src="{{ url_for('static', filename='assets/img/tutorials/windows_linux_commands/env1.jpg')}}" alt="Setting up Windows Environment Variables" class="img-rounded img-responsive">
+
+	  <p>Click <strong>Environment Variables</strong> near the bottom of the window.</p>
+
+		<img src="{{ url_for('static', filename='assets/img/tutorials/windows_linux_commands/env2.jpg')}}" alt="Setting up Windows Environment Variables" class="img-rounded img-responsive">
+
+		<p>Click the <strong>PATH</strong> variable and choose <strong>Edit</strong>.
+			Using your MinGW install directory, add the following folder location to your
+			PATH variable <strong>C:\MinGW\msys\1.0\bin</strong> and click <strong>OK</strong>.</p>
+
+<img src="{{ url_for('static', filename='assets/img/tutorials/windows_linux_commands/env3.jpg')}}" alt="Setting up Windows Environment Variables" class="img-rounded img-responsive">
+
+		<p>Open your command prompt and starting using Linux terminal commands in Windows!</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
