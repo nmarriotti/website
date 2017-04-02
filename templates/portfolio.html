@@ -54,7 +54,7 @@
                 <div class="list-group">
                   {% for t in TUTORIAL_CAT["Types"] %}
                   {% set tutType = t[0] %}
-                  <a href="{{t[1]}}" class="list-group-item"><span class="label label-primary">{{ TOPIC_DICT[tutType]|length }}</span> <span class="glyphicon glyphicon-folder-close"></span> {{t[0]}}  </a>
+                  <a href="{{t[1]}}" class="list-group-item"><span class="label label-primary">{{ TOPIC_DICT[tutType]|length }}</span> {{t[0]}}  </a>
                   {% endfor %}
                 </div>
               </div>
