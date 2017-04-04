@@ -136,28 +136,28 @@ def Hello_World():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
-    return render_template("tutorials/c++/installing-compiler-and-codeblocks-ide.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0], title=TOPIC_DICT["C++"][0][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/C++/installing-compiler-and-codeblocks-ide.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0], title=TOPIC_DICT["C++"][0][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT)
 
 
 
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][1][1], methods=['GET', 'POST'])
 def Creating_a_Hello_World_program_in_Cpp():
-    return render_template("tutorials/c++/hello-world.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], title=TOPIC_DICT["C++"][1][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][2][1], nextTitle = TOPIC_DICT["C++"][2][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], title=TOPIC_DICT["C++"][1][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][2][1], nextTitle = TOPIC_DICT["C++"][2][0], TOPIC_DICT = TOPIC_DICT)
 
 
 
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][2][1], methods=['GET', 'POST'])
 def Getting_user_input_and_variables():
-    return render_template("tutorials/c++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][2][1], curTitle=TOPIC_DICT["C++"][2][0], title=TOPIC_DICT["C++"][2][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][3][1], nextTitle = TOPIC_DICT["C++"][3][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/C++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][2][1], curTitle=TOPIC_DICT["C++"][2][0], title=TOPIC_DICT["C++"][2][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][3][1], nextTitle = TOPIC_DICT["C++"][3][0], TOPIC_DICT = TOPIC_DICT)
 
 
 
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][3][1], methods=['GET', 'POST'])
 def Data_Types():
-    return render_template("tutorials/c++/data_types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], title=TOPIC_DICT["C++"][3][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][4][1], nextTitle = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/C++/data_types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], title=TOPIC_DICT["C++"][3][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][4][1], nextTitle = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT)
 
 
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
