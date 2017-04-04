@@ -157,7 +157,7 @@ def Getting_user_input_and_variables():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][3][1], methods=['GET', 'POST'])
 def Data_Types():
-    return render_template("tutorials/c++/data_types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], title=TOPIC_DICT["C++"][3][0], curTopic="C++", TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/c++/data_types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], title=TOPIC_DICT["C++"][3][0], curTopic="C++",  nextLink = TOPIC_DICT["C++"][4][1], nextTitle = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT)
 
 
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
