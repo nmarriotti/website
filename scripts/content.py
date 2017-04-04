@@ -14,7 +14,7 @@ def Content():
     "C++":[["Installing the C++ compiler and Code:Blocks IDE","installing-compiler-and-codeblocks-ide"],
     ["Creating a Hello World program in C++!","hello-world"],
     ["Getting user input and variables","user-input-and-variables"],
-    ["Data Types","data_types"]],
+    ["Data Types","data-types"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]]}
 
     return TOPIC_DICT
