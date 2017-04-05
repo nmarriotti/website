@@ -82,4 +82,8 @@
   <loc>http://www.nickmarriotti.com/tutorials/c++/data_types</loc>
   <changefreq>hourly</changefreq>
 </url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/c++/conditional-statements</loc>
+  <changefreq>hourly</changefreq>
+</url>
 </urlset>
