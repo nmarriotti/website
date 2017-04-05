@@ -1,0 +1,147 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C++, If statement, condition, logical, operators, tutorials" />
+<meta name="description" content="Control the flow of your program and determine which block of code should be executed by using IF statements to test various conditions." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>To control the flow of a program you can use IF statements. They can be used to
+		determine if a block of code should be executed or not. Below is the basic structure
+		of an IF statement.</p>
+
+		<pre class="line-numbers"><code class="language-cpp">
+		if (condition) {
+			  statement(s)
+		}
+		</code></pre>
+
+	  <h3>What is a condition?</h3>
+		<p>Think back to math class. Remember the greater than or equal to, not equal to, etc... Operators such as
+			those are usually contained inside these if statements to determine what block of code should be executed.
+			Below is a chart of the different conditional operators you can use in C++.</p>
+
+			<table class="table table-bordered table-responsive">
+	<tr>
+	<th>Operator</th>
+	<th>Purpose</th>
+	</tr>
+	<tr>
+	<td>==</td>
+	<td>true if and only if left operand is equal to right operand</td>
+	</tr>
+	<tr>
+	<td>!=</td>
+	<td>true if and only if left operand is not equal to right operand</td>
+	</tr>
+	<tr>
+	<td>></td>
+	<td>true if and only if left operand is greater than right operand</td>
+	</tr>
+	<tr>
+	<td>>=</td>
+	<td>true if and only if left operand is greater than or equal than right operand</td>
+	</tr>
+	<tr>
+	<td><=</td>
+	<td>true if and only if left operand is less than or equal than right operand</td>
+	</tr>
+	</table>
+
+	<h3>Logical Operators</h3>
+	<p>In C++ the logical operators are && meaning AND, || meaning OR, and ! meaning NOT.</p>
+
+<h3>Sample Program</h3>
+<p>I put together a program along with the output to demonstrate how the IF statements are used and how
+	the various conditions and logical operators used. Create a project, compile it
+	and test it out for yourself.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+	#include "iostream"
+
+	using namespace std;
+
+	int main()
+	{
+	    int x = 10;
+	    bool y = false;
+
+	    if(x == 10) {
+	        cout << "x is 10" << endl;
+	    }
+
+	    if(x <= 20) {
+	        cout << "x is LESS THAN OR EQUAL TO 20" << endl;
+	    }
+
+	    if(x >= 11) {
+	        cout << "x is GREATER THAN OR EQUAL TO 11" << endl;
+	    }
+
+	    if(x != 9) {
+	        cout << "x is NOT EQUAL to 9" << endl;
+	    }
+
+	    if(!y) {
+	        cout << "y is FALSE" << endl;
+	    }
+
+	    if(x == 1 || x == 10) {
+	        cout << "x is EQUAL to 10" << endl;
+	    }
+
+	    if(x < 20 && x > 0) {
+	        cout << "x is LESS THAN 20 and x is GREATER THAN 0" << endl;
+	    }
+
+	    return 0;
+	}
+
+</code></pre>
+
+	  <h3>Output</h3>
+		<p>After running the above code you should get the following output.</p>
+
+		<img src="{{ url_for('static', filename='assets/img/tutorials/cpp_conditionalstatements/1.jpg')}}" alt="Sample out for sample program using if statements" class="img-rounded img-responsive">
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}

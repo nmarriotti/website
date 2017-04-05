@@ -145,20 +145,17 @@ def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
 def Creating_a_Hello_World_program_in_Cpp():
     return render_template("tutorials/C++/hello-world.html", curLink = TOPIC_DICT["C++"][1][1], curTitle=TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][1][0], TOPIC_DICT = TOPIC_DICT, nextLink = TOPIC_DICT["C++"][2][1], nextTitle= TOPIC_DICT["C++"][2][0])
 
-
-
-
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][2][1], methods=['GET', 'POST'])
 def Getting_user_input_and_variables():
     return render_template("tutorials/C++/user-input-and-variables.html", curLink = TOPIC_DICT["C++"][2][1], curTitle=TOPIC_DICT["C++"][2][0], curTopic = "C++", title = TOPIC_DICT["C++"][2][0], TOPIC_DICT = TOPIC_DICT, nextLink = TOPIC_DICT["C++"][3][1], nextTitle= TOPIC_DICT["C++"][3][0])
 
-
-
-
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][3][1], methods=['GET', 'POST'])
 def Data_Types():
-    return render_template("tutorials/C++/data-types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], curTopic = "C++", title = TOPIC_DICT["C++"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/data-types.html", curLink = TOPIC_DICT["C++"][3][1], curTitle=TOPIC_DICT["C++"][3][0], curTopic = "C++", title = TOPIC_DICT["C++"][3][0], TOPIC_DICT = TOPIC_DICT, nextLink = TOPIC_DICT["C++"][4][1], nextTitle= TOPIC_DICT["C++"][4][0])
 
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][4][1], methods=['GET', 'POST'])
+def Conditional_Statements():
+    return render_template("tutorials/C++/conditional-statements.html", curLink = TOPIC_DICT["C++"][4][1], curTitle=TOPIC_DICT["C++"][4][0], curTopic = "C++", title = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
 def How_to_use_Linux_terminal_commands_in_Windows():
