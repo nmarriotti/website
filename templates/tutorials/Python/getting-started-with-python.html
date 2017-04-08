@@ -1,0 +1,76 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, programming, 2.7, PATH, download, install" />
+<meta name="description" content="Want to install Python? In this tutorial we'll install Python 2.7 and add python.exe to our windows PATH variable" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>So you'd like to learn Python, but don't know where to start? In this tutorial
+	  I walk you through downloading and installing Python.</p>
+	  
+	  <h3>What is Python?</h3>
+	  <p>Python is a high-level object-oriented programming language. It's simple, easy
+	  to learn syntax emphasizes readability and allows for easier maintenance.</p>
+	  
+	  <h3>Required Downloads</h3>
+	  <p>You may sometimes think never is always better. When it comes to Python that is not
+	  always the case. Not all packages are compatible with the newest version, version 3.6 and for that
+	  reason I would recommend Python 2.7.</p>
+	  
+	  <a target="_blank" href="https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi"><span class="glyphicon glyphicon-download"></span> Python 2.7 (Windows)</a>
+
+	  <h3>Installing</h3>
+	  <p>Open the installer and choose whethere to install it for all users or just your account.</p>
+	  <p>Choose an install location. The default location, usually <code>C:\Python27</code> is fine.
+	  <p>On the next screen you can select what is installed. The defaults are fine but make sure you click <strong>Add python.exe to PATH</strong>
+	  and mark it for installation. When something is added to the PATH that means you can execute that program from within any directory in your filesystem</p>
+	  
+	  <img src="{{ url_for('static', filename='assets/img/tutorials/python-install/1.jpg')}}" alt="Python 2.7 Installation" class="img-rounded img-responsive">
+	  
+	  <p>Python 2.7 will now be installed. Click <strong>Finish</strong>. You are now ready to move onto the next tutorial where we will create our first Python program.</p>
+
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

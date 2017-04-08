@@ -10,7 +10,8 @@ def TutorialCategories():
     return TUTORIAL_CAT
 
 def Content():
-    TOPIC_DICT = {"Python":[["Creating a Hello World program in Python!","hello-world"]],
+    TOPIC_DICT = {"Python":[["Getting Started with Python","getting-started-with-python"],
+	["Creating a Hello World program in Python!","hello-world"]],
     "C++":[["Installing the C++ compiler and Code:Blocks IDE","installing-compiler-and-codeblocks-ide"],
     ["Creating a Hello World program in C++!","hello-world"],
     ["Getting user input and variables","user-input-and-variables"],
