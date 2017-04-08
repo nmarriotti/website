@@ -136,7 +136,7 @@ def Getting_Started_with_Python():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][1][1], methods=['GET', 'POST'])
 def Creating_a_Hello_World_program_in_Python():
-    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][1][1], curTitle=TOPIC_DICT["Python"][1][0],  nextLink = TOPIC_DICT["Python"][2][1], nextTitle = TOPIC_DICT["Python"][2][0], curTopic = "Python", title = TOPIC_DICT["Python"][1][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][1][1], curTitle=TOPIC_DICT["Python"][1][0], curTopic = "Python", title = TOPIC_DICT["Python"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle = "None")
 	
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])

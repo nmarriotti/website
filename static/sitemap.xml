@@ -86,4 +86,8 @@
   <loc>http://www.nickmarriotti.com/tutorials/c++/conditional-statements</loc>
   <changefreq>hourly</changefreq>
 </url>
+<url>
+  <loc>http://www.nickmarriotti.com/tutorials/python/getting-started-with-python</loc>
+  <changefreq>hourly</changefreq>
+</url>
 </urlset>
