@@ -160,8 +160,13 @@ def Data_Types():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][4][1], methods=['GET', 'POST'])
 def Conditional_Statements():
-    return render_template("tutorials/C++/conditional-statements.html", curLink = TOPIC_DICT["C++"][4][1], curTitle=TOPIC_DICT["C++"][4][0], curTopic = "C++", title = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/conditional-statements.html", curLink = TOPIC_DICT["C++"][4][1], curTitle=TOPIC_DICT["C++"][4][0], curTopic = "C++", title = TOPIC_DICT["C++"][4][0], TOPIC_DICT = TOPIC_DICT, nextLink = TOPIC_DICT["C++"][5][1], nextTitle = TOPIC_DICT["C++"][5][0])
 
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][5][1], methods=['GET', 'POST'])
+def Loops():
+    return render_template("tutorials/C++/loops.html", curLink = TOPIC_DICT["C++"][5][1], curTitle=TOPIC_DICT["C++"][5][0], curTopic = "C++", title = TOPIC_DICT["C++"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+	
+	
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
 def How_to_use_Linux_terminal_commands_in_Windows():
     return render_template("tutorials/Microsoft Windows/how-to-use-linux-terminal-commands-in-windows.html", curLink = TOPIC_DICT["Microsoft Windows"][0][1], curTitle=TOPIC_DICT["Microsoft Windows"][0][0], nextTitle = "None", curTopic = "Microsoft Windows", title = TOPIC_DICT["Microsoft Windows"][0][0], TOPIC_DICT = TOPIC_DICT)

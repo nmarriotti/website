@@ -16,7 +16,8 @@ def Content():
     ["Creating a Hello World program in C++!","hello-world"],
     ["Getting user input and variables","user-input-and-variables"],
     ["Data Types","data-types"],
-    ["Conditional Statements","conditional-statements"]],
+    ["Conditional Statements","conditional-statements"],
+    ["Loops","loops"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]]}
 
     return TOPIC_DICT
