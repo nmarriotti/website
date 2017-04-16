@@ -17,7 +17,8 @@ def Content():
     ["Getting user input and variables","user-input-and-variables"],
     ["Data Types","data-types"],
     ["Conditional Statements","conditional-statements"],
-    ["Loops","loops"]],
+    ["Loops","loops"],
+    ["How to create and use functions","how-to-create-and-use-functions"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]]}
 
     return TOPIC_DICT

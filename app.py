@@ -164,7 +164,13 @@ def Conditional_Statements():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][5][1], methods=['GET', 'POST'])
 def Loops():
-    return render_template("tutorials/C++/loops.html", curLink = TOPIC_DICT["C++"][5][1], curTitle=TOPIC_DICT["C++"][5][0], curTopic = "C++", title = TOPIC_DICT["C++"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/loops.html", curLink = TOPIC_DICT["C++"][5][1], curTitle=TOPIC_DICT["C++"][5][0], curTopic = "C++", title = TOPIC_DICT["C++"][5][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["C++"][6][1], nextTitle= TOPIC_DICT["C++"][6][0])
+	
+
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][6][1], methods=['GET', 'POST'])
+def How_to_create_and_use_functions():
+    return render_template("tutorials/C++/how-to-create-and-use-functions.html", curLink = TOPIC_DICT["C++"][6][1], curTitle=TOPIC_DICT["C++"][6][0], curTopic = "C++", title = TOPIC_DICT["C++"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+	
 	
 	
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
