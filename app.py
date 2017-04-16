@@ -178,7 +178,11 @@ def How_to_use_Linux_terminal_commands_in_Windows():
     return render_template("tutorials/Microsoft Windows/how-to-use-linux-terminal-commands-in-windows.html", curLink = TOPIC_DICT["Microsoft Windows"][0][1], curTitle=TOPIC_DICT["Microsoft Windows"][0][0], nextTitle = "None", curTopic = "Microsoft Windows", title = TOPIC_DICT["Microsoft Windows"][0][0], TOPIC_DICT = TOPIC_DICT)
 
 
-
+@app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][0][1], methods=['GET', 'POST'])
+def How_to_install_Exodus_on_Kodi():
+    return render_template("tutorials/Miscellaneous/how-to-install-exodus-on-kodi.html", curLink = TOPIC_DICT["Miscellaneous"][0][1], curTitle=TOPIC_DICT["Miscellaneous"][0][0], nextTitle = "None", curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][0][0], TOPIC_DICT = TOPIC_DICT)
+	
+	
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
 def Programming_in_Python():
     return render_template("blog/programming-in-python.html", curLink = BLOG_TOPIC_DICT["blog"][0][1], curTitle=BLOG_TOPIC_DICT["blog"][0][0], curTopic = "blog", title = BLOG_TOPIC_DICT["blog"][0][0], BLOG_TOPIC_DICT = BLOG_TOPIC_DICT, TUTORIAL_CAT = TUTORIAL_CAT, nextTitle= "None")
