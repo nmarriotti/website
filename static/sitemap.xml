@@ -7,87 +7,144 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.nickmarriotti.com/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/profile</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/profile</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/blog</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/blog</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/contact</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/contact</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/python/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/python/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/c/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/c++/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/java/</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/java/</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/visual%20basic/</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/visual%20basic/
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/microsoft%20windows/</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/microsoft%20windows/
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/miscellaneous/</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/miscellaneous/
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/blog/programming-in-python</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/blog/programming-in-python
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/python/hello-world</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/python/getting-started-with-python
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/hello-world</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/python/hello-world
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/user-input-and-variables</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/installing-compiler-and-codeblocks-ide
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/installing-compiler-and-codeblocks-ide</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/hello-world
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/microsoft%20windows/how-to-use-linux-terminal-commands-in-windows</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/user-input-and-variables
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/data_types</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/data-types
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/c++/conditional-statements</loc>
-  <changefreq>hourly</changefreq>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/conditional-statements
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 <url>
-  <loc>http://www.nickmarriotti.com/tutorials/python/getting-started-with-python</loc>
-  <changefreq>hourly</changefreq>
+<loc>http://www.nickmarriotti.com/tutorials/c++/loops</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
+</url>
+<url>
+<loc>
+http://www.nickmarriotti.com/tutorials/c++/how-to-create-and-use-functions
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
+</url>
+<url>
+<loc>
+http://www.nickmarriotti.com/tutorials/microsoft%20windows/how-to-use-linux-terminal-commands-in-windows
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
 </url>
 </urlset>
