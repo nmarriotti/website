@@ -3,8 +3,10 @@ from functools import wraps
 from models.models import *
 from scripts.content import *
 from werkzeug.utils import secure_filename
-from flask.ext.gzip import Gzip
+from flask_compress import Compress
 import os
+
+compress = Compress()
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
@@ -14,8 +16,13 @@ TUTORIAL_CAT = TutorialCategories()
 TOPIC_DICT = Content()
 BLOG_TOPIC_DICT = BlogContent()
 
-app = Flask(__name__, static_url_path='/static')
-gzip = Gzip(app)
+def start_app():
+	app = Flask(__name__)
+    compress.init_app(app)
+    return app
+	
+@app = Flask(__name__, static_url_path='/static')
+@Compress(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'some_secret'
 
