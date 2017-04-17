@@ -3,6 +3,7 @@ from functools import wraps
 from models.models import *
 from scripts.content import *
 from werkzeug.utils import secure_filename
+from flask.ext.gzip import Gzip
 import os
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -14,6 +15,7 @@ TOPIC_DICT = Content()
 BLOG_TOPIC_DICT = BlogContent()
 
 app = Flask(__name__, static_url_path='/static')
+gzip = Gzip(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'some_secret'
 
