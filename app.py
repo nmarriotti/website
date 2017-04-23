@@ -174,10 +174,15 @@ def Loops():
 
 @flap.route("/tutorials/c++/"+TOPIC_DICT["C++"][6][1], methods=['GET', 'POST'])
 def How_to_create_and_use_functions():
-    return render_template("tutorials/C++/how-to-create-and-use-functions.html", curLink = TOPIC_DICT["C++"][6][1], curTitle=TOPIC_DICT["C++"][6][0], curTopic = "C++", title = TOPIC_DICT["C++"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/how-to-create-and-use-functions.html", curLink = TOPIC_DICT["C++"][6][1], curTitle=TOPIC_DICT["C++"][6][0], curTopic = "C++", title = TOPIC_DICT["C++"][6][0], TOPIC_DICT = TOPIC_DICT, nextLink = TOPIC_DICT["C++"][7][1], nextTitle = TOPIC_DICT["C++"][7][0])
+
+
+@flap.route("/tutorials/c++/"+TOPIC_DICT["C++"][7][1], methods=['GET', 'POST'])
+def Arrays():
+    return render_template("tutorials/C++/arrays.html", curLink = TOPIC_DICT["C++"][7][1], curTitle=TOPIC_DICT["C++"][7][0], curTopic = "C++", title = TOPIC_DICT["C++"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")	
+
 	
-	
-	
+
 @flap.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
 def How_to_use_Linux_terminal_commands_in_Windows():
     return render_template("tutorials/Microsoft Windows/how-to-use-linux-terminal-commands-in-windows.html", curLink = TOPIC_DICT["Microsoft Windows"][0][1], curTitle=TOPIC_DICT["Microsoft Windows"][0][0], nextTitle = "None", curTopic = "Microsoft Windows", title = TOPIC_DICT["Microsoft Windows"][0][0], TOPIC_DICT = TOPIC_DICT)

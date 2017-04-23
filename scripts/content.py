@@ -18,7 +18,8 @@ def Content():
     ["Data Types","data-types"],
     ["Conditional Statements","conditional-statements"],
     ["Loops","loops"],
-    ["How to create and use functions","how-to-create-and-use-functions"]],
+    ["How to create and use functions","how-to-create-and-use-functions"],
+	["Arrays","arrays"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]]}
 

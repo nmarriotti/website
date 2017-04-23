@@ -1,0 +1,170 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="KEYWORDS GO HERE" />
+<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+<h2>What is an array?</h2>
+<p>Arrays are simply variables that can hold multiple values of the same data type and are referenced via 
+a zero-based index. They can be <strong>static</strong>, meaning they can only hold a set number of values; 
+or <strong>dynamic</strong>, and hold as mainly values as needed.</p>
+
+<h2>What is an index?</h2>
+<p>Think of a bookshelf. If you wanted to grab the third book from the shelf, you would just count them 1..2..3.. and grab 
+the book right? Arrays store values just like the books on a shelf example, but the first book starts at index zero. 
+So if you wanted to grab the third book that would be at <code>index 2</code>. If your confused don't worry, I'll explain 
+more in the examples below.</p>
+
+<p>In this tutorial I'll provide example of both static and dynamic arrays, how to declare them, how to initialize them and how to get the values stored inside. </p>
+
+
+
+
+<h2>Static Arrays</h2>
+<p>Here is the outline for declaring a static array.</p>
+
+<pre data-keep-tags="vector, int, iostream" class="line-numbers"><code class="language-cpp">
+DataType ArrayName [Length] = {values};
+</code></pre>
+
+<p>As mentioned above, static arrays can only hold a set number of values. Let's create an array of 
+type <code>int</code> called <code>myNumbers</code> that can hold <code>5</code> values and load it with some values.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+const int ARRAY_LENGTH = 5
+int myNumbers [ARRAY_LENGTH] = {5, 7, 10, 35, 41};
+</code></pre>
+
+<h4>Explanation</h4>
+<p>We created a constant integer variable named <code>ARRAY_LENGTH</code> and set it to 5 and declared our array of type <code>int</code> called <code>myNumbers</code> with a length of <code>5</code> and set 
+the values as <code>5, 7, 10, 35, 41</code>.
+
+
+
+
+<h2>Dynamic Arrays</h2>
+<p>What if we weren't sure how many values our array should hold? In this case we will create a dynamic array. We will create our <strong>myNumbers</strong> again, but to make it a dynamic size we will use a vector.</p>
+
+<p>Here is the outline for declaring a dynamic array.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+vector&lt;DataType&gt; ArrayName [Length] = {values};
+</code></pre>
+
+<p>Let's create it it now</p>
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;vector&gt;
+
+    vector&lt;int&gt; dynArray (5);
+
+    // Set our 5 values
+    dynArray[0] = 5;
+    dynArray[1] = 7;
+    dynArray[2] = 10;
+    dynArray[3] = 35;
+    dynArray[4] = 41;
+</code></pre>
+<h4>Explanation</h4>
+<p>1. When using vectors, you must add <code>#include <vector></code>.</p>
+<p>2. we created a vector of type <code>int</code> named <code>dynArray</code> with an initial size of <code>5</code>.</p>
+<p>3. Added 5 values to our array.</p>
+
+<h3>How to add another value</h3>
+<p>If you need to add another value to your dynamic array you would use the <code>push_back()</code> function</code>
+
+<pre class="line-numbers"><code class="language-cpp">
+dynArray.push_back(55);
+dynArray.push_back(100);
+</code></pre>
+
+<h2>Conclusion</h2>
+<p>Arrays are very usual if you need to store multiple values of the same type. I hope by now you have a basic understanding of how to declare them, add values and get values. Here is a sample C++ file demonstrating both static and dynamic arrays. Feel free to play around with it.</p>
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+int main()
+{
+
+    // Static
+    const int ARRAY_LENGTH = 5
+    int myNumbers [ARRAY_LENGTH] = {1, 2, 3, 4, 5};
+    cout << "Value at index 2 is " << myNumbers[2] << endl;
+
+
+    // Dynamic
+    vector&lt;int&gt; dynArray (5);
+
+    // Set our 5 values
+    dynArray[0] = 5;
+    dynArray[1] = 7;
+    dynArray[2] = 10;
+    dynArray[3] = 35;
+    dynArray[4] = 41;
+
+    // Get the initial size
+    cout << "Size of dynArray is " << dynArray.size() << endl;
+
+    // Add two more values
+    dynArray.push_back(55);
+    dynArray.push_back(100);
+
+    // Get the new size
+    cout << "Size of dynArray is " << dynArray.size() << endl;
+
+
+
+    return 0;
+}
+
+</code></pre>
+
+
+	  <p></p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
