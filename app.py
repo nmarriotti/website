@@ -178,8 +178,12 @@ def How_to_create_and_use_functions():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][7][1], methods=['GET', 'POST'])
 def Arrays():
-    return render_template("tutorials/C++/arrays.html", curLink = TOPIC_DICT["C++"][7][1], curTitle=TOPIC_DICT["C++"][7][0], curTopic = "C++", title = TOPIC_DICT["C++"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")	
+    return render_template("tutorials/C++/arrays.html", curLink = TOPIC_DICT["C++"][7][1], curTitle=TOPIC_DICT["C++"][7][0], curTopic = "C++", title = TOPIC_DICT["C++"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C++"][8][0], nextLink = TOPIC_DICT["C++"][8][1])	
 
+
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][8][1], methods=['GET', 'POST'])
+def Writing_Files():
+    return render_template("tutorials/C++/writing-files.html", curLink = TOPIC_DICT["C++"][8][1], curTitle=TOPIC_DICT["C++"][8][0], curTopic = "C++", title = TOPIC_DICT["C++"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 	
 
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
