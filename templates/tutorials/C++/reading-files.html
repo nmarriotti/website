@@ -2,8 +2,8 @@
 {% extends "tutorial-master.html" %}
 
 {% block metatags %}
-<meta name="keywords" content="IO, writing, files, write, c++, cpp" />
-<meta name="description" content="This tutorials demonstrates how to write files in C++" />
+<meta name="keywords" content="reading, read, files, cpp, c++, how to, tutorial, nickmarriotti" />
+<meta name="description" content="Demonstrating how to read files in C++." />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 {% endblock %}
 
@@ -22,8 +22,7 @@
 </script>
 <!-- End Ad -->
 <br>
-
-	  <p>In this tutorial we will create a .txt file and write some strings to it.</p>
+	  <p>In this tutorial we will open the .txt file we created from the last tutorial and output it to the console.</p>
 
 
 <pre class="line-numbers"><code class="language-cpp">
@@ -33,24 +32,34 @@ using namespace std;
 
 int main() {
     
-    // Writing
-    ofstream myfile;
-    myfile.open("example.txt");
-    myfile << "We are going to write this string to the file\n";
-    myfile.close();
+    // Reading
+    string line;
+    ifstream inputfile("example.txt");
+    
+	if(inputfile.is_open()) {
+        while(getline(inputfile, line)) {
+            cout << line << endl;
+        }
+        inputfile.close();    
+    } else {
+        cout << "Unable to open file\n";
+    }
     
     return 0;
 }
 </code></pre>
 
 <h2>Explanation/h2>
-<p><strong>Line 8:</strong> Created an output filestream object named <code>myfile</code>.</p>
-<p><strong>Line 9:</strong> Opened a file called <code>example.txt</code> using our myfile object.</p>
-<p><strong>Line 10:</strong> Sent a string into example.txt.</p>
-<p><strong>Line 11:</strong> Closed the file.</p>
+<p><strong>Line 8:</strong> Created a string variable named <code>line</code>. This variable will hold the contents of each line we read from the file.</p>
+<p><strong>Line 9:</strong> Created an input stream <code>ifstream></code> object named <code>inputfile</code> and set the file we want to open.</p>
+<p><strong>Line 11:</strong> We used <code>inputfile.is_open()</code> because we only want to get the contents of the file if the file opened successfully.</p>
+<p><strong>Line 12-14:</strong> Loop through each line in our inputfile object and store each line in the string called <code>line</code> and output it to the console.</p>
+<p><strong>Line 15:</strong> Close the file.</p>
+<p><strong>Line 16-18:</strong> If the file didn't open then display an error message.</p>
 <br>
 <br>
-<p>In the next tutorial I'll show you how to read this file.</p>
+<p>In the next tutorial I'll show you open and display each value in a comma delimited (CSV) file.</p>
+<br>
 <!-- Ad -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ad_responsive -->

@@ -20,7 +20,8 @@ def Content():
     ["Loops","loops"],
     ["How to create and use functions","how-to-create-and-use-functions"],
     ["Arrays","arrays"],
-    ["Writing Files","writing-files"]],
+    ["Writing Files","writing-files"],
+    ["Reading Files","reading-files"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]]}
 
