@@ -1,0 +1,96 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="CSV, read, reading, comma, delimited, file, cpp, c++, tutorial, nickmarriotti, how, to, array, vector" />
+<meta name="description" content="Demonstrating how to read a comma delimited CSV file into a dynamic array in C++." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>In this tutorial we will open a comma delimited .csv file and store each value into a dynamic array. Once all the values are read in we will loop through each value in the array.</p>
+
+
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    
+    // Reading
+    vector&lt;string&gt;row;
+    string value;
+    ifstream inputfile("example.csv");
+    if(inputfile.is_open()) {
+        while(getline(inputfile, value, ',')) {
+            row.push_back(value);
+        }
+        inputfile.close();
+        
+		cout << "The size of the array is: " << row.size() << endl;
+		
+        for(int index=0; index<row.size(); index++) {
+            cout << row[index] << endl;
+        }
+        
+    } else {
+        cout << "Unable to open file\n";
+    }
+    
+    return 0;
+}
+</code></pre>
+
+<h2>Explanation</h2>
+<p><strong>Line 9:</strong> Created a dynamic string array called <code>row</code> because we will be reading one row of data at a time.</p>
+<p><strong>Line 10:</strong> String variable to hold each value from the current row.</p>
+<p><strong>Line 11:</strong> Set our input stream object <code>inputfile</code> to open <code>example.csv</code>.</p>
+<p><strong>Line 11:</strong> We used <code>inputfile.is_open()</code> because we only want to get the contents of the file if the file opened successfully.</p>
+<p><strong>Line 12-15:</strong> Loop through each value in the current row until it reaches the delimiter <code>','</code> and store each value in the array called <code>row</code>.</p>
+<p><strong>Line 16:</strong> Close the file.</p>
+<p><strong>Line 18:</strong> Get the size of our array <code>row.size()</code> to be see if it is holding some values.</p>
+<p><strong>Line 20-22:</strong> Loop through each index of our <code>row</code> array and output the value to the console.</p>
+<p><strong>Line 24-26:</strong> Display an error message if the file was unable to be opened.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

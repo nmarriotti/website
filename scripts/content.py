@@ -21,7 +21,8 @@ def Content():
     ["How to create and use functions","how-to-create-and-use-functions"],
     ["Arrays","arrays"],
     ["Writing Files","writing-files"],
-    ["Reading Files","reading-files"]],
+    ["Reading Files","reading-files"],
+    ["Reading CSV Files","reading-csv-files"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]]}
 
