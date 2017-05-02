@@ -1,0 +1,197 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="classes, objects, constructor, methods, c++, cpp, tutorial, nickmarriotti" />
+<meta name="description" content="Beginner tutorial on how to create and use classes and objects in C++" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>When you think of a bank account what do they all have in common? All accounts fall under a specific bank, 
+	  they all have a balance, an account type and transactions. When you purchase something with your debit or credit 
+	  card money is deducted from your account and when you make a deposit, money is added. You may be asking yourself what's your point? </p>
+	  
+	  <p>Well... I am trying to explain what a class is. Classes define objects and all of their traits and actions. 
+	  So you could create a People class... all people have names, hair color, eye color, height, weight, etc... See what I'm saying? </p>
+	  
+	  <h2>Public and Private</h2>
+	  <p>It is good practice to make all class variables private, meaning they can't be accessed directly from the <code>int main()</code> 
+	  and can only be accessed from within the class itself. With private variables we will be creating <strong>getter</strong> and 
+	  <strong>setter</strong> functions to update our variables.</p>
+	  
+	  <p>Methods or functions of the class should be <code>public</code> so that we can call them outside of the class.
+
+	  <p>In this tutorial I am going to demonstrate a very basic Bank Account class and you'll be able to see how we will update our variables and call our class functions.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+class Account {
+    
+private:
+    float balance;
+    string bankName;
+    
+public:
+    Account(string name, float balance) {
+        cout << "This is the constructor" << endl;
+        setBalance(balance);
+        setBankName(name);
+    }
+    
+    void setBalance(float newBalance) {
+        balance = newBalance;
+    }
+    
+    void setBankName(string name) {
+        bankName = name;
+    }
+    
+    float getBalance() {
+        return balance;
+    }
+    
+    string getBankName() {
+        return bankName;
+    }
+    
+};
+</code></pre>
+
+	  <p>So here is our bank account class. Notice how the class name <code>Account</code> is capitalized. 
+	  Although its not super important that it be capitalized. It is common practice to do so.</p>
+	  
+	  <h2>Constructor</h2>
+	  <p>Take a look at our first class function. Notice it's called <code>Account</code>, the same name as our class itself and takes in a 
+	  bank name and a balance? This is our constructor. The constructor is executed immediately after an object 
+	  is created and in our case we want to update the bank name and balance as soon as an object is created.</p>
+	  
+	  <h2>Getters and Setters</h2>
+	  <p>We also have a few functions to update our variables <code>bankName</code> and <code>balance</code> with each function beginning with either <strong>get</strong> or <strong>set</strong>.</p>
+	  
+	  <h2>Creating an Object of our Account class</h2>
+	  <p>So we have our class created. Let's use it.
+
+<pre class="line-numbers"><code class="language-cpp">
+int main() {
+    Account newAccount("First Bank", 100.00);
+    
+    return 0;
+}
+</code></pre>
+
+<p>What we are saying in the above code is... Create an object called <code>newAccount</code> of 
+the <code>Account</code> class and set the bank name to <code>First Bank</code> and the <code>balance</code> 
+to <code>100.00</code>.</p>
+
+<h2>Testing it out</h2>
+<p>Go ahead and execute your program. Notice how the only output you see is:</p>
+
+<pre class="command-line"><code class="language-bash">
+This is the constructor!
+</code></pre>
+
+<p>Let's call some of our class functions and see what our variables are set to and update our balance.</p>
+
+<h2>Using Class Functions</h2>
+<p>To get the balance of our <code>newAccount</code> object you would type: <code>newAccount.getBalance()</code> and to 
+get the bank name type <code>newAccount.getBankName()</code>.</p>
+
+<p>Want to update the balance? Just call the <code>setBalance</code> function and pass in the new balance. <code>newAccount.setBalance(5000)</code>.</p>
+
+<h2>Complete Code</h2>
+<p>Here is the complete code. Feel free to copy and paste it and play around with it to get a better understanding of how classes and objects work.</p>
+
+
+
+
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Account {
+    
+private:
+    float balance;
+    string bankName;
+    
+public:
+    Account(string name, float balance) {
+        cout << "This is the constructor" << endl;
+        setBalance(balance);
+        setBankName(name);
+    }
+    
+    void setBalance(float newBalance) {
+        balance = newBalance;
+    }
+    
+    void setBankName(string name) {
+        bankName = name;
+    }
+    
+    float getBalance() {
+        return balance;
+    }
+    
+    string getBankName() {
+        return bankName;
+    }
+    
+};
+
+int main() {
+    Account newAccount("First Bank", 100.00);
+    cout << "Bank name: " << newAccount.getBankName() << endl;
+    cout << "Current Balance: " << newAccount.getBalance() << endl;
+    
+    // Update the balance
+    newAccount.setBalance(5000);
+    cout << "New Balance: " << newAccount.getBalance() << endl;
+    
+    return 0;
+}
+</code></pre>
+
+
+	  <p>This tutorial was meant to only cover the basics. There is a ton more to learn when it comes to object oriented programming. I hope I have helped you get a better understanding of what a class is, how to create an object, constructors, and how to use getter and setter functions.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

@@ -193,9 +193,15 @@ def Reading_Files():
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][10][1], methods=['GET', 'POST'])
 def Reading_CSV_Files():
-    return render_template("tutorials/C++/reading-csv-files.html", curLink = TOPIC_DICT["C++"][10][1], curTitle=TOPIC_DICT["C++"][10][0], curTopic = "C++", title = TOPIC_DICT["C++"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/reading-csv-files.html", curLink = TOPIC_DICT["C++"][10][1], curTitle=TOPIC_DICT["C++"][10][0], curTopic = "C++", title = TOPIC_DICT["C++"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C++"][11][0], nextLink=TOPIC_DICT["C++"][11][1])
 	
 
+	@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][11][1], methods=['GET', 'POST'])
+def Classes_and_Objects():
+    return render_template("tutorials/C++/classes-and-objects.html", curLink = TOPIC_DICT["C++"][11][1], curTitle=TOPIC_DICT["C++"][11][0], curTopic = "C++", title = TOPIC_DICT["C++"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+	
+	
+	
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
 def How_to_use_Linux_terminal_commands_in_Windows():
     return render_template("tutorials/Microsoft Windows/how-to-use-linux-terminal-commands-in-windows.html", curLink = TOPIC_DICT["Microsoft Windows"][0][1], curTitle=TOPIC_DICT["Microsoft Windows"][0][0], nextTitle = "None", curTopic = "Microsoft Windows", title = TOPIC_DICT["Microsoft Windows"][0][0], TOPIC_DICT = TOPIC_DICT)
