@@ -196,7 +196,7 @@ def Reading_CSV_Files():
     return render_template("tutorials/C++/reading-csv-files.html", curLink = TOPIC_DICT["C++"][10][1], curTitle=TOPIC_DICT["C++"][10][0], curTopic = "C++", title = TOPIC_DICT["C++"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C++"][11][0], nextLink=TOPIC_DICT["C++"][11][1])
 	
 
-	@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][11][1], methods=['GET', 'POST'])
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][11][1], methods=['GET', 'POST'])
 def Classes_and_Objects():
     return render_template("tutorials/C++/classes-and-objects.html", curLink = TOPIC_DICT["C++"][11][1], curTitle=TOPIC_DICT["C++"][11][0], curTopic = "C++", title = TOPIC_DICT["C++"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 	
