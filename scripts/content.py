@@ -23,7 +23,8 @@ def Content():
     ["Writing Files","writing-files"],
     ["Reading Files","reading-files"],
     ["Reading CSV Files","reading-csv-files"],
-    ["Classes and Objects","classes-and-objects"]],
+    ["Classes and Objects","classes-and-objects"],
+	["Pointers and References","pointers-and-references"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]]}
 

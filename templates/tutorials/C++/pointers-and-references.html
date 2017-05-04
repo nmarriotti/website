@@ -1,0 +1,154 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C++, pointers, reference, memory, cpp, tutorials, variables, nickmarriotti" />
+<meta name="description" content="Brief tutorial on how to use pointers and references in C++." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Pointers are variables which point to to an address in memory where another variable is held. 
+	  They are especially useful when it comes to memory management and passing variables into functions. 
+	  In this tutorial I'll give you a basic understanding of how pointers and references work.</p>
+	  
+	  <h2>Declaring a pointer</h2>
+	  <p>Here is the basic outline for declaring a pointer.</p>
+<pre class="line-numbers"><code class="language-cpp">
+DataType* VariableName = new DataType;
+</code></pre>
+
+<p>Using the template above lets say we want to create an <code>integer</code> pointer called <code>PointsToAnInt</code>. Here is how you would do that.</p>
+<pre class="line-numbers"><code class="language-cpp">
+int* PointsToAnInt = new int;
+</code></pre>
+
+<h2>Using the Pointer</h2>
+<p>So now that we have created a pointer lets make it point to something.</p>
+<pre class="line-numbers"><code class="language-cpp">
+int* PointsToAnInt = new int;
+int age = 28;
+
+PointsToAnInt = &age;
+</code></pre>
+
+<p>As you can see we created an integer variable called <code>age</code> and set it equal to <code>28</code>. 
+We then told our pointer to point to the memory address that our <code>age</code> variable is stored at using the <code>& ampersand</code>
+
+<p>Let's look at some output from the code below to get a better idea of what's going on here.</p>
+<pre class="line-numbers"><code class="language-cpp">
+int* PointsToAnInt = new int;
+int age = 28;
+
+PointsToAnInt = &age;
+
+cout << "PointsToAnInt points to memory address of " << PointsToAnInt << endl;
+cout << "PointsToAnInt holds a value of " << *PointsToAnInt << endl;
+</code></pre>
+
+<h3>Output</h3>
+<pre class="command-line"><code class="language-bash">
+PointsToAnInt points to memory address of 0x61ff18
+PointsToAnInt holds a value of 28
+</code></pre>
+
+<p>So as you can see adding the <code>* asterisk</code> will return our integer value that is held at the memory location <code>PointsToAnInt</code> is pointing to.</p>
+
+<h2>References</h2>
+<p>Now that we have an idea of what a pointer is lets get into references. Think of a reference as the memory location and not the actual value of the variable. When you create functions and pass variables to them you are essentially creating a copy of that variable. If the data being passed into the function is rather large it could be using up precious memory. To conserve some memory we can pass a reference to the variable instead.</p>
+<pre class="line-numbers"><code class="language-cpp">
+PointsToAnInt = &age;
+</code></pre>
+<p>In this statement we told PointsToAnInt to reference the address in memory that age is stored at. <code>Ampersand(&)</code> is how you can reference variables.</p>
+
+<h2>Reference variable in a Function</h2>
+<p>So here we have a program that will calculate the users age based on the year they were born. We have created a <code>getAge</code> function and we will be passing it the reference of what the user types, which will be the <code>year</code> variable.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+// Initialize function
+int getAge(int& year);
+
+int main() {
+    
+    int year = 0;
+    int* pointer = new int;
+    
+    cout << "Enter your birthyear: ";
+    cin >> year;
+    
+	pointer = &year;
+	
+    cout << "\npointer is stored at " << &pointer << endl;
+    cout << "pointer points to value of " << *pointer << endl;
+    cout << "You are " << getAge(*pointer) << endl;
+    
+    cin.get();   
+    return 0;
+    
+
+}
+
+int getAge(int& year) {
+    return (2017 - year);
+}
+</code></pre>
+
+<h4>Explanation</h4>
+<p>Looking at our function <code>getAge</code> you can see we referenced the memory location 
+that our <code>year</code> variable is stored at and when we called our function we passed in the 
+actual integer value using <code>*pointer</code>
+
+<p>Here is the output from the above code.</p>
+
+<pre class="command-line"><code class="language-bash">
+Enter your birthyear: 1988
+pointer is stored at 0x61ff18
+pointer points to value of 1988
+You are 29
+</code></pre>
+
+<br>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
