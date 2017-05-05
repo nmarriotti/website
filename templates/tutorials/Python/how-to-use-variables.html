@@ -1,0 +1,117 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, variables, programming, defining, casting, tutorial, automatically, data, type" />
+<meta name="description" content="This is a brief tutorial on how to define and use variables in Python." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	  <p>Variables are containers which hold information of multiple data types whether it be an integer, double, float, string, or a boolean. Python makes it very easy to declare variables as the datatypes are automatically determined by the compiler.</p>
+
+	  <h2>Declaring a Variable</h2>
+	  <p>Here are some examples of variables using the different data types.</p>
+
+<pre class="line-numbers"><code class="language-python">
+PYTHON CODE
+</code></pre>
+
+
+<pre class="line-numbers"><code class="language-python">
+myNumber = 10
+myString = "Nick Marriotti"
+myFloat = 19.99
+myBoolean = True
+</code></pre>
+
+	  <p>So we just created a few variables. Since the python interpreter automatically determines the data type you just set your variable name equal to a value.</p>
+
+<h2>Type Casting</h2>
+
+	  <p>Let's try to combine <code>myString</code> and <code>myNumber</code> in a print statement.</p>
+<pre class="line-numbers"><code class="language-python">
+myNumber = 10
+myString = "Nick Marriotti"
+
+print(myString + " has " + myNumber + " dollars")
+</code></pre>
+
+	  <p>Our desired output should be <strong>Nick Marriotti has 10 dollars</strong>. Below is our output.</p>
+	  <p></p>
+
+
+<quote>print(myString + " has " + myNumber + " dollars")
+TypeError: cannot concatenate 'str' and 'int' objects</quote>
+
+
+	  <p>So that error is telling us that we cannot at <code>myNumber</code> into a string, because it is currently an integer. We can fix it by temporarily converting it to a string. Let's modify our code.</p>
+
+<pre class="line-numbers"><code class="language-python">
+myNumber = 10
+myString = "Nick Marriotti"
+
+# Method 1
+print(myString + " has " + str(myNumber) + " dollars")
+
+# Method 2
+print("{name} has {money} dollars".format(name=myString, money=myNumber))
+</code></pre>
+
+<pre class="command-line"><code class="language-bash">
+Nick Marriotti has 10 dollars
+Nick Marriotti has 10 dollars
+</code></pre>
+
+<p>It worked! Take note of our second method of writing the print statement. You can convert variables to different data types by wrapping your variable in any of the following functions:
+<ul>
+	<li>str()</li>
+	<li>int()</li>
+	<li>float()</li>
+	<li>double()</li>
+</ul>
+<br>
+<br>
+<p>So there you have it! That's how variables work in Python :)</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

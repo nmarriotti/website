@@ -140,8 +140,13 @@ def Getting_Started_with_Python():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][1][1], methods=['GET', 'POST'])
 def Creating_a_Hello_World_program_in_Python():
-    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][1][1], curTitle=TOPIC_DICT["Python"][1][0], curTopic = "Python", title = TOPIC_DICT["Python"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle = "None")
+    return render_template("tutorials/Python/hello-world.html", curLink = TOPIC_DICT["Python"][1][1], curTitle=TOPIC_DICT["Python"][1][0], curTopic = "Python", title = TOPIC_DICT["Python"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][2][0], nextLink=TOPIC_DICT["Python"][2][1])
 	
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][2][1], methods=['GET', 'POST'])
+def How_to_use_variables():
+    return render_template("tutorials/Python/how-to-use-variables.html", curLink = TOPIC_DICT["Python"][2][1], curTitle=TOPIC_DICT["Python"][2][0], curTopic = "Python", title = TOPIC_DICT["Python"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
