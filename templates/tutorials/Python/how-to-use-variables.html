@@ -23,15 +23,10 @@
 <!-- End Ad -->
 <br>
 
-	  <p>Variables are containers which hold information of multiple data types whether it be an integer, double, float, string, or a boolean. Python makes it very easy to declare variables as the datatypes are automatically determined by the compiler.</p>
+	  <p>Variables are containers which hold information of multiple data types whether it be an integer, double, float, string, or a boolean. Python makes it very easy to declare variables as the datatypes are automatically determined by the interpreter.</p>
 
 	  <h2>Declaring a Variable</h2>
 	  <p>Here are some examples of variables using the different data types.</p>
-
-<pre class="line-numbers"><code class="language-python">
-PYTHON CODE
-</code></pre>
-
 
 <pre class="line-numbers"><code class="language-python">
 myNumber = 10
@@ -56,11 +51,11 @@ print(myString + " has " + myNumber + " dollars")
 	  <p></p>
 
 
-<quote>print(myString + " has " + myNumber + " dollars")
-TypeError: cannot concatenate 'str' and 'int' objects</quote>
+<code><strong>print(myString + " has " + myNumber + " dollars")
+TypeError: cannot concatenate 'str' and 'int' objects</strong></code>
 
 
-	  <p>So that error is telling us that we cannot at <code>myNumber</code> into a string, because it is currently an integer. We can fix it by temporarily converting it to a string. Let's modify our code.</p>
+	  <p>The error is telling us that we cannot combine <code>myNumber</code> into a string because it is currently an integer. We can fix it by temporarily converting it to a string though! Let's modify our code.</p>
 
 <pre class="line-numbers"><code class="language-python">
 myNumber = 10
