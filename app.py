@@ -145,7 +145,13 @@ def Creating_a_Hello_World_program_in_Python():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][2][1], methods=['GET', 'POST'])
 def How_to_use_variables():
-    return render_template("tutorials/Python/how-to-use-variables.html", curLink = TOPIC_DICT["Python"][2][1], curTitle=TOPIC_DICT["Python"][2][0], curTopic = "Python", title = TOPIC_DICT["Python"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/how-to-use-variables.html", curLink = TOPIC_DICT["Python"][2][1], curTitle=TOPIC_DICT["Python"][2][0], curTopic = "Python", title = TOPIC_DICT["Python"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][3][0], nextLink=TOPIC_DICT["Python"][3][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][3][1], methods=['GET', 'POST'])
+def Functions():
+    return render_template("tutorials/Python/functions.html", curLink = TOPIC_DICT["Python"][3][1], curTitle=TOPIC_DICT["Python"][3][0], curTopic = "Python", title = TOPIC_DICT["Python"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])

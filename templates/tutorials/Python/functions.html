@@ -1,0 +1,96 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, tutorials, functions, function, variable, call, pass, def, 3.6" />
+<meta name="description" content="How to create a function and pass variables in Python 3.6" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	<p>Functions are used to break your program up into manageable organized pieces and allows for code to easily to be updated in the event changes are required. In this tutorial I'll give you a general understanding of how to create a function, call a function (execute the code in the function) and how to pass variables into a function.</p>
+
+	<h2>Function Example</h2>
+	<p>In this example we will create a variable called <code>name</code> and pass that variable into a function called <code>greeting</code> which will print out a greeting to the user.</p>
+
+	<h3>Creating a Function</h3>
+	<p>Here is our <code>greeting</code> function. All functions begin with <code>def</code>. Inside the parenthesis are the variables which will be passed in for your function to use. You can name these variables whatever you'd like.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def greeting(yourname):
+	print("Hello {}, your name was passed into this function".format(yourname))
+</code></pre>
+
+<p>We created a function called <code>greeting</code> that accepts one variable <code>yourname</code>.</p>
+
+<h2>Calling the Function</h2>
+<p>Now that we have a function we are going to <code>call</code> it. When you call a function, you are telling the interpreter "Hey goto this section of code... execute it and then continue where you left off."</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+	name = "Nick"
+	greeting(name)
+</code></pre>
+
+<p>Here's our required main function. We created our name variable and then called our greeting function passing in the name variable with it.</p>
+
+<h2>Output</h2>
+<p>Here is the complete code and it's output.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+	name = "Nick"
+	greeting(name)
+
+def greeting(yourname):
+	print("Hello {}, your name was passed into this function".format(yourname))
+
+if __name__ == "__main__":
+	main()
+</code></pre>
+
+<pre class="command-line"><code class="language-bash">
+Hello Nick, your name was passed into this function
+</code></pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
