@@ -150,7 +150,12 @@ def How_to_use_variables():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][3][1], methods=['GET', 'POST'])
 def Functions():
-    return render_template("tutorials/Python/functions.html", curLink = TOPIC_DICT["Python"][3][1], curTitle=TOPIC_DICT["Python"][3][0], curTopic = "Python", title = TOPIC_DICT["Python"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/functions.html", curLink = TOPIC_DICT["Python"][3][1], curTitle=TOPIC_DICT["Python"][3][0], curTopic = "Python", title = TOPIC_DICT["Python"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["Python"][4][0], nextLink=TOPIC_DICT["Python"][4][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][4][1], methods=['GET', 'POST'])
+def Using_lists_to_store_information():
+    return render_template("tutorials/Python/using-lists-to-store-information.html", curLink = TOPIC_DICT["Python"][4][1], curTitle=TOPIC_DICT["Python"][4][0], curTopic = "Python", title = TOPIC_DICT["Python"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	

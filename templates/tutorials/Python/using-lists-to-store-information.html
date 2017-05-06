@@ -1,0 +1,142 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, lists, array, information, store, index, tutorial, nickmarriotti" />
+<meta name="description" content="Tutorial on how to store and reference information in lists" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Lists can store information in exactly what it sounds like... a list. This information
+			can then be referenced based on an index.<p>
+
+		<h2>Creating a List</h2>
+		<p>In this example we are going to create a list of names.</p>
+		
+<pre class="line-numbers"><code class="language-python">
+names = []
+</code></pre>
+
+	  <p>There's our empty <code>names</code> list.</p>
+
+	  <h2>Add items to list</h2>
+	  <p>Now that we have our list created, lets add some information to it. To do that we use <code>LISTNAME.append(ITEM)</code>.</p>
+
+<pre class="line-numbers"><code class="language-python">
+names.append("Nick")
+names.append("Bill")
+names.append("Jim")
+names.append("Sally")
+</code></pre>
+
+	<h2>Checking list size</h2>
+	<p>To check the list size use <code>len(LISTNAME)</code>
+
+<pre class="line-numbers"><code class="language-python">
+print(len(names))
+</code></pre>
+
+<h3>Output</h3>
+
+<pre class="command-line"><code class="language-bash">
+4
+</code></pre>
+
+<h2>Getting values<h2>
+<p>We had a list created and it contains information. Now we want to pull some of those values from the list. To get the values we will be referencing the index. For example, if we wanted the first value in the list that would be <code>LISTNAME[0]</code>.</p>
+
+<p>In this example I want to get <code>Jim</code> from the list.</p>
+
+<pre class="line-numbers"><code class="language-python">
+print(names[1])
+</code></pre>
+
+<h3>Output</h3>
+
+<pre class="command-line"><code class="language-bash">
+Jim
+</code></pre>
+
+<h3>Looping through list items</h3>
+<p>Inside of getting values individually using our example above, we could also use a loop to get each list item.</p>
+
+<pre class="line-numbers"><code class="language-python">
+for item in names:
+    print(item)
+</code></pre>
+
+<h3>Output</h3>
+
+<pre class="command-line"><code class="language-bash">
+Nick
+Bill
+Jim
+Sally
+</code></pre>
+
+<h3>Remove item from list</h3>
+<p>Let's say we want to remove <code>Bill</code> from the list. To do that it's very similar to how we add items; except this time we use
+<code>LISTNAME.remove(item)</code>.</p>
+
+<pre class="line-numbers"><code class="language-python">
+names.remove(1)
+
+for items in names:
+    print(item)
+
+print("\nlist has {} values".format(len(names)))
+</code></pre>
+
+<h3>Output</h3>
+
+<pre class="command-line"><code class="language-bash">
+Nick
+Jim
+Sally
+
+list has 3 values
+</code></pre>
+
+
+<br>
+<p>So there you have it! That's how you can create, add, remove, and get items from a list in Python.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
