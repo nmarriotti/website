@@ -1,0 +1,178 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, dict, dictionary, key, value, update, print, sort" />
+<meta name="description" content="Learn how to create and use dictionaries to store information in Python." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	<p>Dictionaries are very similar to an array, except values are set for keys. In this tutorial we will be creating a school grades dictionary and by the end of the tutorial you'll have learned how to create a dictionary, set values to keys, sort, update values and print the information</p>
+
+	<h2>Creating a Dictionary</h2>
+<pre class="line-numbers"><code class="language-python">
+    grades = {
+           "Math": "A",
+        "Science": "B",
+        "History": "D",
+        "English": "F"
+    }
+</code></pre>
+
+	  <p>There is our <code>grades</code> dictionary. The keys are set to the classes: <code>Math, Science, History and English</code>. Keys are to be wrapped in double quotations followed by a semicolon. We then set the grades: <code>A, B, D and F</code></p>.
+	  <p></p>
+
+	 <h2>Printing Dictionary</h2>
+	 <p>Now that we have our dictionary created lets print out the information. You can print a single key, value pair or you can print everything out using a <code>for loop</code> like we did in the previous tutorial with lists.</p>
+	 
+	 <h3>Single Record</h3>
+<pre class="line-numbers"><code class="language-python">
+    print(grades["History"])
+</code></pre>
+<h4>Output</h4>
+<pre class="command-line"><code class="language-bash">
+D
+</code></pre>
+
+	<h3>All Records</h3>
+<pre class="line-numbers"><code class="language-python">
+    for key, value in grades.items():
+        print("{} grade is {}".format(key, value))
+</code></pre>
+<h4>Output</h4>
+<pre class="command-line"><code class="language-bash">
+Science grade is B
+English grade is F
+Math grade is A
+History grade is D
+</code></pre>
+
+	  <p>The above for loop is grabbing every key and value from the dictionary and printing it to the screen.</p>
+	  <p>If you want to print just the values. You can modify your for loop.</p>
+<pre class="line-numbers"><code class="language-python">
+    for grade in grades:
+        print(grades[grade])
+</code></pre>
+<h4>Output</h4>
+<pre class="command-line"><code class="language-bash">
+D
+B
+F
+A
+</code></pre>
+
+	<h2>Sorting</h2>
+	<p>You may have noticed that when we printed our grades dictionary out the keys were not in alphabetical order. To do that we can use the <code>sorted()</code> function.</p>
+<pre class="line-numbers"><code class="language-python">
+    for key, value in sorted(grades.items()):
+        print key, value
+</code></pre>	
+<h4>Output</h4>
+<pre class="command-line"><code class="language-bash">
+English F
+History D
+Math A
+Science B
+</code></pre>
+
+	<h2>Updating a value</h2>
+	<p>So what if someone improved their grade in lets say... History class. Here's how you would update the history grade.</p>
+<pre class="line-numbers"><code class="language-python">
+    grades["History"] = "C"
+</code></pre>			  
+	  <p>Now we can print out our dictionary again to see the changes.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    for key, value in grades.items():
+        print key, value
+</code></pre>	
+<pre class="command-line"><code class="language-bash">
+Science B
+English F
+Math A
+History C
+</code></pre>	
+	  <p></p>
+	  <p></p>
+
+<h2>Complete Example</h2>
+<p>Here is the code used for this tutorial.</p>
+<pre class="line-numbers"><code class="language-python">
+def main():
+    grades = {
+           "Math": "A",
+        "Science": "B",
+        "History": "D",
+        "English": "F"
+    }
+
+    for key, value in grades.items():
+        print("{} grade is {}".format(key, value))
+
+    
+    # Print specific key
+    print(grades["History"])
+
+
+    # Print just the values
+    for grade in grades:
+        print(grades[grade])
+
+    # Sort 
+    for key, value in sorted(grades.items()):
+        print key, value
+
+    # Update value
+    grades["History"] = "C"
+    for key, value in grades.items():
+        print key, value
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+<p>Congrats! You just learned how to use dictionaries in Python!</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

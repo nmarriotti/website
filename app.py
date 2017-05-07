@@ -155,7 +155,12 @@ def Functions():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][4][1], methods=['GET', 'POST'])
 def Using_lists_to_store_information():
-    return render_template("tutorials/Python/using-lists-to-store-information.html", curLink = TOPIC_DICT["Python"][4][1], curTitle=TOPIC_DICT["Python"][4][0], curTopic = "Python", title = TOPIC_DICT["Python"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/using-lists-to-store-information.html", curLink = TOPIC_DICT["Python"][4][1], curTitle=TOPIC_DICT["Python"][4][0], curTopic = "Python", title = TOPIC_DICT["Python"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["Python"][5][0], nextLink=TOPIC_DICT["Python"][5][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][5][1], methods=['GET', 'POST'])
+def Storing_information_in_dictionaries():
+    return render_template("tutorials/Python/storing-information-in-dictionaries.html", curLink = TOPIC_DICT["Python"][5][1], curTitle=TOPIC_DICT["Python"][5][0], curTopic = "Python", title = TOPIC_DICT["Python"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	
