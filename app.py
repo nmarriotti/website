@@ -163,6 +163,11 @@ def Storing_information_in_dictionaries():
     return render_template("tutorials/Python/storing-information-in-dictionaries.html", curLink = TOPIC_DICT["Python"][5][1], curTitle=TOPIC_DICT["Python"][5][0], curTopic = "Python", title = TOPIC_DICT["Python"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][0][1], methods=['GET', 'POST'])
+def Hello_World_in_C():
+    return render_template("tutorials/C/hello-world.html", curLink = TOPIC_DICT["C"][0][1], curTitle=TOPIC_DICT["C"][0][0], curTopic = "C", title = TOPIC_DICT["C"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
+
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
