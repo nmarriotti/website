@@ -16,6 +16,7 @@ def Content():
     ["Functions","functions"],
     ["Using lists to store information","using-lists-to-store-information"],
     ["Storing information in dictionaries","storing-information-in-dictionaries"]],
+    "C":[["Hello World!","hello-world"]],
     "C++":[["Installing the C++ compiler and Code:Blocks IDE","installing-compiler-and-codeblocks-ide"],
     ["Creating a Hello World program in C++!","hello-world"],
     ["Getting user input and variables","user-input-and-variables"],
@@ -28,7 +29,7 @@ def Content():
     ["Reading Files","reading-files"],
     ["Reading CSV Files","reading-csv-files"],
     ["Classes and Objects","classes-and-objects"],
-	["Pointers and References","pointers-and-references"]],
+    ["Pointers and References","pointers-and-references"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]]}
 
