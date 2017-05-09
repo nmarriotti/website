@@ -2,8 +2,8 @@
 {% extends "tutorial-master.html" %}
 
 {% block metatags %}
-<meta name="keywords" content="KEYWORDS GO HERE" />
-<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="keywords" content="C, programming, hello, world, first, program, compile, beginner, tutorial, nickmarriotti" />
+<meta name="description" content="Creating your very first hello world program in the C programming language." />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 {% endblock %}
 
@@ -22,28 +22,59 @@
 </script>
 <!-- End Ad -->
 <br>
-	  <div class="embed-responsive embed-responsive-16by9">VIDEO EMBED</div>
 
-	  <p></p>
-	  <p></p>
+	  <p>So you want to start learning the C programming language? Creating a Hello World program is usually the first step and that's what I'm going to show you how to do. Lets get started!</p>
 
+		<h2>General Outline</h2>
+		<p>All C programs will contain a general outline consisting of <code>includes</code>, which allow your program to use
+			other functions and an <code>int main()</code> function. The int main() is where your program begins.</p>
+
+		<p>Begin by creating a file <code>hello.c</code> and add the following code:</p>
 
 <pre class="line-numbers"><code class="language-python">
-PYTHON CODE
+#include &lt;stdio.h&gt;
+
+int main() {
+	//PUT CODE HERE
+	return 0;
+}
 </code></pre>
 
-	  <p></p>
-	  <p></p>
-	  <p></p>
-	  <p></p>
+	  <h2>Print text to terminal</h2>
+	  <p>Now that we have our general outline, lets make the string <code>Hello World!</code> print to the screen. To do this we will be using the <code>puts()</code> command.
 
+<pre class="line-numbers"><code class="language-python">
+#include &lt;stdio.h&gt;
+
+int main() {
+	puts("Hello World!");
+	return 0;
+}
+</code></pre>
+
+	<h3>What is puts()?</h3>
+	<p><code>puts()</code> is a function to print unformatted text to the screen. You cannot include variables when using <code>puts()</code>. We will get more into variables and printing formatted text to the screen in a later tutorial.</p>
+
+	<h2>Compiling</h2>
+	<p>Computers read 1's and 0's. To make our computer understand our program we first need to compile it to convert it to machine language. Enter the following command to compile your program:</p>
 
 <pre class="command-line"><code class="language-bash">
-COMMAND PROMPT CODE HERE
+gcc hello.c -o hello
 </code></pre>
 
+<p>Wondering what the command is doing? Well... we are telling the C compile (<code>gcc</code>) to compile <code>hello.c</code> and save the machine language ouput <code>-o</code> as <code>hello</code>. <strong>Note: </strong>If you are on Windows, you will be presented with a <code>.exe<code> file after compiling.</p>
 
-	  <p></p>
+<p>Now it's time to run your program:</p>
+
+<pre class="command-line"><code class="language-bash">
+./hello
+</code></pre>
+
+<pre class="command-line"><code class="language-bash">
+Hello World!
+</code></pre>
+
+<p>Congrats, You just wrote your very first C program! Although the program doesn't do a whole lot right now, we'll continue to build on this example and learn more about C in the upcoming tutorials.</p>
 <br>
 <!-- Ad -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -69,5 +100,3 @@ COMMAND PROMPT CODE HERE
 
 
 {% endblock %}
-
-
