@@ -44,10 +44,9 @@ a {
 }
 
 body {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 20px;
     margin: 0 auto;
-    background-color: #444444;
 }
 
 h1, h2, h3, h4, h5, h6 {
