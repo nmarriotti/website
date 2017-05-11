@@ -1,0 +1,95 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, lambda, functions, tutorials, nickmarriotti" />
+<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	
+	<p>Lambda functions, or anonymous functions, are similar to normal functions, except they are not created with the <code>def</code> keyword and do no contain a function name. In this tutorial I'll show you how to create a basic lambda function and show you how they they compare to your typical functions.</p>
+
+	  <p>Here is a simple lambda function that will multiply a number by two.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    f = lambda x: x*2
+    print f(10)
+</code></pre>
+
+	<p> We created a variable <code>f</code> and set it equal to the result of <code>x*2</code>. In the next line you can see we want to print the result of <code>f(10)</code>. It's basically the same thing as saying...</p>
+
+<pre class="line-numbers"><code class="language-python">
+    def f(x):
+        return x*2
+
+    print f(10)
+</code></pre>	
+
+	  <p>Both functions return the same result <code>20</code>. The choice is yours on how you want to create your functions. Lambda's just require a little less code.</p>
+
+	  <h2>Example</h2>
+	  <p>Here's the complete code for the examples above and their output.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    f = lambda x: x*2
+    print f(10)
+
+    print g(10)
+
+def g(x):
+    return x*2
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+<pre class="command-line"><code class="language-bash">
+20
+20
+</code></pre>
+
+	  <p></p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
