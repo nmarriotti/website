@@ -174,7 +174,7 @@ def If_Statements():
 
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][8][1], methods=['GET', 'POST'])
-def Loops():
+def python_Loops():
     return render_template("tutorials/Python/loops.html", curLink = TOPIC_DICT["Python"][8][1], curTitle=TOPIC_DICT["Python"][8][0], curTopic = "Python", title = TOPIC_DICT["Python"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
