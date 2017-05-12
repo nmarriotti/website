@@ -602,6 +602,7 @@ a.icons-menu-button:focus,
     padding-bottom: 30px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    background-color: #154890;
 }
 
 .head .title {
