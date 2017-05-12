@@ -1,0 +1,161 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, condition, if, elif, else, statement, tutorial, nickmarriotti" />
+<meta name="description" content="Beginner tutorial explaining how to use if statements to control the flow of a program." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Conditional statements such as <code>if, elif and else</code> are very useful in determining whether a block of code should be
+	  executed. They control the flow of your program. Most people who have no programming experience at all have a good idea of what an <code>if</code> statement does. It executes code only <strong>IF</strong> a condition is <code>True</code>.</p>
+
+	  <p>In this tutorial I demonstrate how to use these conditional statements to control the flow of a program.</p>
+
+	  <h2>Basics</h2>
+	  <p>Let's go over how to construct simple if statements.</p>
+	  <h3>If statement</h3>
+<pre class="line-numbers"><code class="language-python">
+if some_condition:
+    # execute whats inside
+</code></pre>	  		
+
+	  <p><code>if some_condition:</code> will only execute if that variable is <code>True</code>.</p>
+<pre class="line-numbers"><code class="language-python">
+running = True
+
+if running:
+    print running
+    running = False
+
+if running:
+    print "Running is still true"
+</code></pre>
+
+	  <p>We initially set <code>running = True</code>. The program then checks <code>if running:</code>. Now remember the code inside the if statement will only be executed if our condition is <code>True</code>. It is! so we are going to print out the value of running and set it to <code>False</code>.</p>
+
+	  <p>Then, on line 7, the program checks again to see if running is still True. Running is <code>False</code> so <code>that code is not executed.</code></p>
+
+	  <h3>elif statement</h3>
+	  <p>Lets modify our example and add an <code>elif</code>(else if) statement. If the initial <code>if</code> statement is <code>False</code> it will then check the <code>elif</code> condition.</p>
+
+<pre class="line-numbers"><code class="language-python">
+running = False
+walking = True
+
+if running:
+    print "Running is still true"
+elif walking:
+    print "We're walking now"
+    walking = False
+</code></pre>
+
+<h4>Output</h4>
+<pre class="line-numbers"><code class="language-python">
+running = False
+walking = True
+
+if running:
+    print "Running is still true"
+elif walking:
+    print "We're walking now"
+    walking = False
+</code></pre>
+
+<p>So running is <code>False</code>. Is walking true? Yes! so print out <strong>We're walking now</strong> and set <code>walking = False</code>
+
+<p>Are you getting the hang of it? Lastly lets look at the <code>else</code> statement.
+
+<h3>else statement</h3>
+<p>Else statements are executed <strong>only if</strong> all of the other conditions are <code>False</code>. Lets modify our example once more.</p>
+
+<pre class="line-numbers"><code class="language-python">
+running = False
+walking = False
+
+if running:
+    print "Running is still true"
+elif walking:
+    print "We're walking now"
+    walking = False
+else:
+    print "We're not moving at all."
+</code></pre>
+
+<p>Since running is False and walking is False we just want to print out <strong>We're not moving at all.</strong>.</p>
+
+<h2>Testing multiple conditions</h2>
+<p>What if you want to check multiple conditions? In that case you can use the following operators:</p>
+<ul>
+	<li>and</li>
+	<li>or</li>
+	<li>not</li>
+</ul>
+
+<p>Here's a quick example</p>
+
+<pre class="line-numbers"><code class="language-python">
+running = True
+walking = True
+sitting = False
+
+if running and walking:
+    print "Running is still true"
+elif walking or running:
+    print "One or more conditions are True"
+
+if not sitting:
+    print "Sitting is False"
+</code></pre>
+
+<h4>Output</h4>
+<ul>
+	<li><strong>Running is still true</strong></li>
+	<li><strong>One or more conditions are True</strong></li>
+	<li><strong>Sitting is False</strong></li>
+</ul>
+
+<p>That concludes the tutorial on conditional statements. I hope I helped you learn a little more about Python. Leave a comment below and let me know what you thought of it.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
