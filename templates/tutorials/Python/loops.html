@@ -1,0 +1,137 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, loops, while, for, break, pass, continue, iteration, automate" />
+<meta name="description" content="Basics on how to automate tasks using loops in Python." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	<p>Loops play a big role in automating tasks. When I create scripts to parse and manipulate CSV data I use loops to scan each rows data. By the end of this tutorial you should have a basic understanding of how to construct a loop and be familiar with the difference between the two types of loops.</p>
+
+	<h2>Types of Loops</h2>
+	<h3>while loop</h3>
+	    <p>If you are unsure how many times you need to execute a block of code your best bet would be to use a <code>while loop</code>. While loops will continue until a condition is <code>false</code>.
+
+	    <h4>Example</h4>
+	    <p>Lets say we have a list of data and we want to print out all the values. Here's how you can use a while loop to complete that task. Be sure to refer back to my tutorial on <a href="using-lists-to-store-information">lists</a> if you need a refresher.</p>
+
+<pre class="line-numbers"><code class="language-python">
+myList = [1,2,3,4,5,6,7,8,9,10]
+
+count = 0
+
+while count < len(myList):
+    print myList[count]
+    count += 1
+</code></pre>
+
+	<h4>Output</h4>
+
+<pre class="line-numbers"><code class="language-python">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre>
+
+<p>What we have done is created a variable, <code>count</code> and set it to <code>0</code>. We then want to execute the code inside the loop and print out the current index value of our list using <code>myList[count]</code> until count is equal to the length of <code>myList</code>. We also increment count by 1 after every iteration.</p>
+
+
+
+	<h3>for loop</h3>
+		<p>If you know exactly how many times you want to execute a block of code you probably going to be using a <code>for loop</code>. In our example we will be looping through all the items contained in a list.</p>
+
+	    <h4>Example</h4>
+	    <p>Using the same task as for the while loop here's how you can grab all of the lists values using a <code>for loop</code>
+
+<pre class="line-numbers"><code class="language-python">
+myList = [1,2,3,4,5,6,7,8,9,10]
+
+for item in myList:
+    print item
+</code></pre>
+
+	<h4>Output</h4>
+
+<pre class="line-numbers"><code class="language-python">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre>
+
+<p>What we have done is created a variable called <code>item</code> and used the <code>for loop</code> to grab every value until all values in <code>myList</code> have been printed to the screen.
+
+<h2>Control Statements</h2>
+<h3>Break</h3>
+<p>Sometimes you'll find it necessary to stop a loop. To do this you can use <code>break</code>. For example:</p>
+
+
+<pre class="line-numbers"><code class="language-python">
+if count == 4:
+    break
+</code></pre>
+
+<p>With the above code, when count is equal to 4 we'll exit the loop and continue with the code following the loop.</p>
+
+<h3>Continue</h3>
+<p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p>
+
+<h3>Pass</h3>
+<p>Used when a statement is required syntactically but you do not want any command or code to execute.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

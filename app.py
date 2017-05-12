@@ -170,7 +170,12 @@ def Lambda_Functions():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][7][1], methods=['GET', 'POST'])
 def If_Statements():
-    return render_template("tutorials/Python/if-statements.html", curLink = TOPIC_DICT["Python"][7][1], curTitle=TOPIC_DICT["Python"][7][0], curTopic = "Python", title = TOPIC_DICT["Python"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/if-statements.html", curLink = TOPIC_DICT["Python"][7][1], curTitle=TOPIC_DICT["Python"][7][0], curTopic = "Python", title = TOPIC_DICT["Python"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][8][0], nextLink=TOPIC_DICT["Python"][8][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][8][1], methods=['GET', 'POST'])
+def Loops():
+    return render_template("tutorials/Python/loops.html", curLink = TOPIC_DICT["Python"][8][1], curTitle=TOPIC_DICT["Python"][8][0], curTopic = "Python", title = TOPIC_DICT["Python"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 
