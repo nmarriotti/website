@@ -1,0 +1,90 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="programming, string, print, printf, puts, C" />
+<meta name="description" content="How to print variables using the printf() function and the difference between puts()." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+<p>Referring to the last tutorial where we printed "Hello World!" to the screen. What if we wanted Hello World! to be placed in a variable and print out just the variable? In this tutorial I'll be explaining the basics of the <code>printf()</code> function and how to print variables to the terminal.</p>
+
+<pre class="line-numbers"><code class="language-c">
+char name[5] = "Nick";
+int apples = 3;
+</code></pre>
+
+	  <p>Those are the variables we're going to use. In this example we want to print <strong>Hello there! Nick has 3 apples</strong>. Lets add our printf function.</p>
+
+<pre class="line-numbers"><code class="language-c">
+printf("Hello there! %s has %i apples.\n", name, apples);
+</code></pre>
+
+	  <p>Notice the <code>%s</code> and <code>%i</code>. The <code>%s</code> is referring to a string variable and the <code>%i</code> refers to an integer variable. We then ended the line using <code>\n</code> and then put the names of our variables. The first one is the string and the second is an integer.</p>
+
+	  <p>Go ahead and compile and run your program. You should see the following output:</p>
+
+<pre><code class="language-bash">
+Hello there! Nick has 3 apples.
+</code></pre>
+
+	<p>Here is the complete code used for this example. Feel free to modify and play around with it.</p>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+
+        char name[5] = "Nick";
+        int apples = 3;
+
+        printf("Hello, %s has %i apples.\n",name, apples);
+        return 0;
+}
+
+</code></pre>	
+
+	  <p>Remember, the puts() function will NOT print out variables. For printing variables you'll want to use printf(). This tutorial was pretty quick and didn't go into much depth. But it should be enough to get you started. Leave a comment and let me know what you thought.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
