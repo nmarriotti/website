@@ -1,0 +1,112 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="arguments, command-line, C, argc, argv, array, index" />
+<meta name="description" content="How to get use and get command-line arguments in C." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	  <p>When you execute your program via the command line, you can also also arguments, or additional criteria such as specifying input and ouput files your program should use. In this tutorial I will give you an example of how to create a program to capture these arguments and output them all to the screen.</p>
+
+	  <p>Command line arguments are stored in an array. We haven't touched on arrays yet, but we will in the next tutorial. Lets say we need to create a program that reads an input file, manipulates the data in some way and writes the output to a new file.
+
+	  <p>In your <code>int main()</code> function modify it to match what is below.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int main(int argc, char* argv[]) {
+	
+}
+</code></pre>
+
+	 <p>As you can see our int main now takes in an integer variable <code>argc</code> and a char pointer array <code>argv[]</code>. What is this stuff?</p>
+
+	 <p><strong>argc</strong> is a variable that counts the number of command line arguments passed in the terminal or command-line at runtime.</p>
+
+	 <p><strong>argv[]</strong> is an array that stores each argument passed. Each value is stored based on an index. The first command line argument will always be your program executable.</p>
+
+	 <p>Now lets say to run our program we type <code>./run</code> but we want to now specify our input and output file as well. To do that type something like this...</p>
+
+<pre class="command-line"><code class="language-bash">
+./run inputfile.txt outputfile.txt
+</code></pre>
+
+	<p>If we ran our program with the above arguments <code>argc</code> would hold the value of <code>3</code> and since <code>argv[]</code> is an array we can reference each value like so:</p>
+
+	<ul>
+		<li><strong>argv[0]</strong> = ./run</li>
+		<li><strong>argv[1]</strong> = inputfile.txt</li>
+		<li><strong>argv[2]</strong> = outputfile.txt</li>
+	</ul>
+
+	<p>Here is the complete code to loop through all arguments and print there values.</p>
+
+<pre class="line-numbers"><code class="language-c">
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+
+    printf("Arguments passed: %i\n", argc);
+
+    for(int i=0; i<argc; i++) {
+        printf("Argument %i: %s\n", i, argv[i]);
+    }
+}
+</code></pre>
+
+	<p>What's that code doing? Well... We are first print out the total number of arguments passed by displaying the value of <code>argc</code> and we then use a <code>for loop</code> to print out each value stored in <code>argv[]</code>. If your not familiar with loops yet, don't worry, we'll get to it soon enough.</p>
+
+	<p>When we run our program you should get the following output.</p>
+
+<pre class="command-line">
+Arguments passed: 3
+Argument 0: ./run
+Argument 1: inputfile.txt
+Argument 2: outputfile.txt
+</code></pre>
+
+<p>That's all there is to it!</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
