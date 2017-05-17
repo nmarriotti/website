@@ -269,6 +269,12 @@ def How_to_use_Linux_terminal_commands_in_Windows():
 def How_to_install_Exodus_on_Kodi():
     return render_template("tutorials/Miscellaneous/how-to-install-exodus-on-kodi.html", curLink = TOPIC_DICT["Miscellaneous"][0][1], curTitle=TOPIC_DICT["Miscellaneous"][0][0], nextTitle = "None", curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][0][0], TOPIC_DICT = TOPIC_DICT)
 	
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][0][1], methods=['GET', 'POST'])
+def Hello_World_in_Java():
+    return render_template("tutorials/Java/hello-world-in-java.html", curLink = TOPIC_DICT["Java"][0][1], curTitle=TOPIC_DICT["Java"][0][0], nextTitle = "None", curTopic = "Java", title = TOPIC_DICT["Java"][0][0], TOPIC_DICT = TOPIC_DICT)
+
+
 	
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
 def Programming_in_Python():
