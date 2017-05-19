@@ -26,19 +26,19 @@
 
 	<p>First, lets create a variable that we can use to store our input.</p>
 
-<pre class="line-numbers"><code class="language-python">
+<pre class="line-numbers"><code class="language-c">
 char filename[80];
 </code></pre>
 
 	<p>This <code>char</code> called <code>filename</code> can hold up to 79 characters. Now lets ask the user for the name of the file.</p>
 
-<pre class="line-numbers"><code class="language-python">
+<pre class="line-numbers"><code class="language-c">
 printf("Enter a filename: ");
 </code></pre>
 
-	<p>Time to get some data from the user. Add the following line of code right below your <code>puts()</code> statement.</p>
+	<p>Time to get some data from the user. Add the following line of code.</p>
 
-<pre class="line-numbers"><code class="language-python">
+<pre class="line-numbers"><code class="language-c">
 scanf("%79s", filename)
 printf("You entered: %s", filename);
 </code></pre>
