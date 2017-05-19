@@ -191,7 +191,12 @@ def Printing_variables_with_printf():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][2][1], methods=['GET', 'POST'])
 def Command_Line_Arguments():
-    return render_template("tutorials/C/command-line-arguments.html", curLink = TOPIC_DICT["C"][2][1], curTitle=TOPIC_DICT["C"][2][0], curTopic = "C", title = TOPIC_DICT["C"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/command-line-arguments.html", curLink = TOPIC_DICT["C"][2][1], curTitle=TOPIC_DICT["C"][2][0], curTopic = "C", title = TOPIC_DICT["C"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C"][3][0], nextLink=TOPIC_DICT["C"][3][1])
+
+
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][3][1], methods=['GET', 'POST'])
+def User_Input():
+    return render_template("tutorials/C/user-input.html", curLink = TOPIC_DICT["C"][3][1], curTitle=TOPIC_DICT["C"][3][0], curTopic = "C", title = TOPIC_DICT["C"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	

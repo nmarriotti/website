@@ -1,0 +1,83 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C, user, input, scanf, programming, how, to, tutorial, nickmarriotti" />
+<meta name="description" content="How to capture user input and store entered data into a variable" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	<p>Imagine you are creating a program and want to ask the user for a filename. By now you should know how to use <code>puts()</code> and <code>printf()</code> to output text to the screen, but how we can grab data that the user has typed from the keyboard? To do this we'll be using the <code>scanf()</code> function.</p>
+
+	<p>First, lets create a variable that we can use to store our input.</p>
+
+<pre class="line-numbers"><code class="language-python">
+char filename[80];
+</code></pre>
+
+	<p>This <code>char</code> called <code>filename</code> can hold up to 79 characters. Now lets ask the user for the name of the file.</p>
+
+<pre class="line-numbers"><code class="language-python">
+printf("Enter a filename: ");
+</code></pre>
+
+	<p>Time to get some data from the user. Add the following line of code right below your <code>puts()</code> statement.</p>
+
+<pre class="line-numbers"><code class="language-python">
+scanf("%79s", filename)
+printf("You entered: %s", filename);
+</code></pre>
+
+	  <p>The <code>scanf()</code> function is used to capture input from the keyboard. The <strong>79</strong> tells us that only 79 characters of what the user types will be stored into the <strong>filename</strong> variable and the <strong>s</strong> tells the compiler that what the user is entering show be stored as a string. The next <code>printf()</code> is just grabbing the stored data and printing it back to us.</p>
+
+	  <p>Here is a demo of the program running.</p>
+
+<pre>
+Enter a filename: test.txt
+You entered: test.txt
+</pre>
+
+<p>Want some practice storing user input? Try creating some variables with different data types and modifying the scanf and print statements.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
