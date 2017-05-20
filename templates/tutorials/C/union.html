@@ -1,0 +1,133 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="union, typedef, struct, tutorial, C, programming, how, to, nickmarriotti" />
+<meta name="description" content="How to create and use a union in C." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>In the last tutorial we learned how to use <strong>structs</strong>. When we created our create a location is memory was reserved for each of its variables.</p>
+
+	  <p><code>union</code> is same same by different. We can still tell it to contain different variables, but it reserves a memory location for <strong>ONLY</strong> the largest variable it contains. With that being said you can only fill up one of the variables at a time</p>
+
+	  <p>Let's say we are building a food ordering program. The customer could order items by quantity, such as:</p>
+
+	  <ul>
+	  	<li>Weight</li>
+	  	<li>Count</li>
+	  </ul>
+
+	  <p>If we wanted to buy some lemons... You wouldn't want to buy a volume of lemons, because that doesn't make sense. You would want to buy X amount of lemons instead. So we would only need to define the <code>count</code></p>
+
+	  <p>Lets get started!</p>
+
+	  <h2>Defining a Union</h2>
+
+	  <p>Creating a union is very similar to how we build a struct.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        typedef union {
+                float weight;
+                int count;
+        } quantity;
+</code></pre>
+
+	  <p>We have a couple variables with different data types and we can now reference this union by using <code>quantity</code>.</p>
+
+	  <h2>Defining our struct</h2>
+
+	  <p>Now lets create our struct and have it use our <code>quantity</code> union.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        typedef struct {
+                const char *item;
+                quantity amount;
+        } order;
+</code></pre>	
+
+		<p>We created a variable <code>amount</code> of our union <code>quantity</code> type. So now let's place an order for some lemons.</p>
+
+		<h2>Using our union</h2>
+
+<pre class="line-numbers"><code class="language-c">
+        order i = {"Lemons", .amount.count=3};
+
+        printf("You ordered %i %s\n", i.amount.count, i.item);
+</code></pre>			
+
+		<p>We created a reference of our <code>struct</code> defined as <code>i</code>, set the <code>item</code> equal to <code>Lemons</code> and set the <code>int count</code> variable of our <code>quantity union</code> to <code>3</code> by using (.) to navigate through and printed out what we ordered.</p>
+
+		<p>When we run our program we get the following output:</p>
+
+<pre>
+You ordered 3 Lemons
+</pre>
+
+		<h2>Complete Code</h2>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+
+        typedef union {
+                float weight;
+                float volume;
+                int count;
+        } quantity;
+
+        typedef struct {
+                const char *item;
+                quantity amount;
+        } order;
+
+        order i = {"Lemons", .amount.count=3};
+
+        printf("You ordered %i %s\n", i.amount.count, i.item);
+</code></pre>
+
+	  <p><strong>REMEMBER</strong>: Unions will only allocate memory for the largest data type it contains. In the next tutorial we'll get in to memory allocation and talk about the stack and heap.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
