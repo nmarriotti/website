@@ -1,0 +1,124 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C, struct, typedef, organize, group, programming, variables, tutorial, nickmarriotti" />
+<meta name="description" content="Using structs we can group variables together. Check out this step by step C tutorial." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+	  <p>Imagine you we're reading in a CSV file. We know that each value should goto a specific variable, but what do all of these values have in common? They all belong to a specific row. Using a struct we can group all of the rows values together and reference them based on what we named our struct.</p>
+
+	  <p>Sorry if I confused you, but hopefully by the end of this tutorial you'll have a better understanding of what I mean. In this tutorial we are working with recipes. All recipes have a few things in common.</p>
+
+	  <ul>
+	  	<li>Recipe name</li>
+	  	<li>Description</li>
+	  	<li>Prep Time</li>
+	  	<li>Number of servings</li>
+	  </ul>
+
+	  <p>Lets create a struct to group all of these things together for a specific recipe.</p>
+
+
+<pre class="line-numbers"><code class="language-c">
+        struct recipe {
+                const char *name;
+                char *description;
+                int prepTime;
+                int servings;
+        };
+</code></pre>
+
+	  <p>There's our struct. All is does is allocate memory to hold our variables for each recipe. Let's create a recipe and add use our struct.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        struct recipe spaghetti = {"Spaghetti", "It's super delicious", 20, 4};
+</code></pre>
+
+	  <p>What we did here is create <code>Spaghetti</code> using our <code>recipe</code> struct and loaded each variable with a value. Now we're ready to get the values contained in our <code>spaghetti</code> recipe. To do that we'll use a <code>printf</code> statement and call <code>spaghetti.VARIABLENAME</code>.</p>
+
+
+<pre class="line-numbers"><code class="language-c">
+        printf("Recipe: %s\nDescription: %s\nPrep Time: %d\nServings: %d\n",
+               spaghetti.name, spaghetti.description, spaghetti.prepTime, spaghetti.servings);
+</code></pre>
+
+	<p>We can reference all of the variables we loaded in our <code>spaghetti</code> recipe struct like so:</p>
+
+	  <ul>
+	  	<li>spaghetti.name</li>
+	  	<li>spaghetti.description</li>
+	  	<li>spaghetti.prepTime</li>
+	  	<li>spaghetti.servings</li>
+	  <p></p>
+
+
+<h2>typedef</h2>
+
+<p>To reference our struct by a different name we can use <code>typedef</code>. Lets say we want to reference our struct using the word <code>recipe</code>. Checkout the modified code.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        typedef struct {
+                const char *name;
+                char *description;
+                int prepTime;
+                int servings;
+        }recipe;
+
+        recipe spaghetti = {"Spaghetti", "It's super delicious", 20, 4};
+</code></pre>
+
+	<p>Lets run our program and see what output we get.</p>
+
+<pre>
+Recipe: Spaghetti
+Description: Some delicious spaghetti
+Prep Time: 20
+Servings: 4
+</pre>
+
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
