@@ -23,7 +23,7 @@
 <!-- End Ad -->
 <br>
 
-	  <p>Imagine you we're reading in a CSV file. We know that each value should goto a specific variable, but what do all of these values have in common? They all belong to a specific row. Using a struct we can group all of the rows values together and reference them based on what we named our struct.</p>
+	  <p>Imagine we're reading in a CSV file and have to manipulate the data. We know that each value in the row should goto a specific variable, but what do all of these values have in common? They all belong to a specific row. Using a struct we can group all of the rows values together and reference them based on what we named our struct.</p>
 
 	  <p>Sorry if I confused you, but hopefully by the end of this tutorial you'll have a better understanding of what I mean. In this tutorial we are working with recipes. All recipes have a few things in common.</p>
 
@@ -46,13 +46,13 @@
         };
 </code></pre>
 
-	  <p>There's our struct. All is does is allocate memory to hold our variables for each recipe. Let's create a recipe and add use our struct.</p>
+	  <p>There's our struct. All it does is allocate memory to hold our variables for each recipe. Let's create a recipe using our struct and load it with some values.</p>
 
 <pre class="line-numbers"><code class="language-c">
         struct recipe spaghetti = {"Spaghetti", "It's super delicious", 20, 4};
 </code></pre>
 
-	  <p>What we did here is create <code>Spaghetti</code> using our <code>recipe</code> struct and loaded each variable with a value. Now we're ready to get the values contained in our <code>spaghetti</code> recipe. To do that we'll use a <code>printf</code> statement and call <code>spaghetti.VARIABLENAME</code>.</p>
+	  <p>What we did here is create <code>Spaghetti</code> using our <code>recipe</code> struct and loaded each variable with a value. Now we're ready to print the values contained in our <code>spaghetti</code> recipe. To do that we'll use a <code>printf</code> statement and call <code>spaghetti.VARIABLENAME</code>.</p>
 
 
 <pre class="line-numbers"><code class="language-c">
