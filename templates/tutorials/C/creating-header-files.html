@@ -1,0 +1,94 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="header, files, .h, include, c, programming, how, to, create, tutorial" />
+<meta name="description" content="Learn how to create your own header files and use them in C." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Header files in C contain the <code>.h</code> extension. One of the most common is the <code>stdio.h</code> header file. Including these files essentially copies and pastes their contents so that we can use them in our code. In this tutorial we'll be creating a very basic program that adds two integers together and add them together, printing out the result to the user.</p>
+
+	  <p>Create a file <code>add.h</code> and add the following function:</p>
+
+<pre class="line-numbers"><code class="language-c">
+int addNumbers(int x, int y) {
+        return x+y;
+}
+</code></pre>	  
+
+	  <p>Inside of our header file we are creating our function to add the two integers together which will return the answer. That's it for our header file!</p>
+
+
+	  <p>Now create a file called <code>example.c</code> and add the following includes:</p>
+
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+#include "add.h"
+</code></pre>
+
+	  <p>Notice a difference between the two? Header files contained in the C library are not wrapped in double quotes. Header files wrapped in double quotes tell the compiler that it is a local file and should look in the current directory.</p>
+
+	  <p>Now we can use our <code>addNumbers()</code> function located inside <code>add.h</code>. Paste in the remainder of our program.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int main() {
+
+        int num1, num2, result;
+
+        printf("Enter a number: ");
+        scanf("%d", &num1);
+        printf("Enter another number: ");
+        scanf("%d", &num2);
+
+        result = addNumbers(num1, num2);
+        printf("Result: %d\n", result);
+
+        return 0;
+}
+</code></pre>
+
+	  <p>Congrats! You just created your own header file and used its function <code>addNumbers()</code>. Header files can help your code stay organized and separate from your program. If you have any questions please leave a comment.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
