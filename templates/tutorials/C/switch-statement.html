@@ -1,0 +1,141 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="switch, case, C, options, conditional, programming, tutorial, nickmarriotti" />
+<meta name="description" content="Learn how to use switch statements in the C programming language. Switch statements are very similar to if statements." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Switch statements are very similar to if statements. For if statements your saying: "If this is equal to that then do this, else do that..."</p>
+
+	  <p>Here is the basic outline for a <code>switch</code> statement.</p>
+
+<pre class="line-numbers"><code class="language-c">
+
+        switch(expression) {
+                case constant-expression: 
+                        //do this
+                        break; /* optional */
+                case constant-expression:
+                        //do this
+                        break; /* optional */
+                case constant-expression:
+                        //do this
+                        break; /* optional */
+                default: /* optional */
+                        //else do this
+        }
+</code></pre>	  
+
+	<p>You can have as many <code>case</code> statements as you'd like. What this is saying is that depending on what the main expression is, execute the code inside the corresponding case statement.</p>
+
+	<p>In this tutorial we are going to ask the user to enter a number 1-3 and use the switch statement to determine what the user entered.</p>
+
+<pre class="line-numbers"><code class="language-c">
+
+        switch(expression) {
+                case constant-expression: 
+                        //do this
+                        break; /* optional */
+                case constant-expression:
+                        //do this
+                        break; /* optional */
+                case constant-expression:
+                        //do this
+                        break; /* optional */
+                default: /* optional */
+                        //else do this
+        }
+</code></pre>
+
+	  <p></p>
+	  <p></p>
+
+
+<pre class="line-numbers"><code class="language-c">
+        int option;
+
+        printf("Select an option 1-3: ");
+        scanf("%i", &option);
+
+        switch(option) {
+                case 1: 
+                        puts("option is 1");
+                        break;
+                case 2:
+                        puts("option is 2");
+                        break;
+                case 3:
+                        puts("option is 3");
+                        break;
+                default:
+                        puts("Invalid option!");
+        }
+
+</code></pre>
+
+	  <p>Here is what the code is doing:</p>
+	  <ul>
+	  	<li>Defined integer variable called <code>option</code></li>
+	  	<li>Asked the user to enter an option</li>
+	  	<li>Store the input into the memory address of our <code>option</code> variable</li>
+	  	<li>Depending on the <code>value</code> of <code>option</code> execute the corresponding case statement</li>
+	  </ul>
+
+	  <p>Note: If a case statement does not include a <code>break</code>It will execute every case statement following it.</p>
+
+	  <p>Lets run the program.</p>
+
+<pre>
+Select an option 1-3: 2
+option is 2
+</pre>
+
+<pre>
+Select an option 1-3: 4
+Invalid option!
+</pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

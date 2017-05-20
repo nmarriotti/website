@@ -211,7 +211,13 @@ def Using_Structs():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][6][1], methods=['GET', 'POST'])
 def Using_Union():
-    return render_template("tutorials/C/union.html", curLink = TOPIC_DICT["C"][6][1], curTitle=TOPIC_DICT["C"][6][0], curTopic = "C", title = TOPIC_DICT["C"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/union.html", curLink = TOPIC_DICT["C"][6][1], curTitle=TOPIC_DICT["C"][6][0], curTopic = "C", title = TOPIC_DICT["C"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["C"][7][0], nextLink=TOPIC_DICT["C"][7][1])
+
+
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][7][1], methods=['GET', 'POST'])
+def Switch_Statement():
+    return render_template("tutorials/C/switch-statement.html", curLink = TOPIC_DICT["C"][7][1], curTitle=TOPIC_DICT["C"][7][0], curTopic = "C", title = TOPIC_DICT["C"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
