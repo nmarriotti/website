@@ -1,0 +1,134 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="file, IO, writing, files, how, to, tutorial, C, programming, pointer, write, nickmarriotti" />
+<meta name="description" content="How to write files using a file pointer, fputs, and fprintf." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>To create files and write to them we will need to include <code>stdio.h</code> and a file pointer defined as:</p>
+
+<pre class="line-numbers"><code class="language-c">
+FILE *fp;
+</code></pre>	  
+
+	  <p>Now we need to set the filename and the mode that we want to open it in.</p>
+
+<pre class="line-numbers"><code class="language-c">
+fp = fopen("test.txt", "w+");
+</code></pre>	
+
+	  <p>Using our file pointer <code>fp</code> we are using the <code>fopen()</code> function and telling it to create a file called <code>test.txt</code> and open it in <code>w+</code> mode. Here is a listing of the available modes you can choose from.</p>
+
+<div class="table-responsive">
+	  <table class="table">
+	  <tr>
+	  	<th>Mode</th>
+	  	<th>Description</th>
+	  </tr>
+	  <tr>
+	  	<td>r</td>
+	  	<td>Open an existing file to read.</td>
+	  </tr>
+	  <tr>
+	  	<td>w</td>
+	  	<td>Opens a text file for writing. If it does not exist then a new file is created.</td>
+	  </tr>
+	  <tr>
+	  	<td>a</td>
+	  	<td>Opens a text file for writing in appending mode.</td>
+	  </tr>
+	  <tr>
+	  	<td>r+</td>
+	  	<td>Opens a text file for both reading and writing.</td>
+	  </tr>
+	  <tr>
+	  	<td>a+</td>
+	  	<td>Opens a text file for both reading and writing. It creates the file if it does not exist. Reading will start from the beginning, but writing can only be appended.</td>
+	  </tr>
+	 </table>
+</div>
+
+	<p>Now lets start writing some strings to our file. Here are two ways you can do it:</p>
+
+<pre class="line-numbers"><code class="language-c">
+fprintf(fp, "This is testing for fprintf\n");
+fputs("This is testing for fputs\n", fp);
+</code></pre>
+
+	  <p>Both <code>fprintf</code> and <code>fputs</code> do the same thing and they both require the file pointer <code>fp</code> to be passed as a parameter.</p>
+
+	  <p>When finished writing to the file we have to close it.</p>
+
+<pre class="line-numbers"><code class="language-c">
+fclose(fp);
+</code></pre>
+
+	  <p>When we run our program you will see a <code>test.txt</code> file is created and contains our two strings.</p>
+
+<pre>
+This is testing for fprintf
+This is testing for fputs
+</pre>
+
+	  <p>Here is the complete code.</p>
+
+<pre class="line-numbers"><code class="language-c">
+#include <stdio.h>
+
+int main() {
+
+        FILE *fp;
+        fp = fopen("test.txt", "w+");
+
+        fprintf(fp, "This is testing for fprintf\n");
+        fputs("This is testing for fputs\n", fp);
+
+        fclose(fp);
+
+}
+</code></pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

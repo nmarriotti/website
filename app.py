@@ -216,7 +216,12 @@ def Using_Union():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][7][1], methods=['GET', 'POST'])
 def Switch_Statement():
-    return render_template("tutorials/C/switch-statement.html", curLink = TOPIC_DICT["C"][7][1], curTitle=TOPIC_DICT["C"][7][0], curTopic = "C", title = TOPIC_DICT["C"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/switch-statement.html", curLink = TOPIC_DICT["C"][7][1], curTitle=TOPIC_DICT["C"][7][0], curTopic = "C", title = TOPIC_DICT["C"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["C"][8][0], nextLink=TOPIC_DICT["C"][8][1])
+
+
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][8][1], methods=['GET', 'POST'])
+def Writing_Files_C():
+    return render_template("tutorials/C/writing-files.html", curLink = TOPIC_DICT["C"][8][1], curTitle=TOPIC_DICT["C"][8][0], curTopic = "C", title = TOPIC_DICT["C"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	
