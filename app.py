@@ -221,7 +221,12 @@ def Switch_Statement():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][8][1], methods=['GET', 'POST'])
 def Writing_Files_C():
-    return render_template("tutorials/C/writing-files.html", curLink = TOPIC_DICT["C"][8][1], curTitle=TOPIC_DICT["C"][8][0], curTopic = "C", title = TOPIC_DICT["C"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/writing-files.html", curLink = TOPIC_DICT["C"][8][1], curTitle=TOPIC_DICT["C"][8][0], curTopic = "C", title = TOPIC_DICT["C"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C"][9][0], nextLink=TOPIC_DICT["C"][9][1])
+
+
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][9][1], methods=['GET', 'POST'])
+def Reading_Files():
+    return render_template("tutorials/C/reading-files.html", curLink = TOPIC_DICT["C"][9][1], curTitle=TOPIC_DICT["C"][9][0], curTopic = "C", title = TOPIC_DICT["C"][9][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	

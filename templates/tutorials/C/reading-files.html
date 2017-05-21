@@ -1,0 +1,171 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="fgets, fscanf, fgetc, read, files, reading, tutorial, file, C, nickmarriotti" />
+<meta name="description" content="Here's how you can read files in the C programming language." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>In the last tutorial we went over how to write files. Now lets see how we can read from a file and display the contents on the screen. To supply the program with the file we want to read we're going to be passing the file in as a command line argument.</p>
+
+	  <p>There are 3 different functions we can use to read our file.</p>
+
+<div class="table-responsive">
+	  <table class="table">
+	  <tr>
+	  	<th>Function</th>
+	  	<th>Description</th>
+	  </tr>
+	  <tr>
+	  	<td>fgetc</td>
+	  	<td>Reads one character at a time.</td>
+	  </tr>
+	  <tr>
+	  	<td>fscanf</td>
+	  	<td>Reads from a file until the first space is reached. <code>fscanf(fp, "%s", buffer)</code>f</td>
+	  </tr>
+	  <tr>
+	  	<td>fgets</td>
+	  	<td>Reads the entire line.</td>
+	  </tr>
+	 </table>
+</div>
+
+	  <p>Begin by creating a file <code>test.txt</code> and add the following contents. This is the file we are going to tell our program to read.</p>
+
+<pre>
+This is my test file
+C is going to read this file in.
+</pre>
+
+	  <p>Now create a file <code>read.c</code> and start by adding our required header file.</p>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+</code></pre>	  
+
+	  <p>Now we need to add our <code>int main</code> function.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int main(int argc, char* argv[]) {
+	
+	// Put code here
+
+	return 0;
+}
+</code></pre>
+
+<p>Now that we have our basic program outline finished. Let's write the code to read the file. To begin will will need to define our <code>file pointer</code> and call the<code>fopen()</code> function to tell it what file we want to open and how we want to open it. You can refer back to my previous tutorial on writing files if you need a refresher.</p>
+
+<pre class="line-numbers"><code class="language-c">
+FILE *fp = fopen(argv[1], "r");
+</code></pre>
+
+<p>To store the contents from the file we are going to need a <code>char</code> variable. Add the following line after your file pointer.</p>
+
+<pre class="line-numbers"><code class="language-c">
+char buffer[255];
+</code></pre>
+
+	  <p>In order to read the entire contents of the file we will need to use a loop. This loop will continue as long as the file is open. We also need to close the file after our loop.</p>
+
+<pre class="line-numbers"><code class="language-c">
+while(fp) {
+	
+}
+
+fclose(fp);
+</code></pre>
+
+	<p>Inside your <code>while</code> loop add the following code.</p>
+
+<pre class="line-numbers"><code class="language-c">
+    fgets(buffer, 255, fp);
+    if(feof(fp)) break;
+    printf("%s", buffer);
+</code></pre>
+
+	  <ul>
+	  	<li>Line 1: Read entire line.</li>
+	  	<li>Line 2: If the end of file was reached exit the loop.</li>
+	  	<li>Line 3: Print out the line which is stored in the <code>buffer</code> variable.</li>
+	  </ul>
+
+
+
+	  <p>That should do it! Lets compile and run our program to see if it works.</p>
+
+<pre>
+./read test.txt
+This is my test file
+C is going to read this file in.
+</pre>
+
+	<h2>Complete Code</h2>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(int argc, char* argv[]) {
+
+        FILE *fp = fopen(argv[1], "r");
+
+        char buffer[255];
+        char *c;
+
+        while(fp) 
+        {
+    		fgets(buffer, 255, fp);
+    		if(feof(fp)) break;
+    		printf("%s", buffer);
+        } 
+
+        fclose(fp);
+        return 0;
+</code></pre>
+
+
+	<p>Congrats! You just learned how to read the contents of a file in C. See if you can modify the code and read one word at a time using the <code>fscanf</code> function.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
