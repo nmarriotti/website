@@ -38,7 +38,7 @@
 	  </tr>
 	  <tr>
 	  	<td>fscanf</td>
-	  	<td>Reads from a file until the first space is reached. <code>fscanf(fp, "%s", buffer)</code>f</td>
+	  	<td>Reads from a file until the first space is reached. <code>fscanf(fp, "%s", buffer)</code></td>
 	  </tr>
 	  <tr>
 	  	<td>fgets</td>
@@ -71,13 +71,13 @@ int main(int argc, char* argv[]) {
 }
 </code></pre>
 
-<p>Now that we have our basic program outline finished. Let's write the code to read the file. To begin will will need to define our <code>file pointer</code> and call the<code>fopen()</code> function to tell it what file we want to open and how we want to open it. You can refer back to my previous tutorial on writing files if you need a refresher.</p>
+<p>Now that we have our basic program outline finished. Let's write the code to read the file. To begin we need to define our <code>file pointer</code> and call the<code>fopen()</code> function to tell it what file we want to open and how we want to open it. You can refer back to my previous tutorial on writing files if you need a refresher.</p>
 
 <pre class="line-numbers"><code class="language-c">
 FILE *fp = fopen(argv[1], "r");
 </code></pre>
 
-<p>To store the contents from the file we are going to need a <code>char</code> variable. Add the following line after your file pointer.</p>
+<p>To store the contents from the file we need a <code>char</code> variable. Add the following line after your file pointer.</p>
 
 <pre class="line-numbers"><code class="language-c">
 char buffer[255];

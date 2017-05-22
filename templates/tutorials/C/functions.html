@@ -1,0 +1,108 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C, functions, pass, parameters, value, void, return, tutorial, nickmarriotti" />
+<meta name="description" content="How to create and use functions in C." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Functions help break you code up into manageable pieces. You can pass variables into a function and you can return values. In this tutorial we'll create two basic functions, go over writing the function prototype and calling the functions. When I say <code>call</code> what I mean is run the function.</p>
+
+	  <h3>Prototype</h3>
+
+	  <p>The compiler compiles the code sequentially from top to bottom. When you call a function, the compiler has to be able to say "Oh ok this is where your calling your function". So we have to give the compiler a heads up on what our function is before we use it.</p>
+
+	  <p>A function prototype is just you telling the compiler this is the return type of my function and it takes in these parameters. Prototypes can go inside a header file or can be places at the top of your code right before the <code>int main()</code>.</p>
+
+	  <p>Here are the prototypes for the functions we'll use in this tutorial.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void saySomething();
+int doSomething(int);
+</code></pre>	  
+
+	  <p>Functions that will not return a value should be declared as <code>void</code>. If you want to do some calculations and return a value you will need to declare your functions as either <code>int, float, double, char, etc...</code>. You'll see what I mean later in the tutorial.</p>
+
+	  <p>Looking at our <code>doSomething(int)</code> you can see inside the parenthesis it has <code>int</code>. That means it requires an <code>integer</code> value to be passed in when the function is called and since we have <code>int</code> at the beginning of the declaration it is going to return an integer value.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int main() {
+		int number;
+
+        saySomething();
+        number = doSomething(6);
+        printf("Number is", number); 
+        return 0;
+}
+</code></pre>	  
+
+	<p>Here is our <code>int main()</code>. We created an integer variable and are <code>calling</code> our <code>saySomething()</code> function and then we are <code>calling</code> our <code>doSomething(6)</code> function. Notice how we also passed in the <code>integer</code> value of <code>6</code>. Our program is going to jump to each function, executes its code and return where it left off. Lets declare our functions now.</p>
+
+	<h3>Function Declarations</h3>
+
+	<p>Below your int main() is where we are going to declare our functions and add the code that we want each to run.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void saySomething() {
+        printf("Hello there!\n");
+}
+
+int doSomething(int x) {
+        x = x * 2;
+        return x;
+}
+</code></pre>
+
+	  <p>The first function is just printing a statement. The <code>doSomething(int x)</code> function is multiplying the number we passed in (<code>6</code>) by 2 and <code>returning the value of x</code> which is stored in the <code>number</code> variable.</p>
+
+	  <p>Time to compile and run our program to see these functions in action.</p>
+
+<pre>
+Hello there!
+Number is 12
+</pre>
+
+	<p>When we pass variables into functions we are essentially creating a copy of them. This takes up more memory. In the next tutorial I'll show you how we can use pointers to avoid our functions from taking up more memory from creating these copies.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
