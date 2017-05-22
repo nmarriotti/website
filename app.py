@@ -236,8 +236,11 @@ def C_Functions():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][11][1], methods=['GET', 'POST'])
 def Pointers():
-    return render_template("tutorials/C/pointers.html", curLink = TOPIC_DICT["C"][11][1], curTitle=TOPIC_DICT["C"][11][0], curTopic = "C", title = TOPIC_DICT["C"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/pointers.html", curLink = TOPIC_DICT["C"][11][1], curTitle=TOPIC_DICT["C"][11][0], curTopic = "C", title = TOPIC_DICT["C"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C"][12][0], nextLink=TOPIC_DICT["C"][12][1])
 
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][12][1], methods=['GET', 'POST'])
+def Split_strings_using_strtok():
+    return render_template("tutorials/C/split-strings-using-strtok.html", curLink = TOPIC_DICT["C"][12][1], curTitle=TOPIC_DICT["C"][12][0], curTopic = "C", title = TOPIC_DICT["C"][12][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])

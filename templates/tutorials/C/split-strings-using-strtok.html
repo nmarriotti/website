@@ -1,0 +1,117 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="C, string, strtok, delimiter, function, tutorial, how-to, nickmarriotti" />
+<meta name="description" content="Splitting string based on a delimiter using the strtok function." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>The <code>strtok()</code>function is used to split strings that are separated by a delimiter. For example suppose we have the following string.</p>
+
+<pre>
+This,is,a,comma,delimited,string
+</pre>	  
+
+	  <p>Using the <code>strtok()</code> function we can pull out each word that is separated by the comma. The declaration is <code>char *strtok(char *str, const char *delim)</code>. It returns a <code>char</code> and takes in a <code>char string, and delimiter</code> as parameters. You will need to include <code>string.h</code> to use the function.</p>
+	  <h3>Declare Variables</h3>
+
+<pre class="line-numbers"><code class="language-c">
+char myString[] = "This,is,a,comma,delimited,string";
+char delim[2] = ",";
+char *token;
+</code></pre>	  
+
+	  <p>We created three <code>char</code> variables. One contains the string we want to parse, the second is the delimiter and the last is a pointer which will point to each separated word from our string. Now lets use the <code>strtok()</code> function to start parsing this string out.</p>
+
+<pre class="line-numbers"><code class="language-c">
+token = strtok(myString, delim);
+printf("%s", token); /* example */
+</code></pre>
+
+
+	  <p>When we run the code you can see it's working, but it only pulled out the the word <strong>This</strong>. To parse the entire string we need to use a loop.</p>
+
+<pre class="line-numbers"><code class="language-c">
+while(token != NULL) {
+    printf("%s\n", token);
+    token = strtok(NULL, delim);
+}
+</code></pre>
+
+<pre>
+This
+is
+a
+comma
+delimited
+string
+</pre>
+
+	<h3>Complete Code</h3>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char myString[] = "This,is,a,comma,delimited,string";
+    char delim[2] = ",";
+    char *token;
+
+    token = strtok(myString, delim);
+    printf("%s", token);
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delim);
+    }
+
+    return 0;
+}
+</code></pre>
+
+	<p>Here is the complete code used for this tutorial. In the next tutorial we'll pass in a CSV file as a command line argument and use <code>strok()</code> to parse out the file.</p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
