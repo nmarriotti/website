@@ -1,0 +1,144 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="pointers, memory, address, location, C, functions, tutorial, nickmarriotti" />
+<meta name="description" content="How to use pointers to point to the memory address of variables in the C programming language." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Pointers are variables that point to a location in memory. They can be used in functions to prevent creating copies of variables which allows for better memory management.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int var = 100;
+int *i = NULL;  /* this is a pointer */
+</code></pre>
+
+	  <p>In the above code we have a variable <code>var</code> that holds the value of <code>100</code>. Using a pointer <code>int *i</code> we can point to the same location in memory that our <code>var</code> value is stored at.</p>
+
+<pre class="line-numbers"><code class="language-c">
+i = &var;
+</code></pre>
+
+	  <p>We set <code>i</code> equal to the memory location of <code>var</code>. The ampersand <code>&</code> gets the memory location. Lets create some print statements to see where in memory our variable is stored and where our pointer is pointing.</p>
+
+<pre class="line-numbers"><code class="language-c">
+printf("var is stored at: %p\n", &var);
+printf("i points to memory address of %p\n", i);
+</code></pre>
+
+<pre>
+var is stored at: 0x7ffdb54e893c
+i points to memory address of 0x7ffdb54e893c
+</pre>
+
+	<p>Your memory location may be different, but they are both pointing to the same location in memory! Now lets see what value our <code>pointer</code> is pointing to at that memory location.</p>
+
+<pre class="line-numbers"><code class="language-c">
+printf("i points to value of %i\n", *i);
+</code></pre>
+
+	<p>Using the asterisk <code>*</code> We can get the value our pointer is pointing to.</p>
+
+<pre>
+i points to value of 100
+</pre>
+
+<h3>Pass Pointers into Functions</h3>
+
+	<p>When you want to pass a pointer into a function you will need to add the asterisk <code>*</code> symbol in your function prototype and declaration.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void minus10(int *x);
+
+int main() {
+        int value = 20;
+        minus10(&value);
+        printf("%d",value);
+
+        return 0;
+}
+
+void minus10(int *x) {
+        *x = *x - 10;
+}
+</code></pre>	
+
+	  <p>We want to pass in the memory location of our <code>int value</code> variable so we call <code>minus10(&value)</code>. Inside our function we are taking the <code>integer value</code> of our variable using <code>*</code> and multiplying it by 2. Since we passed in the memory location, the value of the <code>value</code> variable is updated globally. Lets run the program.</p>
+
+<pre>
+20
+</pre>
+
+	  <p>If you read through the previous tutorial. Here is the updated version of it using pointers in our function.</p>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+
+// Function Prototypes
+void saySomething();
+void doSomething(int *);
+
+int main() {
+        int number = 6;
+        saySomething();
+        doSomething(&number);   
+        printf("Number is %d\n", number);
+        return 0;
+}
+
+void saySomething() {
+        printf("Hello there!\n");
+}
+
+void doSomething(int *x) {
+        *x = *x * 2;
+}
+</code></pre>
+
+<pre>
+Number is 12
+</pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

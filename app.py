@@ -231,9 +231,15 @@ def C_Reading_Files():
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][10][1], methods=['GET', 'POST'])
 def C_Functions():
-    return render_template("tutorials/C/functions.html", curLink = TOPIC_DICT["C"][10][1], curTitle=TOPIC_DICT["C"][10][0], curTopic = "C", title = TOPIC_DICT["C"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C/functions.html", curLink = TOPIC_DICT["C"][10][1], curTitle=TOPIC_DICT["C"][10][0], curTopic = "C", title = TOPIC_DICT["C"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["C"][11][0], nextLink=TOPIC_DICT["C"][11][1])
 
-	
+
+@app.route("/tutorials/c/"+TOPIC_DICT["C"][11][1], methods=['GET', 'POST'])
+def Pointers():
+    return render_template("tutorials/C/pointers.html", curLink = TOPIC_DICT["C"][11][1], curTitle=TOPIC_DICT["C"][11][0], curTopic = "C", title = TOPIC_DICT["C"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
+
+
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][0][1], methods=['GET', 'POST'])
 def Installing_the_Cpp_compiler_and_CodeBlocks_IDE():
     return render_template("tutorials/C++/installing-compiler-and-codeblocks-ide.html", curLink = TOPIC_DICT["C++"][0][1], curTitle=TOPIC_DICT["C++"][0][0],  nextLink = TOPIC_DICT["C++"][1][1], nextTitle = TOPIC_DICT["C++"][1][0], curTopic = "C++", title = TOPIC_DICT["C++"][0][0], TOPIC_DICT = TOPIC_DICT)
