@@ -56,7 +56,7 @@
 
 	<h3>Check if file was supplied</h3>
 
-	<p>The first thing we need to do is check if the user supplied a filename as a command-line argument. If you remember from my tutorial on <a href="/command-line-arguments">command-line arguments</a> we can get the value of the <code>argc</code> variable to see how many parameters were passed.</p>
+	<p>The first thing we need to do is check if the user supplied a filename as a command-line argument. If you remember from my tutorial on <a href="/tutorials/c/command-line-arguments">command-line arguments</a> we can get the value of the <code>argc</code> variable to see how many parameters were passed.</p>
 
 <pre class="line-numbers"><code class="language-c">
 int main(int argc, char *argv[]) {
@@ -112,7 +112,7 @@ void readfile(char *filename) {
         char buffer[255];
 </code></pre>	
  
-	<p>So now that we know our file exists. We want to loop through and grab each line. Each line in the file will need to have the last character removed as that last character is a <code>\n</code> which means <code>newline</code> and it will mess up our formatting when we print our final results. For more information on the code below you can refer to my tutorial on <a href="/reading files">reading files</a>.</p>
+	<p>So now that we know our file exists. We want to loop through and grab each line. Each line in the file will need to have the last character removed as that last character is a <code>\n</code> which means <code>newline</code> and it will mess up our formatting when we print our final results. For more information on the code below you can refer to my tutorial on <a href="/tutorials/c/reading files">reading files</a>.</p>
 
 <pre class="line-numbers"><code class="language-c">
 	    while(fp) {
@@ -286,7 +286,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 </code></pre>
-	
+
 	<p>Please leave a comment on what you thought of the tutorial and feel free to ask for help.</p>
 <br>
 <!-- Ad -->
