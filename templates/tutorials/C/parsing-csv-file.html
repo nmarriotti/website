@@ -23,23 +23,110 @@
 <!-- End Ad -->
 <br>
 
+	<p>In the previous tutorial I explained how you can use the <code>strtok()</code> function to parse out a comma delimited string. Now we are going to take it a step further and parse out a CSV file that is supplied as a command line argument. If your fairly new to programming and C the code may look a little overwhelming, but I'll explain it line by line.</p>
+
+	<p>Here is the contents of our csv file that we want to parse.</p>
+
+<pre>
+1,2,3,4,5
+6,7,8,9,10
+11,12,13,14,15
+16,17,18,19,20
+</pre>
+
+	<p>To begin, create a file <code>main.c</code> and add the following includes:</p>
+
 <pre class="line-numbers"><code class="language-c">
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
+</code></pre>
 
-void parse(char *line) {
-    char *token;
-    char delim[2] = ",";
+	<p>Before we get into any more code, we need to think of all the steps that will be involved in order get our end result. We need to:</p>
 
-    token = strtok(line, delim);
+	<ul>
+		<li>1. Check if a file was supplied as argument.</li>
+		<li>2. Check if the file exists.</li>
+		<li>3. Open the file.</li>
+		<li>4. Grab each line in the file.</li>
+		<li>5. Parse out the line based on the comma delimiter.</li>
+		<li>6. Print the parsed out values.</li>
+		<li>7. Repeat 4-6 until the end of file.</li>
+	</ul>
 
-    while(token != NULL) {
-        printf("%s\n", token);
-        token = strtok(NULL, delim);
+	<h3>Check if file was supplied</h3>
+
+	<p>The first thing we need to do is check if the user supplied a filename as a command-line argument. If you remember from a few tutorials back we can get the value of the <code>argc</code> variable to see how many parameters were passed.</p>
+
+<pre class="line-numbers"><code class="language-c">
+int main(int argc, char *argv[]) {
+
+    if(argc > 1) {
+        // Code goes here
     }
-}
 
+    return 0;
+}
+</code></pre>
+
+	<p>If our <code>argc</code> value is <strong>greater than 1</strong> than we will assume that the file the user wants to parse was supplied. So inside of our <code>if</code>statement we will create a <code>char</code> pointer and set it equal to our command-line-argument at index 0.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        char *filename = argv[1];
+        readfile(filename); /*call function to open and read file */
+</code></pre>
+
+	<p>Notice we are also calling a function <code>readfile()</code> and passing in our <code>filename</code> pointer, because now that we have the filename we need to read the contents of it.</p>
+
+	<h3>Open and Read the File</h3>
+
+	<p>To read our file we will create a function. This will help ensure our program is organized. Here is the basic outline for our function. It will take in the <code>filename</code>.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void readfile(char *filename) {
+
+}
+</code></pre>
+
+	<p>Inside of our function we need to create a file pointer and tell it what file we want to open and how we want to open it. For this tutorial we will want to open it in <code>read-only</code> mode so inside of your function, add this line of code.</p>
+
+<pre class="line-numbers"><code class="language-c">
+    FILE *fp = fopen(filename, "r");
+</code></pre>	
+
+	<p>Next we have to check if the file exists. For that we will use a simple <code>if/else</code> statement. Next add:</p>
+
+<pre class="line-numbers"><code class="language-c">
+    if(fp) 
+    {
+    	/* File exists */
+    } 
+    else {
+        printf("File does not exist.\n");
+    }
+</code></pre>
+
+	<p>To grab each line of our file we need to define a <code>char</code> variable. The variable we will create can hold <code>254</code> characters.</p>
+
+<pre class="line-numbers"><code class="language-c">
+        char buffer[255];
+</code></pre>	
+ 
+	<p>So now that we know our file exists. We want to loop through and grab each line. Each line in the file will need to have the last character removed, please that last character is a <code>\n</code> which means <code>newline</code> and it will mess our formatting up when we print our final results. For more information on the code below you can refer to my tutorial on reading files.</p>
+
+<pre class="line-numbers"><code class="language-c">
+	    while(fp) {
+		    fgets(buffer, 255, fp);   /* Set buffer equal to a line in the file */
+            buffer[strlen(buffer)-1]='\0';  /* Remove last character from line */
+		    if(feof(fp)) break; /* Exit loop if end of file reached */
+            parse(buffer); /* call function to parse line */ 
+	    }
+        fclose(fp); /* close file */
+</code></pre>	
+
+	<p>Here is our final <code>readfile()</code> function.</p>
+
+<pre class="line-numbers"><code class="language-c">
 void readfile(char *filename) {
     FILE *fp = fopen(filename, "r");
     if(fp) 
@@ -58,19 +145,99 @@ void readfile(char *filename) {
         printf("File does not exist.\n");
     }
 
-}
-
-int main(int argc, char *argv[]) {
-
-    if(argc > 1) {
-        char *filename = argv[1];
-        readfile(filename);
-    }
-
-    return 0;
-}
+}	
 </code></pre>
 
+	<p>That's it for our function to read the file and get each line from it. Next we have to parse out each line and for that we will create another function called <code>parse</code> which will take in our <code>buffer</code> variable as a parameter.</p>
+
+	<h3>Parsing the Line</h3>
+
+	<p>Now that we were able to grab each line from the line we need to send that line to a function to be parsed and the values printed. Here is the outline for our function.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void parse(char *line) {
+
+}	
+</code></pre>
+
+	<p>To parse out a line we need to create two variables. One will contain the values from the file and the next will be our delimiter.</p>
+
+<pre class="line-numbers"><code class="language-c">
+    char *token;
+    char delim[2] = ",";
+</code></pre>
+
+	<p>The last step is to use the <code>strtok()</code> function to get the values from inbetween the delimiter. For explanation on the code please refer to the previous tutorial on the <code>strtok()</code> function.</p>
+
+<pre class="line-numbers"><code class="language-c">
+    token = strtok(line, delim);
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delim);
+    }
+</code></pre>
+
+	<p>Our complete <code>parse()</code> function looks like this.</p>
+
+<pre class="line-numbers"><code class="language-c">
+void parse(char *line) {
+    char *token;
+    char delim[2] = ",";
+
+    token = strtok(line, delim);
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delim);
+    }
+}
+</code></pre>		
+
+	<h3>Compile and Run</h3>
+
+	<p>Our program is complete! Now we just need to compile and run it.</p>
+
+<pre>
+gcc main.c -o read
+</pre>
+
+	<h3>Run</h3>
+
+	<p>First we'll try to give it a file that doesn't exist.</p>
+
+<pre>
+./read file.csv
+File does not exist.
+</pre>
+	
+<pre>
+./read test.csv
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre>
+
+	<p>It's working! We were able to open a file supplied as a command-line argument, check if it exists, read each line from the file and parse out the values inbetween the delimiter to ultimately print each value to the screen.</p>
+
+	<p>Please leave a comment on what you thought of the tutorial and feel free to ask for help.</p>
 <br>
 <!-- Ad -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
