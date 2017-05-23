@@ -1,0 +1,100 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="parse, parsing, csv, strtok, delimiter, read, file, argument, C, tutorial, nickmarriotti" />
+<meta name="description" content="Parse a CSV file supplied from command line using the strtok function in C." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+void parse(char *line) {
+    char *token;
+    char delim[2] = ",";
+
+    token = strtok(line, delim);
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delim);
+    }
+}
+
+void readfile(char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if(fp) 
+    {
+        char buffer[255];
+
+	    while(fp) {
+		    fgets(buffer, 255, fp);   
+            buffer[strlen(buffer)-1]='\0'; 
+		    if(feof(fp)) break; 
+            parse(buffer); 
+	    }
+        fclose(fp);
+    } 
+    else {
+        printf("File does not exist.\n");
+    }
+
+}
+
+int main(int argc, char *argv[]) {
+
+    if(argc > 1) {
+        char *filename = argv[1];
+        readfile(filename);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
