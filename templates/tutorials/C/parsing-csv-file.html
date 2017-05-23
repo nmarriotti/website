@@ -56,7 +56,7 @@
 
 	<h3>Check if file was supplied</h3>
 
-	<p>The first thing we need to do is check if the user supplied a filename as a command-line argument. If you remember from a few tutorials back we can get the value of the <code>argc</code> variable to see how many parameters were passed.</p>
+	<p>The first thing we need to do is check if the user supplied a filename as a command-line argument. If you remember from my tutorial on <a href="/command-line-arguments">command-line arguments</a> we can get the value of the <code>argc</code> variable to see how many parameters were passed.</p>
 
 <pre class="line-numbers"><code class="language-c">
 int main(int argc, char *argv[]) {
@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
 }
 </code></pre>
 
-	<p>If our <code>argc</code> value is <strong>greater than 1</strong> than we will assume that the file the user wants to parse was supplied. So inside of our <code>if</code>statement we will create a <code>char</code> pointer and set it equal to our command-line-argument at index 0.</p>
+	<p>If our <code>argc</code> value is <strong>greater than 1</strong> than we will assume that the file the user wants to parse was supplied. So inside of our <code>if</code>statement we will create a <code>char</code> pointer and set it equal to our command-line-argument at index 1.</p>
 
 <pre class="line-numbers"><code class="language-c">
         char *filename = argv[1];
@@ -112,7 +112,7 @@ void readfile(char *filename) {
         char buffer[255];
 </code></pre>	
  
-	<p>So now that we know our file exists. We want to loop through and grab each line. Each line in the file will need to have the last character removed, please that last character is a <code>\n</code> which means <code>newline</code> and it will mess our formatting up when we print our final results. For more information on the code below you can refer to my tutorial on reading files.</p>
+	<p>So now that we know our file exists. We want to loop through and grab each line. Each line in the file will need to have the last character removed as that last character is a <code>\n</code> which means <code>newline</code> and it will mess up our formatting when we print our final results. For more information on the code below you can refer to my tutorial on <a href="/reading files">reading files</a>.</p>
 
 <pre class="line-numbers"><code class="language-c">
 	    while(fp) {
@@ -237,6 +237,56 @@ File does not exist.
 
 	<p>It's working! We were able to open a file supplied as a command-line argument, check if it exists, read each line from the file and parse out the values inbetween the delimiter to ultimately print each value to the screen.</p>
 
+	<h3>Complete Code</h3>
+
+<pre class="line-numbers"><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+void parse(char *line) {
+    char *token;
+    char delim[2] = ",";
+
+    token = strtok(line, delim);
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delim);
+    }
+}
+
+void readfile(char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if(fp) 
+    {
+        char buffer[255];
+
+	    while(fp) {
+		    fgets(buffer, 255, fp);   
+            buffer[strlen(buffer)-1]='\0'; 
+		    if(feof(fp)) break; 
+            parse(buffer); 
+	    }
+        fclose(fp);
+    } 
+    else {
+        printf("File does not exist.\n");
+    }
+
+}
+
+int main(int argc, char *argv[]) {
+
+    if(argc > 1) {
+        char *filename = argv[1];
+        readfile(filename);
+    }
+
+    return 0;
+}
+</code></pre>
+	
 	<p>Please leave a comment on what you thought of the tutorial and feel free to ask for help.</p>
 <br>
 <!-- Ad -->
