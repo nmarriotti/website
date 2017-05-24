@@ -331,7 +331,7 @@ def Hello_World_in_Java():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][1][1], methods=['GET', 'POST'])
 def Public_Private_Protected():
-    return render_template("tutorials/Java/public-private-protected.html", curLink = TOPIC_DICT["Java"][1][1], curTitle=TOPIC_DICT["Java"][1][0],  nextLink = TOPIC_DICT["Java"][2][1], nextTitle = "None", curTopic = "Java", title = TOPIC_DICT["Java"][1][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/Java/public-private-protected.html", curLink = TOPIC_DICT["Java"][1][1], curTitle=TOPIC_DICT["Java"][1][0], curTopic = "Java", title = TOPIC_DICT["Java"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle = "None")
 
 
 	
