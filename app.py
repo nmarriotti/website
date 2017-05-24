@@ -326,7 +326,12 @@ def How_to_install_Exodus_on_Kodi():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][0][1], methods=['GET', 'POST'])
 def Hello_World_in_Java():
-    return render_template("tutorials/Java/hello-world-in-java.html", curLink = TOPIC_DICT["Java"][0][1], curTitle=TOPIC_DICT["Java"][0][0], nextTitle = "None", curTopic = "Java", title = TOPIC_DICT["Java"][0][0], TOPIC_DICT = TOPIC_DICT)
+    return render_template("tutorials/Java/hello-world-in-java.html", curLink = TOPIC_DICT["Java"][0][1], curTitle=TOPIC_DICT["Java"][0][0], nextTitle =TOPIC_DICT["Java"][1][0], curTopic = "Java", title = TOPIC_DICT["Java"][0][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Java"][1][1])
+
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][1][1], methods=['GET', 'POST'])
+def Public_Private_Protected():
+    return render_template("tutorials/Java/public-private-protected.html", curLink = TOPIC_DICT["Java"][1][1], curTitle=TOPIC_DICT["Java"][1][0],  nextLink = TOPIC_DICT["Java"][2][1], nextTitle = TOPIC_DICT["Java"][2][0], curTopic = "Java", title = TOPIC_DICT["Java"][1][0], TOPIC_DICT = TOPIC_DICT)
 
 
 	

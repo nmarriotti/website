@@ -48,7 +48,8 @@ def Content():
     ["Pointers and References","pointers-and-references"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]],
-    "Java":[["Hello World in Java","hello-world-in-java"]]}
+    "Java":[["Hello World in Java","hello-world-in-java"],
+    ["Public, Private, Protected","public-private-protected"]]}
 
     return TOPIC_DICT
 
