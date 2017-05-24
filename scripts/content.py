@@ -49,7 +49,8 @@ def Content():
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]],
     "Java":[["Hello World in Java","hello-world-in-java"],
-    ["Public, Private, Protected","public-private-protected"]]}
+    ["Public, Private, Protected","public-private-protected"],
+    ["User Input","user-input"]]}
 
     return TOPIC_DICT
 
