@@ -23,22 +23,123 @@
 <!-- End Ad -->
 <br>
 
+	<p>In this tutorial we'll create a program which asks the user to enter their name. The name will be stored into a string variable and printed back to the user. To do this we will need to create a <code>Scanner</code> object</p>.
+
+	<p>Create a file <code>Input.java</code> and add the following code.</p>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.Scanner;
+</code></pre>	
+
+	<p>The <code>java.util.Scanner</code> package must be imported in order to capture user input.</p>
+
+	<p>Next we need to create our class. Remember <strong>class names must be the same name as the file you created</strong>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Input {
+
+
+
+}
+</code></pre>
+
+	<p>If you remember from my Hello World tutorial, we need to add our main function, so lets add that inside our class now.</p>
+
 <pre class="line-numbers"><code class="language-java">
 import java.util.Scanner;
 
 public class Input {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        
+
+    }
+}
+</code></pre>
+
+	<p>The rest of the code in this tutorial will go inside our main function.</p>
+
+	<h3>Creating Scanner Object</h3>
+
+	<p>Since we imported the <code>Scanner</code> package we can now create a <code>Scanner</code> object.</p>
+
+<pre class="line-numbers"><code class="language-java">
+Scanner s = new Scanner(System.in);
+</code></pre>
+
+	<h3>Declaring Variable</h3>
+
+	<p>Next we need to create a variable that the users input will be stored in. Since we are asking the user for their name we will use a string variable.</p>
+
+<pre class="line-numbers"><code class="language-java">
+String name;
+</code></pre>	
+
+	<h3>Using Scanner object</h3>
+
+	<p>We're almost done. Using the <code>System.out.print()</code> function, we need to ask the user a question.</p>
+
+<pre class="line-numbers"><code class="language-java">
+System.out.print("Enter your name: ");
+</code></pre>	
+
+	<h3>Using Scanner Object</h3>
+
+	<p>To prompt the user to enter input we need to use our <code>Scanner</code> object and call the <code>next()</code> function since our name is a string. If we wanted to store a whole number that the user entered we would use <code>nextInt()</code>.
+
+<pre class="line-numbers"><code class="language-java">
+name = s.next();
+</code></pre>
+	
+	<p>At this point if we ran our program, the user would be prompted to enter their name and <code>Scanner</code> would wait until something is typed in and for the ENTER key to be pressed.</p>
+
+	<h3>Printing the Variable</h3>
+
+	<p>Finally, we need to print out the users name. Printing out a variable is very easy.</p>
+
+<pre class="line-numbers"><code class="language-java">
+System.out.println("You entered: " + name);    
+</code></pre>	
+
+	<h3>Compile and Run</h3>
+
+	<p>Our program is now finished. All we need to do now is compile and run it. Open up a terminal or console and type:</p>
+
+<pre>
+javac Input.java</pre>
+
+	<p>Hopefully you didn't receive any errors compiling. If all went well run the program by typing:</p>
+
+<pre>
+java Input</pre>
+</pre>
+
+	<p>Here is the output from the program:</p>
+
+<pre>
+Enter your name: Nick
+You entered: Nick
+</pre>
+
+	<h3>Complete Code</h3>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.Scanner;
+
+public class Input {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
         
         String name;
         
         System.out.print("Enter your name: ");
-        name = scanner.next();
+		name = s.next();
 
         System.out.println("You entered: " + name);    
     }
 }
 </code></pre>
+
+	<p>That does it for this tutorial. In the next tutorial we'll get into creating classes and objects. If you have a question please leave a comment below.</p>
 
 <br>
 <!-- Ad -->
