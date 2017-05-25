@@ -1,0 +1,81 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, format, string, out, system, nickmarriotti, tutorials" />
+<meta name="description" content="Basic examples on how to format output with System.out.format()." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>At this point we have only been using <code>System.out.println</code> to print to the console. Another way you can do it is using <code>System.out.format()</code> which gives you more options when it comes to formatting your ouput.</p>
+
+<pre class="line-numbers"><code class="language-java">
+        String myString = "This is a string";
+        int myInt = 10;
+        float myFloat = 49.3f;
+        char myChar = 'C';
+
+        System.out.format("%s%n", myString);
+        System.out.format("%d%n", myInt);
+        System.out.format("%f%n", myFloat);
+        System.out.format("%c%n", myChar);
+        System.out.format("%.2f%n", myFloat); /* 2 Decimal Places */
+</code></pre>
+
+	<p>Here is the output from the above code.</p>
+
+<pre>
+This is a string
+10
+49.299999
+C
+49.30
+</pre>
+
+	  <p>This should get you started with the basics. For more information regarding the <code>System.out.format</code> function refer to the <a href="https://docs.oracle.com/javase/tutorial/java/data/numberformat.html">official documentation</a>.</p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

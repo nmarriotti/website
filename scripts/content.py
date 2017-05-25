@@ -50,7 +50,8 @@ def Content():
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"]],
     "Java":[["Hello World in Java","hello-world-in-java"],
     ["Public, Private, Protected","public-private-protected"],
-    ["User Input","user-input"]]}
+    ["User Input","user-input"],
+    ["Printing with String.out.format","printing-with-string-format"]]}
 
     return TOPIC_DICT
 
