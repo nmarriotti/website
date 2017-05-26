@@ -74,53 +74,17 @@
                <!-- Description Page -->
                <h4 class="description">{{ curTopic }}</h4><hr>
                 <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-8 padding-bottom">
+                <div class="col-xs-12 col-sm-12 col-lg-12 padding-bottom">
                     <!-- start post -->
                     {% block content %}
                     {% endblock %}
-                    <!-- end post -->
-                </div>
-                <div class="col-xs-12 col-sm-12 col-lg-4">
-                    <!-- start slidebar -->
-
-                    <!-- Ad -->
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- ad_responsive -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-1536610602343915"
-                         data-ad-slot="3839980586"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <br>
-                    <!-- End Ad -->
-
-
-                    <aside class="widget widget_categories">
-                        <h3 class="widget-title">More {{ curTopic }} Tutorials</h3>
-                        <ul>
+                         <ul>
                           {% for t in TOPIC_DICT[curTopic] %}
                           <li><a href="{{t[1]}}">{{t[0]}}</a></li>
                           {% endfor %}
                         </ul>
-                    </aside>
-                    <!-- end slidebar -->
-                    <br>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_3 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1536610602343915"
-     data-ad-slot="8270180183"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- end ad_3 -->
+                    <!-- end post -->
                 </div>
-
                 <div class="col-xs-12 col-sm-12 col-lg-12">
                   <br><br><br><br>
                   <div id="disqus_thread"></div>
