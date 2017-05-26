@@ -26,7 +26,7 @@
 
 	  <p>Classes define all the variables and methods for a particular object. For example, lets say you wanted to make an address book program. You could create a contact class and create a new object of that class which holds a particular persons contact information. In this tutorial we'll create something similar.</p>
 
-	  <p>Create a file <code>Main.java</code> and lets starting get the main method down. Remember class names MUST be the same name as the source file.</p>
+	  <p>Create a file <code>Main.java</code> and lets get the main method down. Remember class names MUST be the same name as the source file.</p>
 
 <pre class="line-numbers"><code class="language-java">
 public class Main {
@@ -50,6 +50,7 @@ public class Contact {
 
 	<p>Common practice is to make all variables private, meaning they are only accessible from within the same class. Lets create a variable.</p>
 
+<pre class="line-numbers"><code class="language-java">
 public class Contact {
 	
 	private String name;
@@ -90,7 +91,7 @@ public class Contact {
     }
 </code></pre>
 
-	<p><code>There we have two methods. One that <code>sets</code> the value of our <code>name</code> variable and one that <code>gets</code> the value of our <code>name</code> variable and prints it out. <code>this.name</code> tells the compiler that we are referring to the class variable called <code>name</code>.</p>
+	<p>There we have two methods. One that <code>sets</code> the value of our <code>name</code> variable and one that <code>gets</code> the value of our <code>name</code> variable and prints it out. <code>this.name</code> tells the compiler that we are referring to the class variable <code>name</code>.</p>
 
 	<h3>Final Contact class</h3>
 
@@ -157,10 +158,7 @@ public class Main {
 
 <pre>
 javac Main.java
-</pre>
-
-<pre>
-java Main.java
+java Main
 </pre>
 
 <pre>
@@ -168,7 +166,7 @@ Object created!
 Nick Marriotti
 </pre>
 
-	<p>Our constructor was automatically called and printed <code>Object created!</code>. We set our <code>name</code> variable using our <code>setter</code> method and printed it using our <code>getter</code> method. If you'd like to have the constructor set our name variable, you can modify the following sections of code.</p>
+	<p>Our constructor was automatically called and printed <code>Object created!</code>. We set our <code>name</code> variable using our <code>setter</code> method and printed it using our <code>getter</code> method. If you'd like to have the constructor set our name variable once the object is created, you can modify the following sections of code.</p>
 
 <pre class="line-numbers"><code class="language-java">
         Contact c = new Contact("Nick Marriotti");
@@ -181,7 +179,7 @@ Nick Marriotti
         setName(name);
     }
 
-    <p>That concludes the tutorial on creating classes and objects. Later on in the tutorial series we'll get into more advanced classes.</p>
+    <p>That concludes the tutorial on creating classes and objects. Later on in the tutorial series we'll get into more advanced classes using inheritance.</p>
 <br>
 <!-- Ad -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
