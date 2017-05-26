@@ -1674,7 +1674,7 @@ button, input, optgroup, select, textarea {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;}
+  font-weight: 700;}
 
 a {
   color: #f96332; }
@@ -1696,6 +1696,7 @@ h2, .h2 {
   margin-bottom: 30px; }
 
 h3, .h3 {
+  padding-top: 50px;
   font-size: 2em;
   margin-bottom: 30px;
   line-height: 1.4em; }
