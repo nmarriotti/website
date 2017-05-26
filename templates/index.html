@@ -27,7 +27,7 @@
                     <span class="navbar-toggler-bar bar2"></span>
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                <a class="navbar-brand" href="/" rel="tooltip" title="Back to the homepage." data-placement="bottom" target="_blank">
                     NICK MARRIOTTI
                 </a>
             </div>
@@ -70,7 +70,7 @@
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/header.jpg');">
+            <div class="page-header-image" data-parallax="true" style="background-image: url({{ url_for('static', filename='assets/img/header.jpg') }});">
             </div>
             <div class="container">
                 <div class="content-center brand">
