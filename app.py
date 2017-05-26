@@ -343,7 +343,7 @@ def Printing_with_Stringoutformat():
 
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][4][1], methods=['GET', 'POST'])
-def Classes_and_Objects():
+def Java_Classes_and_Objects():
     return render_template("tutorials/Java/classes-and-objects.html", curLink = TOPIC_DICT["Java"][4][1], curTitle=TOPIC_DICT["Java"][4][0], curTopic = "Java", title = TOPIC_DICT["Java"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
