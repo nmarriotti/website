@@ -344,7 +344,11 @@ def Printing_with_Stringoutformat():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][4][1], methods=['GET', 'POST'])
 def Java_Classes_and_Objects():
-    return render_template("tutorials/Java/classes-and-objects.html", curLink = TOPIC_DICT["Java"][4][1], curTitle=TOPIC_DICT["Java"][4][0], curTopic = "Java", title = TOPIC_DICT["Java"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Java/classes-and-objects.html", curLink = TOPIC_DICT["Java"][4][1], curTitle=TOPIC_DICT["Java"][4][0], curTopic = "Java", title = TOPIC_DICT["Java"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Java"][5][0], nextLink=TOPIC_DICT["Java"][5][1])
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][5][1], methods=['GET', 'POST'])
+def Class_inheritance():
+    return render_template("tutorials/Java/class-inheritance.html", curLink = TOPIC_DICT["Java"][5][1], curTitle=TOPIC_DICT["Java"][5][0], curTopic = "Java", title = TOPIC_DICT["Java"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	

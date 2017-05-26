@@ -1,0 +1,159 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, class, inheritance, objects, instantiate, nickmarriotti, tutorials, how-to, child, parent, super" />
+<meta name="description" content="How to use inheritance in Java by creating a sample Bank Account classes." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>In the last tutorial we learned how to create a class and create/use an object of that class. Now we are going to get into <code>inheritance</code>. Inheritance allows you to create an object of one class, known as the <code>child</code>class, but also <code>inherit</code>, or use the variables and methods from another also known as the <code>parent</code> or <code>super</code> class.</p>
+
+	  <p>For my example I will show you how inheritance works by creating basic bank account classes.</p>
+
+	  <h3>Account Class</h3>
+
+	  <p>The account class is going to be our <code>super</code> class. It will hold the account name and total amount in the account.</p>
+
+	  <p>Create a file <code>Account.java</code> and add the following code:</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Account {
+
+    private String name;
+    private long amount;
+
+    public Account(String name, long amount) {
+        this.name = name;
+        this.amount = amount;
+        this.setAmount(amount);
+    }
+
+    void deposit(long amount) {
+        this.amount += amount;
+    }
+
+    void setAmount(long amount) {
+        this.amount = amount;
+    }
+    
+    String getName() {
+        return name;
+    }
+
+    long getAmount() {
+        return amount;
+    }
+
+}
+</code></pre>	  
+
+	  <p>Looking at our class you can see the constructor <code>public Account()</code> requires a <code>name</code> and <code>amount</code> to be passed in. It also has methods to:</p>
+
+	  <ul>
+	  	<li>Deposit money</li>
+	  	<li>Set amount</li>
+	  	<li>Get account name</li>
+	  	<li>Get amount in account</li>
+
+	  	<p>That does it for our Account class. Lets move on to our next class.</p>
+
+	 
+	  <h3>CheckingAccount Class</h3>
+
+	  <p>To have our class inherit from the <code>Account</code> class we have to use the <code>extends</code> keyword when declaring our class.</p>
+
+	  <p>Create a file <code>CheckingAccount.java</code> and add the following code:</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class CheckingAccount extends Account {
+
+    public CheckingAccount(long amount) {
+        super("Checking", amount);
+    }
+    void withdraw(long amount) {
+        setAmount(getAmount() - amount);
+    }
+}
+</code></pre>	  
+
+	  <p>The <code>CheckingAccount</code> class has a single method to withdraw money.</p>
+
+	  <h3>What is super()?</h3>
+
+	  <p><code>super() is to be put in the constructor of the <code>child</code> class and is used to run the constructor in the <code>parent</code> class. We have to use super(), because that's where our <code>name</code> and <code>amount</code> variables are contained.</code>
+
+	  <h3>Calling Methods</h3>
+
+	  <p>If your <code>parent</code> and <code>child</code> classes contain the same method names, the method contained inside the <code>child</code> class will take precedence and run, vice the method in the <code>parent</code> class.</p>
+
+
+	  <h3>Main method</h3>
+
+	  <p>Create a file <code>Main.java</code> and add the following code:</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+
+        CheckingAccount a = new CheckingAccount(495);  /* create object with initial value of $495 */
+        System.out.println("Name: " + a.getName() );   /* Print out the account name */
+        System.out.println("Amount: " + a.getAmount() ); /* Print amount */
+        a.withdraw(150); /* withdraw $150 */
+        System.out.println("Amount: " + a.getAmount() ); /* Print amount again */
+    }
+}
+</code></pre>	
+
+	<h3>Testing it out</h3>
+
+	<p>Compile and run your program. Sample output is below.</p>
+
+<pre>
+Name: Checking
+Amount: 495
+Amount: 395
+</pre>
+
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

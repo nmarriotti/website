@@ -52,7 +52,8 @@ def Content():
     ["Public, Private, Protected","public-private-protected"],
     ["User Input","user-input"],
     ["Printing with String.out.format","printing-with-string-format"],
-    ["Basic Classes and Objects","classes-and-objects"]]}
+    ["Basic Classes and Objects","classes-and-objects"],
+    ["Class inheritance","class-inheritance"]]}
 
     return TOPIC_DICT
 
