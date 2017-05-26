@@ -1,0 +1,211 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, classes, objects, tutorial, methods, getter, setter, private, public, nickmarriotti" />
+<meta name="description" content="Basics on creating classes and objects in Java." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1536610602343915"
+		 data-ad-slot="3839980586"
+		 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+<br>
+	  <p>Essentially everything in Java is a class and an object. If you've never messed around with object-oriented programming languages, by the end of this tutorial you should have a fairly good idea of to create a class and an object of a class in Java.</p>
+
+	  <p>Classes define all the variables and methods for a particular object. For example, lets say you wanted to make an address book program. You could create a contact class and create a new object of that class which holds a particular persons contact information. In this tutorial we'll create something similar.</p>
+
+	  <p>Create a file <code>Main.java</code> and lets starting get the main method down. Remember class names MUST be the same name as the source file.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+
+
+    }
+}
+</code></pre>
+
+	  <p>Save the file and create a new file <code>Contact.java</code>. Similar to what we did for our previous file we need to define our class.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Contact {
+	
+
+}
+</code></pre>
+
+	<h3>Defining Class Variables</h3>
+
+	<p>Common practice is to make all variables private, meaning they are only accessible from within the same class. Lets create a variable.</p>
+
+public class Contact {
+	
+	private String name;
+
+}
+</code></pre>
+
+	  <h3>Constructor</h3>
+
+	  <p>The constructor is a method with the same name as the class. It contains blocks of code that will be executed automatically after an object of that class is instantiated. Think of it as an initializer. You can have it set all your defaults. For now we'll just have it print a statement so you can see how it works.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Contact {
+	
+	private String name;
+
+	public Contact {
+		// Constructor
+		System.out.println("Object created!");
+	}
+
+}
+</code></pre>
+
+	<h3>Getters and Setters</h3>
+
+	<p>To prevent classes from being able to directly access variables it's best to create <code>getter</code> and <code>setter</code> methods. Methods are blocks of code which complete a certain task.</p>
+
+	<p><code>Getter</code> methods are commonly used to return a variables current value while <code>Setter</code> methods are used to set a variables value.</p>
+
+<pre class="line-numbers"><code class="language-java">
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void getName() {
+        System.out.println(this.name);
+    }
+</code></pre>
+
+	<p><code>There we have two methods. One that <code>sets</code> the value of our <code>name</code> variable and one that <code>gets</code> the value of our <code>name</code> variable and prints it out. <code>this.name</code> tells the compiler that we are referring to the class variable called <code>name</code>.</p>
+
+	<h3>Final Contact class</h3>
+
+	<p>The complete <code>Contact.java</code> class is below. All that's left to do now is create an object in our main method.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Contact {
+    String name;
+
+    public Contact() {
+        System.out.println("Object created!");
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void getName() {
+        System.out.println(this.name);
+    }
+}
+</code></pre>
+
+	  <h3>Creating an Object</h3>
+
+	  <p>Heading back to our <code>Main.java</code> file, we need to create an object of our <code>contact</code> class. Here is the outline for creating an object.</p>
+
+<pre>
+ClassName objectName = new ClassName()
+</pre>
+
+	<p>So to create our object it will be:</p>
+
+<pre class="line-numbers"><code class="language-java">
+Contact c = new Contact()
+</code></pre>
+
+	  <h3>Calling Class Methods</h3>
+
+	  <p>Now we need to set the persons name for our object. We want call class methods using <code>objectName.methodName().</code>
+
+<pre class="line-numbers"><code class="language-java">
+c.setName("Nick Marriotti");
+c.getName();
+</code></pre>
+
+	<h3>Complete Main.java</h3>
+
+	<p>Your completed <code>Main.java</code> file should look like the one below.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        Contact c = new Contact();
+        c.setName("Nick Marriotti");
+        c.getName();
+    }
+}
+</code></pre>
+
+	<h3>Testing it all out</h3>
+
+	<p>The last thing we need to do is compile and run our program.</p>
+
+<pre>
+javac Main.java
+</pre>
+
+<pre>
+java Main.java
+</pre>
+
+<pre>
+Object created!
+Nick Marriotti
+</pre>
+
+	<p>Our constructor was automatically called and printed <code>Object created!</code>. We set our <code>name</code> variable using our <code>setter</code> method and printed it using our <code>getter</code> method. If you'd like to have the constructor set our name variable, you can modify the following sections of code.</p>
+
+<pre class="line-numbers"><code class="language-java">
+        Contact c = new Contact("Nick Marriotti");
+        c.getName();
+</code></pre>
+
+<pre class="line-numbers"><code class="language-java">
+    public Contact(String name) {
+        System.out.println("Object created!");
+        setName(name);
+    }
+
+    <p>That concludes the tutorial on creating classes and objects. Later on in the tutorial series we'll get into more advanced classes.</p>
+<br>
+<!-- Ad -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1536610602343915"
+     data-ad-slot="3839980586"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- End Ad -->
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

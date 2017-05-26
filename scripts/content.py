@@ -51,7 +51,8 @@ def Content():
     "Java":[["Hello World in Java","hello-world-in-java"],
     ["Public, Private, Protected","public-private-protected"],
     ["User Input","user-input"],
-    ["Printing with String.out.format","printing-with-string-format"]]}
+    ["Printing with String.out.format","printing-with-string-format"],
+    ["Classes and Objects","classes-and-objects"]]}
 
     return TOPIC_DICT
 

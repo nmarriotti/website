@@ -339,7 +339,13 @@ def Java_User_Input():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][3][1], methods=['GET', 'POST'])
 def Printing_with_Stringoutformat():
-    return render_template("tutorials/Java/printing-with-string-format.html", curLink = TOPIC_DICT["Java"][3][1], curTitle=TOPIC_DICT["Java"][3][0], curTopic = "Java", title = TOPIC_DICT["Java"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Java/printing-with-string-format.html", curLink = TOPIC_DICT["Java"][3][1], curTitle=TOPIC_DICT["Java"][3][0], curTopic = "Java", title = TOPIC_DICT["Java"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["Java"][4][0], nextLink=TOPIC_DICT["Java"][4][1])
+
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][4][1], methods=['GET', 'POST'])
+def Classes_and_Objects():
+    return render_template("tutorials/Java/classes-and-objects.html", curLink = TOPIC_DICT["Java"][4][1], curTitle=TOPIC_DICT["Java"][4][0], curTopic = "Java", title = TOPIC_DICT["Java"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 	
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
