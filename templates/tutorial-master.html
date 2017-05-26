@@ -75,14 +75,15 @@
                <h4 class="description">{{ curTopic }}</h4><hr>
                 <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12 padding-bottom">
-                    <!-- start post -->
-                    {% block content %}
-                    {% endblock %}
-                         <ul>
+                <h3>Tutorial Listing</h3>
+                                         <ul>
                           {% for t in TOPIC_DICT[curTopic] %}
                           <li><a href="{{t[1]}}">{{t[0]}}</a></li>
                           {% endfor %}
                         </ul>
+                    <!-- start post -->
+                    {% block content %}
+                    {% endblock %}
                     <!-- end post -->
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-12">
