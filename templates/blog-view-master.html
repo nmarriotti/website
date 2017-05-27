@@ -70,17 +70,18 @@
                         </div>
                     <!-- end post -->
                 </div>
-
+                <div class="col-xs-12 col-sm-12 col-lg-3 padding-bottom">
                     <aside class="widget widget_categories">
-                        <h3 class="widget-title">Older Posts</h3>
+                        <h6>Older Posts</h6>
                         <ul>
                           {% for t in BLOG_TOPIC_DICT["blog"] %}
                           <li><a href="/blog/{{t[1]}}">{{t[0]}}</a></li>
                           {% endfor %}
                         </ul>
                     </aside>
-
-                <div class="col-xs-12 col-sm-12 col-lg-9 padding-bottom">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-12 padding-bottom">
+                <br><br><br>
                   <div id="disqus_thread"></div>
                     <script>
                         (function() { // DON'T EDIT BELOW THIS LINE
@@ -92,7 +93,7 @@
                     </script>
                     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                 </div>
-                
+
                     <!-- end slidebar -->
                 </div>
 
