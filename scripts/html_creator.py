@@ -14,19 +14,7 @@ HTML_TEMPLATE = """
 
 {% block content %}
 
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-1536610602343915"
-		 data-ad-slot="3839980586"
-		 data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
-<br>
+
 	  <div class="embed-responsive embed-responsive-16by9">VIDEO EMBED</div>
 
 	  <p></p>
@@ -48,24 +36,13 @@ COMMAND PROMPT CODE HERE
 </code></pre>
 
 
-	  <p></p>
+
 <br>
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1536610602343915"
-     data-ad-slot="3839980586"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
+
 
 <div class="post-pagination">
    {% if nextTitle != "None" %}
-  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
   {% else %}
   You've reached the last tutorial for now. Check back later for more.
   <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
