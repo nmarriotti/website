@@ -55,12 +55,12 @@
                     </li>
                                                                 <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Dropdown
+                                                    More {{ curTopic }} Tutorials
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
+                          {% for t in TOPIC_DICT[curTopic] %}
+                          <li><a class="dropdown-item" href="{{t[1]}}">{{t[0]}}</a></li>
+                          {% endfor %}
                                                 </div>
                                             </li>
                     <li class="nav-item">
@@ -85,11 +85,6 @@
                <h4 class="description">{{ curTopic }}</h4><hr>
                 <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12 padding-bottom">
-                                         <ul>
-                          {% for t in TOPIC_DICT[curTopic] %}
-                          <li><a href="{{t[1]}}">{{t[0]}}</a></li>
-                          {% endfor %}
-                        </ul>
                     <!-- start post -->
                     {% block content %}
                     {% endblock %}
@@ -113,42 +108,7 @@
                 </div>
             </div>
         </div>
-        <footer class="footer footer-default">
-            <div class="container">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                                MIT License
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>, Designed by
-                    <a href="http://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-                </div>
-            </div>
-        </footer>
+    {% include 'includes/newfooter.html' %}
     </div>
 </body>
 
