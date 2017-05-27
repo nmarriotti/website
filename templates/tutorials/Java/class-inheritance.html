@@ -9,19 +9,7 @@
 
 {% block content %}
 
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-1536610602343915"
-		 data-ad-slot="3839980586"
-		 data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
-<br>
+
 	  <p>In the last tutorial we learned how to create a class and create/use an object of that class. Now we are going to get into <code>inheritance</code>. Inheritance allows you to create an object of one class, known as the <code>child</code>class, but also <code>inherit</code>, or use the variables and methods from another also known as the <code>parent</code> or <code>super</code> class.</p>
 
 	  <p>For my example I will show you how inheritance works by creating basic bank account classes.</p>
@@ -132,25 +120,13 @@ Amount: 395
 </pre>
 
 <br>
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1536610602343915"
-     data-ad-slot="3839980586"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
 
 <div class="post-pagination">
    {% if nextTitle != "None" %}
-  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-simple btn-round btn-lg"> Next Tutorial: {{nextTitle}}</a>
   {% else %}
   You've reached the last tutorial for now. Check back later for more.
-  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  <a title="Home" href="/" class="btn btn-simple btn-round btn-lg">Home</a>
   {% endif %}
 </div>
 
