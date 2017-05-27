@@ -1673,9 +1673,17 @@ textarea.form-control:focus, textarea.form-control:active {
 button, input, optgroup, select, textarea {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
 
-p, ul, ol, pre, table, blockquote {
+p, ul, ol, table, blockquote {
     margin-top: 12px;
     margin-bottom: 12px;
+}
+
+pre {
+padding: 3px 5px; border: 3px double silver;
+background: #eee; overflow: auto;
+margin-top: 12px;
+margin-bottom: 12px;
+/* causes a scrollbar if content does not fit */
 }
 
 h1, h2, h3, h4, h5, h6 {
