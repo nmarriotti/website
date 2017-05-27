@@ -9,19 +9,6 @@
 
 {% block content %}
 
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-1536610602343915"
-		 data-ad-slot="3839980586"
-		 data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
-<br>
 	<p>Java is one of the most popular programming languages. It's source code is compiled down to bytecode that is ran from the Java Virtual Machine. Before we get started make sure you have the <strong>Java Runtime Environment (JRE)</strong> and <strong>Java Development Kit (JDK)</strong> installed.</p>
 
 	<p>When working with Java, all classes and functions MUST be wrapped in curly braces and all statements MUST end with a semicolon.</p>
@@ -65,22 +52,11 @@ Hello World
 	  <p>Congrats, you just wrote, compiled and ran your first Java program!</p>
 
 <br>
-<!-- Ad -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad_responsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1536610602343915"
-     data-ad-slot="3839980586"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- End Ad -->
+
 
 <div class="post-pagination">
    {% if nextTitle != "None" %}
-  <a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a>
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
   {% else %}
   You've reached the last tutorial for now. Check back later for more.
   <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
