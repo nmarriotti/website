@@ -68,15 +68,13 @@
             <div class="container">
                <!-- Title Page -->
                <h2 class="title">Select a Language</h2>
-               <!-- Description Page -->
-               <h4 class="description">New tutorials are added daily!</h4><hr>
                 <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12 padding-bottom">
                     <!-- start post -->
                         <div class="list-group">
                           {% for t in TUTORIAL_CAT["Types"] %}
                           {% set tutType = t[0] %}
-                          <a href="{{t[1]}}" class="list-group-item"><span class="label label-primary">{{ TOPIC_DICT[tutType]|length }}</span> {{t[0]}}  </a>
+                          <a href="{{t[1]}}" class="list-group-item"><span class="badge badge-primary">{{ TOPIC_DICT[tutType]|length }}</span> {{t[0]}}  </a>
                           {% endfor %}
                         </div>
                     <!-- end post -->
