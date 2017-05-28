@@ -3,7 +3,7 @@
 
 {% block metatags %}
 <meta name="keywords" content="python, error, handling, try, except" />
-<meta name="description" content="Using try, catch statements to prevent python script from crashing." />
+<meta name="description" content="In Python you can use try/except statements to prevent your script from crashing. Here's how you can implement error handling." />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 {% endblock %}
 
@@ -44,40 +44,29 @@ def main():
         x = 1/0
     	print(x)
     except ZeroDivisionError:
-        continue
+        pass
 
     print("Hi there")
 </code></pre>
 
-	<p>The example above will only handle a <code>ZeroDivisionError</code>. If we want to catch all possible errors just use <code>except</code>.</p>
+	<p>The example above will only handle a <code>ZeroDivisionError</code>. If we want to catch all possible errors just use <code>except</code> by itself.</p>
 
 <pre class="line-numbers"><code class="language-python">
 def main():
     try:
         x = 1/0
     	print(x)
-    except ZeroDivisionError:
-        continue
+    except:
+        pass
 
     print("Hi there")
 </code></pre>
 
-	<p>When we run our program now the error is ignored and our script finishes executing.</p>
+	<p>Run the program. The error is caught and the program continues on without issue.</p>
 
 <pre>
 Hi there!
 </pre>
-
-
-
-
-
-
-<pre class="command-line"><code class="language-bash">
-COMMAND PROMPT CODE HERE
-</code></pre>
-
-
 
 <br>
 
