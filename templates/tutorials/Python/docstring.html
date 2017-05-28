@@ -1,0 +1,73 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, docstring, string, replace, comment" />
+<meta name="description" content="You can use docstrings to comment blocks of code and create personalized messages in Python." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>In Python a<strong>docstring</strong> is a string literal beginning and ending in three apostrophes <code>'''</code> typically used to comment blocks of code. This page was actually created using a docstring. In this tutorial we'll create a personalized message.</p>
+
+<pre class="line-numbers"><code class="language-python">
+'''
+This is a docstring.
+'''
+</code></pre>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    message = '''    
+Hello TO_NAME,
+                
+    Python is a widely used high-level programming language for general-purpose programming, 
+created by Guido van Rossum and first released in 1991. An interpreted language, Python has 
+a design philosophy which emphasizes code readability (notably using whitespace indentation 
+to delimit code blocks rather than curly brackets or keywords), and a syntax which allows 
+programmers to express concepts in fewer lines of code than possible in languages such as 
+C++ or Java.
+
+Thanks,
+FROM_NAME
+'''
+</code></pre>
+
+	  <p>Right now the message variable is set to our docstring. Check out the use of the unique <code>TO_NAME</code> and <code>FROM_NAME</code>. These words don't occur anywhere else in the string so we can use the print fnction to replace them with something else.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    print(message.replace("TO_NAME", "Jon Smith").replace("FROM_NAME", "Nick"))
+</code></pre>
+
+	<p>The above print statement is replacing all instances of <code>TO_NAME</code> and <code>FROM_NAME</code> with <strong>Jon Smith</strong> and <strong>Nick</strong> leaving us with the following output.</p>
+
+<pre>
+Hello Jon Smith,
+
+    Python is a widely used high-level programming language for general-purpose programming,
+created by Guido van Rossum and first released in 1991. An interpreted language, Python has
+a design philosophy which emphasizes code readability (notably using whitespace indentation
+to delimit code blocks rather than curly brackets or keywords), and a syntax which allows
+programmers to express concepts in fewer lines of code than possible in languages such as
+C++ or Java.
+
+Thanks,
+Nick
+</pre>
+
+<br>
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
