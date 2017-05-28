@@ -175,7 +175,13 @@ def If_Statements():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][8][1], methods=['GET', 'POST'])
 def python_Loops():
-    return render_template("tutorials/Python/loops.html", curLink = TOPIC_DICT["Python"][8][1], curTitle=TOPIC_DICT["Python"][8][0], curTopic = "Python", title = TOPIC_DICT["Python"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/loops.html", curLink = TOPIC_DICT["Python"][8][1], curTitle=TOPIC_DICT["Python"][8][0], curTopic = "Python", title = TOPIC_DICT["Python"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][9][0], nextLink=TOPIC_DICT["Python"][9][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][9][1], methods=['GET', 'POST'])
+def Error_Handling():
+    return render_template("tutorials/Python/error-handling.html", curLink = TOPIC_DICT["Python"][9][1], curTitle=TOPIC_DICT["Python"][9][0], curTopic = "Python", title = TOPIC_DICT["Python"][9][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 

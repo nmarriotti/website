@@ -1,0 +1,97 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, error, handling, try, except" />
+<meta name="description" content="Using try, catch statements to prevent python script from crashing." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	  <p>Error Handling is essential to ensure a script does not crash while running. In this tutorial I'll create a script with an error and show you how to implement error handling to prevent our script from crashing.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    x = 1/0
+    print(x)
+
+    print("Hi there")
+</code></pre>
+
+	  <p>Here we are trying to divide by zero. You can't divide by zero so when the script is executed we are immediately greeted with the below error and our script terminates.</p>
+
+
+<pre><p class="text-danger"></p>
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+    main()
+  File "main.py", line 2, in main
+    x = 1/0
+ZeroDivisionError: integer division or modulo by zero
+</pre>
+
+
+	  <p>So how can we ignore this error?</p>
+
+	  <h2>Using try/except</h2>
+
+	  <p>We could <code>try</code> to exceute <code>x = 1/0</code> and if it results in an error use the <code>except</code> statement to ignore it using the <code>pass</code> statement. When looping you can also use the <code>continue</code> statement.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    try:
+        x = 1/0
+    	print(x)
+    except ZeroDivisionError:
+        continue
+
+    print("Hi there")
+</code></pre>
+
+	<p>The example above will only handle a <code>ZeroDivisionError</code>. If we want to catch all possible errors just use <code>except</code>.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    try:
+        x = 1/0
+    	print(x)
+    except ZeroDivisionError:
+        continue
+
+    print("Hi there")
+</code></pre>
+
+	<p>When we run our program now the error is ignored and our script finishes executing.</p>
+
+<pre>
+Hi there!
+</pre>
+
+
+
+
+
+
+<pre class="command-line"><code class="language-bash">
+COMMAND PROMPT CODE HERE
+</code></pre>
+
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
