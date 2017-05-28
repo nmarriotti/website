@@ -1679,7 +1679,7 @@ p, ul, ol, table, blockquote {
 }
 
 pre {
-padding: 3px 5px; border: 3px double silver;
+padding: 3px 5px;
 background: #eee; overflow: auto;
 margin-top: 12px;
 margin-bottom: 12px;
