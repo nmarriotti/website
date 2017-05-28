@@ -22,13 +22,13 @@ def main():
 	  <p>Here we are trying to divide by zero. You can't divide by zero so when the script is executed we are immediately greeted with the below error and our script terminates.</p>
 
 
-<pre><p class="text-danger"></p>
+<pre><p class="text-danger">
 Traceback (most recent call last):
   File "main.py", line 6, in <module>
     main()
   File "main.py", line 2, in main
     x = 1/0
-ZeroDivisionError: integer division or modulo by zero
+ZeroDivisionError: integer division or modulo by zero</p>
 </pre>
 
 
@@ -36,7 +36,7 @@ ZeroDivisionError: integer division or modulo by zero
 
 	  <h2>Using try/except</h2>
 
-	  <p>We could <code>try</code> to exceute <code>x = 1/0</code> and if it results in an error use the <code>except</code> statement to ignore it using the <code>pass</code> statement. When looping you can also use the <code>continue</code> statement.</p>
+	  <p>We could <code>try</code> to exceute <code>x = 1/0</code> and if it results in an error use the <code>except</code> statement to ignore and <code>pass</code> on that code. When looping you can also use the <code>continue</code> statement.</p>
 
 <pre class="line-numbers"><code class="language-python">
 def main():
