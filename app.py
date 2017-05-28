@@ -180,8 +180,12 @@ def python_Loops():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][9][1], methods=['GET', 'POST'])
 def Error_Handling():
-    return render_template("tutorials/Python/error-handling.html", curLink = TOPIC_DICT["Python"][9][1], curTitle=TOPIC_DICT["Python"][9][0], curTopic = "Python", title = TOPIC_DICT["Python"][9][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/error-handling.html", curLink = TOPIC_DICT["Python"][9][1], curTitle=TOPIC_DICT["Python"][9][0], curTopic = "Python", title = TOPIC_DICT["Python"][9][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][10][0], nextLink=TOPIC_DICT["Python"][10][1])
 
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][10][1], methods=['GET', 'POST'])
+def Writing_to_a_File():
+    return render_template("tutorials/Python/writing-to-a-file.html", curLink = TOPIC_DICT["Python"][10][1], curTitle=TOPIC_DICT["Python"][10][0], curTopic = "Python", title = TOPIC_DICT["Python"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 

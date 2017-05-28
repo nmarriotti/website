@@ -1,0 +1,40 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, write, file, open, writer, write, files" />
+<meta name="description" content="Ready to learn how to write to a file in Python? Lets do it!" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	  <p>Writing to a file in Python is very easy and requires very little code.</p>
+	  <p></p>
+
+
+<pre class="line-numbers"><code class="language-python">
+    writer = open("testfile.txt", 'w')
+    writer.write("This is sent to the output file.\n")
+    writer.close()
+</code></pre>
+
+	  <p>In the code above we called the <code>open</code> function specifying the filename we want to create and used <code>w</code> for write mode and stored that into a <code>writer</code> variable. Next all you do is call the <code>write()</code> function and include the statement you want to send to the file. When finished with wthe file be sure to close it using the <code>close()</code> function.</p>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
