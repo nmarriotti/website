@@ -185,12 +185,12 @@ def Error_Handling():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][10][1], methods=['GET', 'POST'])
 def Writing_to_a_File():
-    return render_template("tutorials/Python/writing-to-a-file.html", curLink = TOPIC_DICT["Python"][10][1], curTitle=TOPIC_DICT["Python"][10][0], curTopic = "Python", title = TOPIC_DICT["Python"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/writing-to-a-file.html", curLink = TOPIC_DICT["Python"][10][1], curTitle=TOPIC_DICT["Python"][10][0], curTopic = "Python", title = TOPIC_DICT["Python"][10][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][10][0], nextLink=TOPIC_DICT["Python"][10][1])
 
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][11][1], methods=['GET', 'POST'])
 def Reading_from_a_File():
-    return render_template("tutorials/Python/reading-from-a-file.html", curLink = TOPIC_DICT["Python"][11][1], curTitle=TOPIC_DICT["Python"][11][0], curTopic = "Python", title = TOPIC_DICT["Python"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][10][0], nextLink=TOPIC_DICT["Python"][10][1])
+    return render_template("tutorials/Python/reading-from-a-file.html", curLink = TOPIC_DICT["Python"][11][1], curTitle=TOPIC_DICT["Python"][11][0], curTopic = "Python", title = TOPIC_DICT["Python"][11][0], TOPIC_DICT = TOPIC_DICT, nextTitle="None")
 
 
 
