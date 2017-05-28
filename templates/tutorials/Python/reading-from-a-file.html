@@ -1,0 +1,74 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, reading, file, open, loop, read" />
+<meta name="description" content="With this tutorial you'll be reading files with Python in no time!" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>So you have a file that you want your python script to open and read huh? In this tutorial I'll show you how you can open a file and print all the contents of that file to the screen.</p>
+
+	  <p>Here's the contents of <code>test.txt</code>, a file that we want our script to open and read.</p>
+
+<pre>
+This is line 1.
+This is the next line.
+This is the last line.
+</pre>
+
+	  <p>Now lets get to the Python code to open and read that file.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    try: 
+        fh = open("test.txt", "r")
+        for line in fh:
+            print(line)
+    except:
+        print("Unable to open file.")
+</code></pre>
+
+	<p>I added some error handling to display an error if the file doesn't exist. We set <code>fh</code> to the file we want to open and used a <code>for</code> loop to grab each line in the file. But wait...
+
+<pre>
+This is line 1.
+
+This is the next line.
+
+This is the last line.
+</pre>
+
+	<p>How can we get rid of the blank lines? Easily using the <code>strip()</code> function. Just edit the print statement in the for loop.</p>
+
+<pre class="line-numbers"><code class="language-python">
+print(line.strip())
+</code></pre>
+
+<pre>
+python readfile.py
+This is the line 1.
+This is the next line.
+This is the last line.
+</pre>
+
+	<p>Now that you learned how to read a file using Python would you like to put your skills to the test? Trying creating a script that asks the user what file to open, store the input, open that file and then print out the contents.</p>	
+
+
+
+<br>
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
