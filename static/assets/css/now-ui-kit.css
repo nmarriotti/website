@@ -1673,6 +1673,9 @@ textarea.form-control:focus, textarea.form-control:active {
 button, input, optgroup, select, textarea {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
 p, ul, ol, table, blockquote {
     margin-top: 12px;
     margin-bottom: 12px;
@@ -1735,7 +1738,11 @@ p {
   line-height: 1.61em; }
 p.description {
   font-size: 1.14em; }
-
+ 
+.seo {
+  margin-top: 50px;
+  padding: 30px;
+}
 .title {
   font-weight: 700; }
 .title.title-up {
