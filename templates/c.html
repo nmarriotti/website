@@ -77,7 +77,7 @@
                     <!-- start post -->
         <div class="list-group">
           {% for t in TOPIC_DICT[title] %}
-          <a href="/tutorials/{{title.lower()}}/{{t[1]}}" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span> {{t[0]}}</a>
+          <a href="/tutorials/{{title.lower()}}/{{t[1]}}" class="list-group-item list-group-item-action">{{t[0]}}</a>
           {% endfor %}
         </div>
                     <!-- end post -->
