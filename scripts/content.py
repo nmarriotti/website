@@ -57,7 +57,8 @@ def Content():
     ["User Input","user-input"],
     ["Printing with String.out.format","printing-with-string-format"],
     ["Basic Classes and Objects","classes-and-objects"],
-    ["Class inheritance","class-inheritance"]]}
+    ["Class inheritance","class-inheritance"],
+    ["Dynamic Arrays using ArrayList","dynamic-arrays-using-arraylist"]]}
 
     return TOPIC_DICT
 

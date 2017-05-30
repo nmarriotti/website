@@ -1,0 +1,147 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, array, collection, list, index, sort" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>In Java an ArrayList is something you can use to create <strong>dynamic</strong> arrays which you can add and remove values to whenever necessary. When creating an array you must also declare the <strong>data type</strong> or object class defining the type of information the list will contain. In this tutorial we will create an ArrayList of strings and look at how we can sort the data in the ArrayList.</p>
+
+	  <h3>Import Package</h3>
+
+	  <p>Before we can create an ArrayList object we must include the required package.</p>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.ArrayList;
+</code></pre>
+
+	<h3>Creating ArrayList</h3>
+
+	<p>The basic outline for creating an ArrayList is:</p>
+
+<pre>
+ArrayList&lt;DATATYPE&gt; LISTNAME = new ArrayList&lt;DATATYPE&gt;();
+</pre>
+	
+	<p>Lets go ahead and create an ArrayList of strings called <code>MyList</code>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+ArrayList&lt;String&gt; MyList = new ArrayList&lt;String&gt;();
+</code></pre>	
+
+	<h3>Adding Items</h3>
+
+	<p>To add values to our ArrayList we can use the ArrayList class method <code>add()</code>. Lets go ahead and add three values now.</p>
+
+<pre class="line-numbers"><code class="language-java">
+MyList.add("Orange");
+MyList.add("Blue");
+MyList.add("Purple");
+</code></pre>		
+
+	<h3>Removing Values</h3>
+
+	<p>To remove values from an ArrayList you can call the remove() method specifing the <code>index</code> where the value is located. The example below would remove the value <code>Purple</code> from <code>MyList</code>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+MyList.remove(2);
+</code></pre>	
+
+
+	<h3>Get List Size</h3>
+
+	<p>Just like adding and removing information from a list there is also a method to get the size or total number of values contained in the ArrayList.</p>
+
+<pre class="line-numbers"><code class="language-java">
+MyList.size();
+</code></pre>
+
+	<h3>Getting Value</h3>
+
+	<p>To get a value from the list you can use the <code>get()</code> method and give it the <code>index</code> for the value you want to retrieve. The example below would retrieve the value located at <code>index 0</code>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+MyList.get(0);
+</code></pre>	
+
+	<h3>Looping through items</h3>
+
+	<p>To print out everything in our list we will be using a <code>for</code> loop. The example below is basically saying <strong>for each item in MyList</strong>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+for(String item : MyList) {
+    System.out.println(item);
+}
+</code></pre>		
+
+	<h3>Example Program</h3>
+
+	<p>Here is a sample program using an ArrayList and all the methods we talked about in this tutorial.</p>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int size; /* Will store size of list */
+
+        //Create an ArrayList of string values 
+        ArrayList&lt;String&gt; MyList = new ArrayList&lt;String&gt;();  
+
+        // Add values to the List
+        MyList.add("Orange");
+        MyList.add("Blue");
+        MyList.add("Purple");
+
+        // Remove item from list
+        MyList.remove("Purple");
+
+        // Set our list size
+        size = MyList.size();
+
+        // Get value from list
+        System.out.println("Value at index 0 is: " + MyList.get(0));
+
+        // Print out the list size
+        System.out.println("List size: " + size);
+
+        // Print everything in our list
+        for(String item : MyList) {
+            System.out.println(item);
+        }
+    }
+}
+</code></pre>	
+
+	<p>Here is the output from the above program.</p>
+	
+<pre>
+Value at index 0 is: Orange
+List size: 2
+Orange
+Blue
+</pre>
+
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
