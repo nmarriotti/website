@@ -1,0 +1,153 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, class, classes, object, object-oriented, instantiate" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Python is an object-oriented programming language. Objects are created from classes, which are essentially blueprints. Classes are comprised of all for a particular object. In this tutorial we'll learn how to create a basic class, take a look at constructor, work with modules, create objects and use some of our objects methods.</p>
+
+	  <p>For this tutorial we will be creating a <code>Book</code> class. Before we begin coding we need to think of some of the traits a book has.</p>
+
+	  <ul>
+	  	<li>Title</li>
+	  	<li>Author</li>
+	  </ul>
+
+	  <h3>Creating a Class</h3>
+
+	  <p>Begin by creating a new file called <code>Book.py</code> in your current working directory and add the following code.</p>
+
+<pre class="line-numbers"><code class="language-python">
+class Book():
+</code></pre>	  
+
+	<h3>Constructors</h3>
+
+	<p>A constructor is a method containing code that will be executed immediately after instantiating (creating) an object. For now let's set our book's title using the constructor so you can see how it works.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    def __init__(self, title):
+    	self.title = title
+</code></pre>
+
+	  <p>To create our constructor we call the <code>__init__</code>, or initialize method and pass in <code>self</code> and the title. Since our constructor now requires a title parameter we will need to be sure to set the title when we create our object later in the tutorial.</p>
+
+	  <h4>What is self?</h4>
+
+	  <p>Passing in <code>self</code> means that we are referring to a class variable and not an instance variable. An instance variable is a variable contained only inside our method.</p>
+
+
+	  <h3>Class Methods</h3>
+
+	  <p>Now we need to create some methods to set and get the title and author of our book object.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    def getTitle(self):
+        return self.title
+
+    def setAuthor(self, author):
+        self.author = author
+
+    def getAuthor(self):
+        return self.author
+</code></pre>
+
+	<p>For our get methods we are simply returning the variable being sure to always use <code>self</code> followed by the variable name and for the set methods we are setting our variable equal to the variable name in the method parameters.</p>
+
+	<p>Save your <code>Book.py</code> file.</p>
+
+	<h3>Importing a Class</h3>
+
+	<p>Create a new file <code>main.py</code>. The first thing we need to do is import our class. 
+
+<pre class="line-numbers"><code class="language-python">
+from Book import Book
+</code></pre>
+
+	<p>What we are saying in the above statement is... <strong>from the file Book.py import the Book class</strong>. If our Book.py file was located in a folder called <code>classes</code> our import statement would be:</p>
+
+<pre class="line-numbers"><code class="language-python">
+from classes.Book import Book
+</code></pre>	
+
+	<p>Now that we have our class imported we can create objects with it.</p>
+
+	<h3>Creating an Object</h3>
+
+	<p>Remember, since our class constructor requires a title we need to pass in a book title when we create our object. To create an object we can do something like this...</p>
+
+<pre class="line-numbers"><code class="language-python">
+    book1 = Book("The Cat in the Hat")
+</code></pre>
+
+	<h3>Using Class Methods</h3>
+
+	<p>To use our class methods we can use <code>book1.METHODNAME()</code>. Lets go ahead and set the author of our first book object.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    book1.setAuthor("Dr. Seuss")
+</code></pre>
+
+	<p>Now lets use some print statements and our <code>get</code> methods to return our books title and author.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    print(book1.getTitle())
+    print(book1.getAuthor())
+</code></pre>
+
+	<h3>Complete Code</h3>
+
+<pre class="line-numbers"><code class="language-python">
+# Book.py
+class Book():
+    def __init__(self, title):
+        print("Book object created.")
+        self.title = title
+    
+    def getTitle(self):
+        return self.title
+
+    def setAuthor(self, author):
+        self.author = author
+
+    def getAuthor(self):
+        return self.author
+</code></pre>
+
+<pre class="line-numbers"><code class="language-python">
+# main.py
+from Book import Book
+
+def main():
+    book1 = Book("The Cat in the Hat")
+    print(book1.getTitle())
+    book1.setAuthor("Dr. Seuss")
+    print(book1.getAuthor())
+
+if __name__ == "__main__":
+    main()
+</code></pre>	
+
+	  <p>That covers the basics of creating and using classes in Python. You can create as many objects of that class as needed, because remember, classes are just blueprints for objects. If you have any questions please be sure to leave a comment below.</p>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

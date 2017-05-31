@@ -195,7 +195,13 @@ def Reading_from_a_File():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][12][1], methods=['GET', 'POST'])
 def DOCSTRING():
-    return render_template("tutorials/Python/docstring.html", curLink = TOPIC_DICT["Python"][12][1], curTitle=TOPIC_DICT["Python"][12][0], curTopic = "Python", title = TOPIC_DICT["Python"][12][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/docstring.html", curLink = TOPIC_DICT["Python"][12][1], curTitle=TOPIC_DICT["Python"][12][0], curTopic = "Python", title = TOPIC_DICT["Python"][12][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][13][0], nextLink=TOPIC_DICT["Python"][13][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][13][1], methods=['GET', 'POST'])
+def Python_Classes_and_Objects():
+    return render_template("tutorials/Python/classes-and-objects.html", curLink = TOPIC_DICT["Python"][13][1], curTitle=TOPIC_DICT["Python"][13][0], curTopic = "Python", title = TOPIC_DICT["Python"][13][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][0][1], methods=['GET', 'POST'])
