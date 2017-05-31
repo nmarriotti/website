@@ -9,7 +9,7 @@
 {% block content %}
 
 
-	  <p>Python is an object-oriented programming language. Objects are created from classes, which are essentially blueprints. Classes are comprised of all for a particular object. In this tutorial we'll learn how to create a basic class, take a look at constructor, work with modules, create objects and use some of our objects methods.</p>
+	  <p>Python is an object-oriented programming language. Objects are created from classes, which are essentially blueprints. Classes are comprised of all traits for a particular object. In this tutorial we'll learn how to create a basic class, learn what a constructor is, work with modules, create objects and use some of our objects methods.</p>
 
 	  <p>For this tutorial we will be creating a <code>Book</code> class. Before we begin coding we need to think of some of the traits a book has.</p>
 
@@ -28,7 +28,7 @@ class Book():
 
 	<h3>Constructors</h3>
 
-	<p>A constructor is a method containing code that will be executed immediately after instantiating (creating) an object. For now let's set our book's title using the constructor so you can see how it works.</p>
+	<p>A constructor is a method containing code that will be executed immediately after instantiating (creating) an object. For now let's set our books title using the constructor so you can see how it works.</p>
 
 <pre class="line-numbers"><code class="language-python">
     def __init__(self, title):
@@ -57,7 +57,7 @@ class Book():
         return self.author
 </code></pre>
 
-	<p>For our get methods we are simply returning the variable being sure to always use <code>self</code> followed by the variable name and for the set methods we are setting our variable equal to the variable name in the method parameters.</p>
+	<p>For our get methods we are simply returning the variable being sure to always use <code>self</code> followed by the variable name and for the set methods we are setting our variable equal to the variable name passed into the method.</p>
 
 	<p>Save your <code>Book.py</code> file.</p>
 
@@ -79,11 +79,17 @@ from classes.Book import Book
 
 	<h3>Creating an Object</h3>
 
-	<p>Remember, since our class constructor requires a title we need to pass in a book title when we create our object. To create an object we can do something like this...</p>
+	<p>Remember, since our class constructor requires a title, we need to pass in a book title when we create our object. To create an object we can do something like this...</p>
 
 <pre class="line-numbers"><code class="language-python">
     book1 = Book("The Cat in the Hat")
 </code></pre>
+
+	<p>As soon as we create our object the constructor is called and outputs the following statement as well as sets the book title variable.</p>
+
+<pre>
+Book object created.
+</pre>
 
 	<h3>Using Class Methods</h3>
 
@@ -99,6 +105,11 @@ from classes.Book import Book
     print(book1.getTitle())
     print(book1.getAuthor())
 </code></pre>
+
+<pre>
+The Cat in the Hat
+Dr. Seuss
+</pre>
 
 	<h3>Complete Code</h3>
 
@@ -131,7 +142,9 @@ def main():
 
 if __name__ == "__main__":
     main()
-</code></pre>	
+</code></pre>
+
+
 
 	  <p>That covers the basics of creating and using classes in Python. You can create as many objects of that class as needed, because remember, classes are just blueprints for objects. If you have any questions please be sure to leave a comment below.</p>
 
