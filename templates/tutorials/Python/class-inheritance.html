@@ -1,0 +1,101 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, classes, inheritance, super, objects, inherit, methods, init" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	  <p>When you create a class in Python you can use inheritance, which allows your class to inherit all traits and methods from another class.</p>
+
+
+	  <h3>Creating the Super Class</h3>
+
+	  <p>Our <code>Pet</code> class will hold the name of our Pet and the type of pet we have as well as some methods to return the name and type.</p>
+
+<pre class="line-numbers"><code class="language-python">
+class Pet:
+    def __init__(self, name, type):
+        self.name = name
+        self.type = type
+
+    def getName(self):
+        return self.name
+    
+    def gettype(self):
+        return self.type
+
+    def __str__(self):
+        return "{} is a {}".format(self.name, self.type)
+</code></pre>
+
+
+	  <h3>Using Inheritance</h3>
+
+	  <p>When you define your class, inside the quotations you simply put the name of the class you want to inherit from. The inherited class then becomes known as the <code>parent</code> or <code>super</code> class.</p>
+
+
+	  <p>In this example we will create a <code>Dog</code> class and set it to inherit everything from the <code>Pet</code> class.</p>
+
+
+<pre class="line-numbers"><code class="language-python">
+class Dog(Pet):
+    def __init__(self, name, breed):
+        Pet.__init__(self, name, "Dog")
+        self.breed = breed
+
+    def getBreed(self):
+        print(self.breed)
+</code></pre>
+
+	<p>When we create an object of our Dog class the constructor for the <code>Pet</code> class will not automatically be called, because the Dog constructor takes precedence so we have to <code>call</code> our Pet class constructor manually.</p>
+
+<pre class="line-numbers"><code class="language-python">
+        Pet.__init__(self, name, "Dog")
+</code></pre>	
+
+
+	<h3>Creating Objects</h3>
+
+	<p>Now that we have our classes built it's time to create a <code>Dog</code> object and see the inheritance in action.</p>
+
+
+<pre class="line-numbers"><code class="language-python">
+    Buddy = Dog("Buddy", "Golden Retriever")
+    print(Buddy)
+    Buddy.getBreed()
+
+    Max = Dog("Max", "Pug")
+    print(Max)
+    Max.getBreed()
+</code></pre>
+
+	<p>In the above example we created an object <code>Buddy</code> of the <code>Dog</code> class, set the name to <code>Buddy</code> and set the type to <code>Golden Retriever</code>.
+
+	<p>When we run our code we get the following output.</p>
+
+<pre>
+Buddy is a Dog
+Golden Retriever
+Max is a Dog
+Pug
+</pre>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
