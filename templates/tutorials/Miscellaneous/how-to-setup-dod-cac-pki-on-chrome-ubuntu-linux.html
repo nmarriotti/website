@@ -1,0 +1,76 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="DoD, CAC, SmartCard, PKI, root, how, to, tutorial, linux, ubuntu, InstallRoot, cackey" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>In this tutorial we'll setup our Common Access Card (CAC) to work in Google Chrome running on Ubuntu Linux and install the DoD root certificates.</p>
+
+	  <h3>Setting up the CAC Reader</h3>
+
+	  <p>First thing you need to do is download <code>cackey</code>.
+
+	  <h4>32-bit</h4>
+
+	  <p>Execute the following command.</p>
+
+<pre>
+wget http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_i386.deb && sudo dpkg -i cackey_0.7.5-1_i386.deb && sudo apt-get install -f
+</pre>
+
+	<h4>64-bit</h4>
+
+	<p>Execute the following command.</p>
+
+<pre>
+sudo mkdir /usr/lib64 && wget http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb && sudo dpkg -i cackey_0.7.5-1_amd64.deb && sudo apt-get install -f
+</pre>
+
+
+	<h3>Google Chrome Setup</h3>
+
+	<p>Execute the following commands.</p>
+
+<pre>
+sudo apt-get install libnss3-tools
+</pre>
+
+	<p>Close Chrome.</p>
+
+	<h4>32-bit</h4>
+
+<pre>
+modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/libcackey.so
+</pre>
+	
+	<h4>64-bit</h4>
+
+<pre>
+modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib64/libcackey.so
+</pre>
+
+
+<p>Open Chrome to try going to a CAC-enabled site.</p>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
