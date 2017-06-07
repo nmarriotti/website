@@ -54,7 +54,7 @@ def Content():
     ["Pointers and References","pointers-and-references"]],
     "Microsoft Windows":[["How to use Linux terminal commands in Windows","how-to-use-linux-terminal-commands-in-windows"]],
     "Miscellaneous":[["How to install Exodus on Kodi","how-to-install-exodus-on-kodi"],
-    ["How to setup DoD CAC/PKI on Chrome Ubunutu Linux","how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux"]],
+    ["How to setup DoD CAC/PKI on Chrome Ubuntu Linux","how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux"]],
     "Java":[["Hello World in Java","hello-world-in-java"],
     ["Public, Private, Protected","public-private-protected"],
     ["User Input","user-input"],
