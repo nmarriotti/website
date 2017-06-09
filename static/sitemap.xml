@@ -448,4 +448,11 @@ http://www.nickmarriotti.com/tutorials/python/queues
 <lastmod>2017-04-16T01:18:47+00:00</lastmod>
 <changefreq>always</changefreq>
 </url>
+<url>
+<loc>
+http://www.nickmarriotti.com/tutorials/python/processing-queue-with-multi-threading
+</loc>
+<lastmod>2017-04-16T01:18:47+00:00</lastmod>
+<changefreq>always</changefreq>
+</url>
 </urlset>

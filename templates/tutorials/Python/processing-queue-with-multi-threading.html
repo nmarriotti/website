@@ -1,0 +1,210 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, queue, thread, threads, multithreading, job" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	<p>Think of a <code>thread</code> as a sequence of instructions or a process running on your computer. In a single threaded program you can only execute one process at a time. When running a time consuming task the program will hang until the task is completed because there's only one thread.</p>
+
+	<p>In terms of <code>multithreading</code>, multiple tasks can be run or executed simultaneously. Take your computers operating system for example; you can minimize a program, open another, check your email, etc... Your operating system is great at multitasking because each program runs on multiple threads.</p>
+
+	<p>When you open Microsoft Outlook to check email it is running on a thread, but have you ever wondered how it knows you just got a new email? There's a background process, which runs on its own thread. If Outlook were a single threaded program and you had it set to check for emails every 5 minutes, The entire program would freeze up every 5 minutes until it was done checking for new emails.</p>
+
+	<p>If at this point your completely confused I apologize, but multithreading is what makes multitasking possible. In this tutorial we'll modify our <a href="/queues">Queues</a> program from the previous tutorial and add threading capabilities to it so we can process multiple jobs in the queue at the same time.</p>
+
+	<h3>Required Modules</h3>
+
+	<p>When working with Threads you have to import the threading module.</p>
+
+
+<pre class="line-numbers"><code class="language-python">
+import threading
+</code></pre>
+
+	<h3>Setting Global Variables</h3>
+
+	<p>Here we are going to define our <code>queue</code> and the number of <code>threads</code> we want our program to have. The number of threads will determine how many jobs in queue can be processed simultaneously. We'll also add a <code>print_lock</code>. This variable will be used to prevent multiple threads from trying to print to the screen at the same time when we call a print function.</p>
+
+<pre class="line-numbers"><code class="language-python">
+q = Queue()
+NUM_THREADS = 2
+print_lock = threading.Lock()
+</code></pre>	
+
+	<h3>Main Method</h3>
+
+	<p>To begin our main method we add 3 jobs to the queue.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def main():
+    q.put("job1")
+    q.put("job2")
+    q.put("job3")
+</code></pre>	
+
+	  <p>Next we setup our threads.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    for x in range(NUM_THREADS):
+        t = threading.Thread( target = threader )
+        t.daemon = True
+        t.start()
+</code></pre>
+
+	  <p>In the above code we used a <code>for</code> loop to create <code>2</code> threads. Each threads <code>target</code> is set to a method called <code>threader</code> which we will get to shortly. What <code>t.daemon = True</code> does is kill the thread when it finishes. The last thing we do is <code>start</code> each thread.</p>
+
+	  <p>To finish up our main method we want to get the time our jobs started running print out a message showing how long it took to clear the queue.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    start = time.time()    
+    q.join()
+    print("Queue processed in {} seconds.".format(time.time()-start))
+</code></pre>
+
+	<p>We use <code>q.join()</code> so that our print statement will not be executed until all jobs in the queue have been processed. Without the join statement the print statement would print to the screen before we even processed the queue.</p>	  
+
+
+	<h3>Threader Method</h3>
+
+	<p>When we created our threads we set <code>target = threader</code>. It's time to create that method.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def threader():
+    while True:
+        job = q.get()
+        process(job)
+        q.task_done()
+</code></pre>
+
+	  <p>We want our threads to constantly check if there's something in the queue which is why we use a <code>while</code> loop which is always <code>True</code>. Inside the loop we are grabbing a job from the queue and calling our <code>process()</code> method passing in the next job in queue. Once the processing is complete for that job we set it as complete using <code>task_done()</code>.</p>
+
+
+	<h3>Process Method</h3>
+
+	<p>Here is where we are processing our jobs from the queue.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def process(job):
+    for x in range(10)
+        time.sleep(0.5)
+        with print_lock:
+            print("{} - {} - {}".format(threading.current_thread().name, job, x))
+    print("{} finished".format(job))
+</code></pre>
+
+
+	<p>We simulate processing time using <code>time.sleep(0.5)</code>. This makes every iteration of the loop take 0.5 seconds. To prevent our threads from printing at the same time we use <code>with print_lock:</code> and nest our print statement inside.</p>
+
+	<h3>Sample Output</h3>
+
+	<p>Now its time to run our program. We have created 2 threads to process 3 jobs. Each job counts from 0-10 with a 0.5 second delay after every iteration. In a single threaded program this would take <code>15</code> seconds. We get this number using the following calculation.</p>
+
+<pre>(10 x 0.5sec delay) x 3 jobs = 15 seconds</pre>
+
+<pre>
+Thread-1 - job1 - 1
+Thread-2 - job2 - 1
+Thread-1 - job1 - 2
+Thread-2 - job2 - 2
+Thread-2 - job2 - 3
+Thread-1 - job1 - 3
+Thread-2 - job2 - 4
+Thread-1 - job1 - 4
+Thread-2 - job2 - 5
+Thread-1 - job1 - 5
+Thread-2 - job2 - 6
+Thread-1 - job1 - 6
+Thread-1 - job1 - 7
+Thread-2 - job2 - 7
+Thread-2 - job2 - 8
+Thread-1 - job1 - 8
+Thread-2 - job2 - 9
+Thread-1 - job1 - 9
+Thread-2 - job2 - 10
+job2 finished
+Thread-1 - job1 - 10
+job1 finished
+Thread-2 - job3 - 1
+Thread-2 - job3 - 2
+Thread-2 - job3 - 3
+Thread-2 - job3 - 4
+Thread-2 - job3 - 5
+Thread-2 - job3 - 6
+Thread-2 - job3 - 7
+Thread-2 - job3 - 8
+Thread-2 - job3 - 9
+Thread-2 - job3 - 10
+job3 finished
+Queue processed in 10.0167078972 seconds.
+</pre>
+
+	<p>Notice how <code>job1</code> and <code>job2</code> were being processed at the same time. Since <code>job2</code> finished first, <code>Thread-2</code> started processing <code>job3</code>. We also shaved five seconds off of our processing time!</p>
+
+	<h3>Complete Code</h3>
+
+<pre class="line-numbers"><code class="language-python">
+from Queue import Queue
+import threading
+import time
+
+NUM_THREADS = 2
+print_lock = threading.Lock()
+q = Queue()
+
+def process(job):
+    count = 0
+    while count < 10:
+        time.sleep(0.5)
+        count += 1
+        with print_lock:
+            print("{} - {} - {}".format(threading.current_thread().name, job, count))
+    print("{} finished".format(job))
+
+def threader():
+    while True:
+        job = q.get()
+        process(job)
+        q.task_done()
+
+def main():
+    q.put("job1")
+    q.put("job2")
+    q.put("job3")
+
+    for x in range(NUM_THREADS):
+        t = threading.Thread( target = threader )
+        t.daemon = True
+        t.start()
+
+    start = time.time()    
+    
+    q.join()
+
+    print("Queue processed in {} seconds.".format(time.time()-start))
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+<p>Hopefully by now you have a better understanding of what <code>Threads</code> are and how <code>multithreading</code> can be used to run multiple tasks simultaneously. If you have any questions please leave a comment below.</p>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
