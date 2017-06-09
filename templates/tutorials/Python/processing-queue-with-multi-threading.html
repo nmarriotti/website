@@ -14,7 +14,7 @@
 
 	<p>When you open Microsoft Outlook to check email it is running on a thread, but have you ever wondered how it knows you just got a new email? There's a background process, which runs on its own thread. If Outlook were a single threaded program and you had it set to check for emails every 5 minutes, The entire program would freeze up every 5 minutes until it was done checking for new emails.</p>
 
-	<p>If at this point your completely confused I apologize, but multithreading is what makes multitasking possible. In this tutorial we'll modify our <a href="/queues">Queues</a> program from the previous tutorial and add threading capabilities to it so we can process multiple jobs in the queue at the same time.</p>
+	<p>If at this point your completely confused I apologize, but multithreading is what makes multitasking possible. In this tutorial we'll modify our <a href="/tutorials/python/queues">Queues</a> program from the previous tutorial and add threading capabilities to it so we can process multiple jobs in the queue at the same time.</p>
 
 	<h3>Required Modules</h3>
 
@@ -57,7 +57,7 @@ def main():
 
 	  <p>In the above code we used a <code>for</code> loop to create <code>2</code> threads. Each threads <code>target</code> is set to a method called <code>threader</code> which we will get to shortly. What <code>t.daemon = True</code> does is kill the thread when it finishes. The last thing we do is <code>start</code> each thread.</p>
 
-	  <p>To finish up our main method we want to get the time our jobs started running print out a message showing how long it took to clear the queue.</p>
+	  <p>To finish up our main method we want to get the time our jobs started running and print out a message showing how long it took to clear the queue.</p>
 
 <pre class="line-numbers"><code class="language-python">
     start = time.time()    
@@ -101,7 +101,7 @@ def process(job):
 
 	<h3>Sample Output</h3>
 
-	<p>Now its time to run our program. We have created 2 threads to process 3 jobs. Each job counts from 0-10 with a 0.5 second delay after every iteration. In a single threaded program this would take <code>15</code> seconds. We get this number using the following calculation.</p>
+	<p>Now its time to run our program. We have created 2 threads to process 3 jobs. Each job counts from 1-10 with a 0.5 second delay after every iteration. In a single threaded program this would take <code>15</code> seconds. We get this number using the following calculation.</p>
 
 <pre>(10 x 0.5sec delay) x 3 jobs = 15 seconds</pre>
 
