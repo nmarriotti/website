@@ -1,0 +1,168 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="queue, python, jobs, FIFO, tutorial, nickmarriotti" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>A <code>Queue</code> is very similar to a list. To try and give you an example of what a queue is, think of a printer. When a bunch of people are trying to print some documents on the same printer. The first document prints, then the next, and so on until all documents have been printed. This method is called <strong>First in First Out (FIFO)</strong>.</p>
+
+	  <p>Queues are essentially just a list of items, except that you can not reference items in the queue based on an index like you can in a list and items in the queue are only removed from the beginning.</p>
+
+	  <p>In this tutorial I'll show you how to setup a queue and simulate some processing for each item in the queue.</p>
+
+	  <h3>Importing Modules</h3>
+
+	  <p>The first thing you'll need to do is import the required module.</p>
+
+<pre class="line-numbers"><code class="language-python">
+from Queue import Queue
+</code></pre>
+
+	<h3>Creating a Queue</h3>
+
+	<p>When you define a queue you can also set how many items it can contain. For this example we'll create a queue named <code>q</code> that can hold <code>3</code> items. If you'd like it to hold infinite items you can disregard the <code>maxsize</code> argument or simpy set it equal to <code>0</code>.</p>
+
+<pre class="line-numbers"><code class="language-python">
+q = Queue(maxsize=3)
+</code></pre>
+
+	<h3>Adding items to a Queue</h3>
+
+	<p>To add items to our queue we'll use the <code>puts()</code> method of the queue class. For our example we'll add <code>3</code> items to the queue called <code>job1, job2, job3</code>.</p>
+
+<pre class="line-numbers"><code class="language-python">
+q.put("job1")
+q.put("job2")
+q.put("job3")
+</code></pre>
+
+	<h3>Simulate Processing</h3>
+	
+	<p>Now we need to simulate some processing for each job in queue. To do this we'll create a <code>process()</code> method that we can send every job to.</p>
+
+<pre class="line-numbers"><code class="language-python">
+def process(job):
+    count = 0
+    while count < 10:
+        time.sleep(0.5)
+        count += 1
+        print("processing {}".format(job))
+    print("{} finished".format(job))
+</code></pre>
+
+	<p>All we are doing here is counting from 0-10 every 0.5 seconds to simulate some processing time.</p>
+
+
+	<h3>Process the Queue</h3>
+
+	<p>Using the FIFO apprach we need to grab the first item in queue and send it to our <code>process()</code> method. We want to do this as long as our queue is not empty. We'll also print out the total time it took to process every job.</p>
+
+	<p>To get an item from the queue you will use the <code>get()</code> method of the queue class.</p>
+
+<pre class="line-numbers"><code class="language-python">
+    start = time.time()
+    while not q.empty():
+        process(q.get())
+    print("Queue processed in {} seconds.".format(time.time()-start))
+</code></pre>
+
+	<h3>Sample Output</h3>
+
+	<p>Now we are ready to run our program! Here is the output.</p>
+
+<pre>
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+processing job1
+job1 finished
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+processing job2
+job2 finished
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+processing job3
+job3 finished
+Queue processed in 15.0242338181 seconds.
+
+</pre>
+
+
+	<h3>Complete Code</h3>
+
+	<p>Here is all of the code used for this tutorial.</p>
+
+<pre class="line-numbers"><code class="language-python">
+from Queue import Queue
+import time
+
+
+def process(job):
+    count = 0
+    while count < 10:
+        time.sleep(0.5)
+        count += 1
+        print("processing {}".format(job))
+    print("{} finished".format(job))
+
+def main():
+    q = Queue()
+
+    q.put("job1")
+    q.put("job2")
+    q.put("job3")
+
+    start = time.time()
+    while not q.empty():
+        process(q.get())
+    print("Queue processed in {} seconds.".format(time.time()-start))
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+	  <p>That concludes my tutorial on queues. Wouldn't it be cool if we could process more then one item in queue at the same time? Well we can! In the next tutorial we'll modify the above code and add multi-threading capabilities.</p>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

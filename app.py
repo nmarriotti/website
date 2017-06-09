@@ -205,8 +205,12 @@ def Python_Classes_and_Objects():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][14][1], methods=['GET', 'POST'])
 def Class_Inheritance():
-    return render_template("tutorials/Python/class-inheritance.html", curLink = TOPIC_DICT["Python"][14][1], curTitle=TOPIC_DICT["Python"][14][0], curTopic = "Python", title = TOPIC_DICT["Python"][14][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/class-inheritance.html", curLink = TOPIC_DICT["Python"][14][1], curTitle=TOPIC_DICT["Python"][14][0], curTopic = "Python", title = TOPIC_DICT["Python"][14][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][15][0], nextLink=TOPIC_DICT["Python"][15][1])
 
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][15][1], methods=['GET', 'POST'])
+def Queue_Tutorial():
+    return render_template("tutorials/Python/queues.html", curLink = TOPIC_DICT["Python"][15][1], curTitle=TOPIC_DICT["Python"][15][0], curTopic = "Python", title = TOPIC_DICT["Python"][15][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][0][1], methods=['GET', 'POST'])
