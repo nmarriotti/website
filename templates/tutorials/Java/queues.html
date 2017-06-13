@@ -1,0 +1,170 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, queues, queue, linkedlist, linked, list, FIFO, tutorial" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	  <p>Queues are essentially just a list of items that use a <strong>First In First Out (FIFO)</strong> principle. An example I like to use for this is a printer queue. When a bunch of people are trying to print some documents all jobs are added to the printers queue and the printer prints out in the order the documents were sent to the printer.</p>
+
+	  <p>In this tutorial I'll show you how to create and use a queue object.</p>
+
+	  <h3>Required Packages</h3>
+
+	  <p>The first thing you'll need to do is import the <code>Queue</code> and <code>LinkedList</code> packages.</p>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.Queue;
+import java.util.LinkedList;
+</code></pre>
+
+	  <h3>Creating the Queue</h3>
+
+	  <p>For this example we'll create a queue to hold <code>Strings</code>.</p>
+
+<pre class="line-numbers"><code class="language-java">
+Queue&lt;String&gt; q = new LinkedList&lt;String&gt;();
+</code></pre>
+
+	<h3>Add Method</h3>
+
+	<p>To add values to our queue we'll use the <code>add()</code> method.</p>
+
+<pre class="line-numbers"><code class="language-java">
+q.add("Job1");
+q.add("Job2");
+q.add("job3");
+</code></pre>
+
+	<h3>Size Method</h3>
+
+	<p>Now that we added some values to our queue lets check the size.</p>
+
+<pre class="line-numbers"><code class="language-java">
+int size = q.size();
+System.out.println("The size is: " +size);
+</code></pre>
+
+<pre>
+3
+</pre>
+
+	<h3>Peek Method</h3>
+
+	<p>Since queues use the FIFO principle we cannot reference values based on an index. The <code>peek()</code> method is used to grab the first item in the queue.</p>
+
+<pre class="line-numbers"><code class="language-java">
+String s = q.peek();
+System.out.println("The first value is: " + s);
+</code></pre>
+
+<pre>
+The first value is: job1
+</pre>
+
+	<h3>Element Method</h3>
+
+	<p>Similar to the <code>peek()</code> method, the <code>element()</code> method is used to grab the first item in the queue and will throw a <code>NoSuchElementException</code> if the queue is empty.</p>
+
+<pre class="line-numbers"><code class="language-java">
+String s = q.element();
+System.out.println("The first value is: " + s);
+</code></pre>
+
+<pre>
+The first value is: job1
+</pre>
+
+	<h3>Poll Method</h3>
+
+	<p>The <code>poll()</code> method will grab the first item in queue and then remove it. If the queue is empty then <code>null</code> is returned.</p>
+
+<pre class="line-numbers"><code class="language-java">
+String s = q.poll();
+System.out.println("The first value is: " + s);
+System.out.println("The size is: " + q.size());
+</code></pre>
+
+<pre>
+The first value is: job1
+The size is: 2
+</pre>
+
+	<h3>Remove Method</h3>
+
+	<p>The <code>remove()</code> method returns the first item in the queue and removes it. If the queue is empty a <code>NoSuchElementException</code> is thrown.</p>
+
+<pre class="line-numbers"><code class="language-java">
+String s = q.remove();
+System.out.println("The first value is: " + s);
+System.out.println("The size is: " + q.size());
+</code></pre>
+
+<pre>
+The first value is: job2
+The size is: 1
+</pre>
+
+	<h3>Complete Code</h3>
+
+	<p>Here is a sample program using all the methods explained above.</p>
+
+<pre class="line-numbers"><code class="language-java">
+import java.util.Queue;
+import java.util.LinkedList;
+public class Main {
+    public static void main(String[] args) {
+		Queue&lt;String&gt; q = new LinkedList&lt;String&gt;();
+
+        q.add("job1");
+        q.add("job2");
+        q.add("job3");
+
+        String s = q.peek();
+        System.out.println("The first value using peek() is: " + s);
+
+        System.out.println("The size is: " + q.size());
+
+        s = q.element();
+        System.out.println("The first value using element() is: " + s);
+
+        s = q.remove();
+        System.out.println("The first value using remove() is: " + s);
+        System.out.println("The size is: " + q.size());
+
+        s = q.poll();
+        System.out.println("The first value using poll() is: " + s);
+        System.out.println("The size is: " + q.size());
+    }
+}
+</code></pre>
+
+<pre>
+The first value using peek() is: job1
+The size is: 3
+The first value using element() is: job1
+The first value using remove() is: job1
+The size is: 2
+The first value using poll() is: job2
+The size is: 1
+</pre>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

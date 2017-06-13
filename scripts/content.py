@@ -64,7 +64,8 @@ def Content():
     ["Printing with String.out.format","printing-with-string-format"],
     ["Basic Classes and Objects","classes-and-objects"],
     ["Class inheritance","class-inheritance"],
-    ["Dynamic Arrays using ArrayList","dynamic-arrays-using-arraylist"]]}
+    ["Dynamic Arrays using ArrayList","dynamic-arrays-using-arraylist"],
+    ["Queues","queues"]]}
 
     return TOPIC_DICT
 

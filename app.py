@@ -401,7 +401,13 @@ def Class_inheritance():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][6][1], methods=['GET', 'POST'])
 def Dynamic_Arrays_using_ArrayList():
-    return render_template("tutorials/Java/dynamic-arrays-using-arraylist.html", curLink = TOPIC_DICT["Java"][6][1], curTitle=TOPIC_DICT["Java"][6][0], curTopic = "Java", title = TOPIC_DICT["Java"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Java/dynamic-arrays-using-arraylist.html", curLink = TOPIC_DICT["Java"][6][1], curTitle=TOPIC_DICT["Java"][6][0], curTopic = "Java", title = TOPIC_DICT["Java"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["Java"][7][0], nextLink=TOPIC_DICT["Java"][7][1])
+
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][7][1], methods=['GET', 'POST'])
+def Queues():
+    return render_template("tutorials/Java/queues.html", curLink = TOPIC_DICT["Java"][7][1], curTitle=TOPIC_DICT["Java"][7][0], curTopic = "Java", title = TOPIC_DICT["Java"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 	
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])
