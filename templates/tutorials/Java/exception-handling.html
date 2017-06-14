@@ -1,0 +1,75 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="java, try, catch, exception, error, handling, tutorial, nickmarriotti" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p><strong>Exceptions</strong> are errors in a program which cause it to terminate unexpectedly. These exceptions must be handled to allow the program to continue running. Exception handling in Java is achieved using <code>try/catch</code> statements.</p>
+
+	  <p>In this tutorial we'll write a little program which will try to divide a number by zero. Division by zero is not allowed and will throw an exception. We'll  handle this error so our program can continue running.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+            
+            int x = 1/0;
+            System.out.println(x);
+            System.out.println("Hi there!");
+
+    }
+}
+</code></pre>
+
+	<p>When we compile and run the above program we get the following output.</p>
+
+	<p><code>Exception in thread "main" java.lang.ArithmeticException: / by zero at Main.main(Main.java:4)</code>. We can see that the name of the exception is <code>ArithmeticException</code>.</p>
+
+	<p>Lets implement our <code>try/catch</code> statements so we can handle this error.</p>
+
+<pre class="line-numbers"><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        
+        try {
+            int x = 1/0;
+            System.out.println(x);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Error: " + e);
+        }
+
+        System.out.println("Hi there!");
+
+    }
+}
+</code></pre>
+
+<pre>
+Error: java.lang.ArithmeticException: / by zero
+Hi there!
+</pre>
+
+	<p>After implementing exception handling we caught the error using the <code>catch</code> statement and printed an error to the user and our program continued executing without abruptly terminating.</p>
+	
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

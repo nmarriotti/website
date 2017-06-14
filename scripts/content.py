@@ -65,7 +65,8 @@ def Content():
     ["Basic Classes and Objects","classes-and-objects"],
     ["Class inheritance","class-inheritance"],
     ["Dynamic Arrays using ArrayList","dynamic-arrays-using-arraylist"],
-    ["Queues","queues"]]}
+    ["Queues","queues"],
+    ["Exception Handling","exception-handling"]]}
 
     return TOPIC_DICT
 

@@ -406,7 +406,12 @@ def Dynamic_Arrays_using_ArrayList():
 
 @app.route("/tutorials/java/"+TOPIC_DICT["Java"][7][1], methods=['GET', 'POST'])
 def Queues():
-    return render_template("tutorials/Java/queues.html", curLink = TOPIC_DICT["Java"][7][1], curTitle=TOPIC_DICT["Java"][7][0], curTopic = "Java", title = TOPIC_DICT["Java"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Java/queues.html", curLink = TOPIC_DICT["Java"][7][1], curTitle=TOPIC_DICT["Java"][7][0], curTopic = "Java", title = TOPIC_DICT["Java"][7][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Java"][8][0], nextLink=TOPIC_DICT["Java"][8][1])
+
+@app.route("/tutorials/java/"+TOPIC_DICT["Java"][8][1], methods=['GET', 'POST'])
+def Exception_Handling():
+    return render_template("tutorials/Java/exception-handling.html", curLink = TOPIC_DICT["Java"][8][1], curTitle=TOPIC_DICT["Java"][8][0], curTopic = "Java", title = TOPIC_DICT["Java"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 	
