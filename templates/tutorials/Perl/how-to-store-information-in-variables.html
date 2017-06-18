@@ -1,0 +1,65 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="perl, variables, scalar, $my" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Perl, unlike other programming languages does not require you to define variables as integer, string, char, float, etc... Perl uses <code>scalar</code> variables which are preceded with a dollar sign <code>$</code>. They scalar variables can hold a chunk of information whether it be a number of text.</p>
+
+	  <h3>Declaring a Variable</h3>
+
+	  <p>Variables in Perl are defined using the <code>my</code> keyword. Notice how our number variable is separated by underscores. This helps improve readability and is optional. It's not required but store values into your variables immediately, but it is good practice to do so.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+my $name = "John Smith";
+my $number = 1_000_000;  #Same as saying 1000000
+</code></pre>
+
+	<h3>Printing Variables</h3>
+
+
+	  <p>There are several ways we can include our variables into print statements.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+print("Hello, ", $name, "! How are you?\n");
+print("Hello, $name! How are you?\n");
+print("Hello, %s! How are you?\n", $name);
+
+print("Number is ", $number, "\n");
+print("Number is $number\n");
+printf("Number is %d\n", $number);
+</code></pre>
+
+	<p>Each print statement will display the same result. It's up to you which method you want to use.</p>
+
+<pre>
+Hello, Nick! How are you?
+Hello, Nick! How are you?
+Hello, Nick! How are you?
+Number is 1000000
+Number is 1000000
+Number is 1000000
+</pre>
+
+	<p>In the next tutorial we'll learn how to capture user input and store what the user types into a variable.</p>
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

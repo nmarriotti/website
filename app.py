@@ -419,7 +419,13 @@ def Exception_Handling():
 
 @app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][0][1], methods=['GET', 'POST'])
 def Hello_World_in_Perl():
-    return render_template("tutorials/Perl/hello-world-in-perl.html", curLink = TOPIC_DICT["Perl"][0][1], curTitle=TOPIC_DICT["Perl"][0][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle="None")
+    return render_template("tutorials/Perl/hello-world-in-perl.html", curLink = TOPIC_DICT["Perl"][0][1], curTitle=TOPIC_DICT["Perl"][0][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Perl"][1][0], nextLink=TOPIC_DICT["Perl"][1][1])
+
+
+@app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][1][1], methods=['GET', 'POST'])
+def How_to_store_information_in_variables():
+    return render_template("tutorials/Perl/how-to-store-information-in-variables.html", curLink = TOPIC_DICT["Perl"][1][1], curTitle=TOPIC_DICT["Perl"][1][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][1][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 	
