@@ -10,8 +10,9 @@ def TutorialCategories():
     return TUTORIAL_CAT
 
 def Content():
-    TOPIC_DICT = {"Python":[["Getting Started with Python","getting-started-with-python"],
-	["Creating a Hello World program in Python!","hello-world"],
+    TOPIC_DICT = {"Perl":[["Hello World in Perl","hello-world-in-perl"]],
+    "Python":[["Getting Started with Python","getting-started-with-python"],
+    ["Creating a Hello World program in Python!","hello-world"],
     ["How to use variables","how-to-use-variables"],
     ["Functions","functions"],
     ["Using lists to store information","using-lists-to-store-information"],
@@ -26,7 +27,8 @@ def Content():
     ["Classes and Objects","classes-and-objects"],
     ["Class Inheritance","class-inheritance"],
     ["Queue","queues"],
-    ["Processing Queue with Multithreading","processing-queue-with-multi-threading"]],
+    ["Processing Queue with Multithreading","processing-queue-with-multi-threading"],
+    ["Zip Files","zip-files"]],
     "C":[["Hello World!","hello-world"],
     ["Printing variables with printf","printing-variables-with-printf"],
     ["Command Line Arguments","command-line-arguments"],

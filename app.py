@@ -215,7 +215,12 @@ def Queue_Tutorial():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][16][1], methods=['GET', 'POST'])
 def Processing_Queue_with_Multi_threading():
-    return render_template("tutorials/Python/processing-queue-with-multi-threading.html", curLink = TOPIC_DICT["Python"][16][1], curTitle=TOPIC_DICT["Python"][16][0], curTopic = "Python", title = TOPIC_DICT["Python"][16][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/processing-queue-with-multi-threading.html", curLink = TOPIC_DICT["Python"][16][1], curTitle=TOPIC_DICT["Python"][16][0], curTopic = "Python", title = TOPIC_DICT["Python"][16][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][17][0], nextLink=TOPIC_DICT["Python"][17][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][17][1], methods=['GET', 'POST'])
+def Zip_Files():
+    return render_template("tutorials/Python/zip-files.html", curLink = TOPIC_DICT["Python"][17][1], curTitle=TOPIC_DICT["Python"][17][0], curTopic = "Python", title = TOPIC_DICT["Python"][17][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 
@@ -412,6 +417,9 @@ def Queues():
 def Exception_Handling():
     return render_template("tutorials/Java/exception-handling.html", curLink = TOPIC_DICT["Java"][8][1], curTitle=TOPIC_DICT["Java"][8][0], curTopic = "Java", title = TOPIC_DICT["Java"][8][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
+@app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][0][1], methods=['GET', 'POST'])
+def Hello_World_in_Perl():
+    return render_template("tutorials/Perl/hello-world-in-perl.html", curLink = TOPIC_DICT["Perl"][0][1], curTitle=TOPIC_DICT["Perl"][0][0],  nextLink = TOPIC_DICT["Perl"][1][1], nextTitle = TOPIC_DICT["Perl"][1][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle="None")
 
 
 	
