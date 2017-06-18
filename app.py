@@ -37,7 +37,7 @@ def page_not_found(e):
 @app.route('/')
 def home():
 	# render the home page
-	return render_template('index.html', title='Home', tutorial_count = TutorialCount())
+	return render_template('index.html', title='Home')
 
 @app.route('/contact')
 def contact():
