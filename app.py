@@ -2,6 +2,7 @@ from flask import Flask, flash, render_template, request, redirect, url_for, g, 
 from functools import wraps
 from models.models import *
 from scripts.content import *
+from scripts.tutorial_count import *
 from whitenoise import WhiteNoise
 from werkzeug.utils import secure_filename
 import os
