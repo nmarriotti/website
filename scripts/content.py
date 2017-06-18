@@ -1,5 +1,6 @@
 def TutorialCategories():
-    TUTORIAL_CAT = {"Types":[["Python","/tutorials/python","p-1.png"],
+    TUTORIAL_CAT = {"Types":["Perl","/tutorials/perl","p-1.png"],
+    ["Python","/tutorials/python","p-1.png"],
     ["C","/tutorials/c","p-1.png"],
     ["C++","/tutorials/c++","p-1.png"],
     ["Java","/tutorials/java","p-1.png"],
