@@ -2,35 +2,57 @@
 {% extends "tutorial-master.html" %}
 
 {% block metatags %}
-<meta name="keywords" content="KEYWORDS GO HERE" />
-<meta name="description" content="DESCRIPTION GOES HERE" />
+<meta name="keywords" content="perl, hello, world, print, say, tutorial, nickmarriotti" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 {% endblock %}
 
 {% block content %}
 
+	  <p>Perl is a family of high-level, general-purpose, interpreted, dynamic programming languages that was originally designed for text processing. After working with other programming languages I feel the Perl syntax is a little ugly, but that's not to say Perl isn't a great language. So lets get started creating our first Perl program.</p>
 
-	  <div class="embed-responsive embed-responsive-16by9">VIDEO EMBED</div>
+	  <p>Create a file <code>hello.pl</code>. All Perl programs will end with the <code>.pl</code> extension.</p>
 
-	  <p></p>
-	  <p></p>
+	  <p>The first line of our script will allow our program to be turned into an executable program.</p>
 
-
-<pre class="line-numbers"><code class="language-python">
-PYTHON CODE
+<pre class="line-numbers"><code class="language-perl">
+#! /usr/bin/env perl
 </code></pre>
 
-	  <p></p>
-	  <p></p>
-	  <p></p>
-	  <p></p>
+	<p>Similar to the include and import statements that are seen in other languages, Perl uses the <code>use</code>. The <code>strict</code> and <code>warnings</code> lines we are going to add to our program tell the Perl interpreter to check for programming errors.</p>
 
-
-<pre class="command-line"><code class="language-bash">
-COMMAND PROMPT CODE HERE
+<pre class="line-numbers"><code class="language-perl">
+use strict;
+use warnings;
 </code></pre>
 
+	<p>Now we are ready to write the code to print text to the console. We can do this use the <code>print</code> or <code>say</code> command.</p>
 
+<pre class="line-numbers"><code class="language-perl">
+print "Hello World!\n";
+say "Hello World!\n";
+</code></pre>
+
+	<p>All lines in Perl must end with a semicolon and there are no specific rules on spacing or indentations, although properly spaced and indented syntax can greatly improve readability.</p>
+
+	<p>Save your file and we'll now use <code>chmod</code> to convert our program into an executable file. Navigate into the directory where <code>hello.pl</code> is located and execute the below command.</p>
+
+	<pre>chmod +x hello.pl</pre>
+
+	<p>To run our program we can type:</p>
+
+<pre>
+./hello.pl
+Hello World!
+</pre>
+
+	<p>We can also run our program using:</p>
+
+<pre>
+perl hello.pl
+Hello World!
+</pre>
+
+	<p>That concludes my Hello World tutorial in Perl. In the next tutorial we'll get into working with variables.</p>
 
 <br>
 
