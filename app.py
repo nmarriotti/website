@@ -14,7 +14,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'MOV', 'mp4
 TUTORIAL_CAT = TutorialCategories()
 TOPIC_DICT = Content()
 BLOG_TOPIC_DICT = BlogContent()
-
+TUTORIAL_COUNT = getCount()
 
 app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -38,7 +38,7 @@ def page_not_found(e):
 @app.route('/')
 def home():
 	# render the home page
-	return render_template('index.html', title='Home')
+	return render_template('index.html', title='Home', tutorial_count = TUTORIAL_COUNT)
 
 @app.route('/contact')
 def contact():
