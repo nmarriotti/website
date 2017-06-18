@@ -74,6 +74,18 @@ def Content():
 
     return TOPIC_DICT
 
+
+def TutorialCount():
+    count = 0
+    x = 0
+    for key, value in TOPIC_DICT.items():
+        for items in TOPIC_DICT[key]:
+            count += 1
+        x += 1
+
+
+    return count
+
 def BlogContent():
 	                            # TITLE            URL                DATE         description                                                      image
     BLOG_TOPIC_DICT = {"blog":[["Programming in Python","programming-in-python", "3/26/2017", "Just talking about what made me want to make this website and what kind of tutorials I am going to post in the future.", "none"]]}

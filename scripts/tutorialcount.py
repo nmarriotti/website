@@ -13,9 +13,3 @@ def getCount():
 
 
     return count
-
-def main():
-    getCount()
-
-if __name__ == "__main__":
-    main()

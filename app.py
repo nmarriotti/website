@@ -2,7 +2,6 @@ from flask import Flask, flash, render_template, request, redirect, url_for, g, 
 from functools import wraps
 from models.models import *
 from scripts.content import *
-from scripts.tutorial_count import *
 from whitenoise import WhiteNoise
 from werkzeug.utils import secure_filename
 import os
@@ -15,7 +14,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'MOV', 'mp4
 TUTORIAL_CAT = TutorialCategories()
 TOPIC_DICT = Content()
 BLOG_TOPIC_DICT = BlogContent()
-TUTORIAL_COUNT = getCount()
+TUTORIAL_COUNT = TutorialCount()
 
 app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
