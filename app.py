@@ -39,15 +39,6 @@ def home():
 	# render the home page
 	return render_template('index.html', title='Home')
 
-@app.route('/contact')
-def contact():
-	# render the contact page
-	return render_template('contact.html', title="Contact")
-
-@app.route('/resume')
-def resume():
-	# render the resume page
-	return render_template('resume.html', title='Resume')
 
 @app.route('/tutorials/<title>/')
 @app.route('/tutorials/', defaults= {'title':1})
@@ -57,10 +48,6 @@ def tutorials(title):
     else:
         return render_template(title+".html", title=str.title(title), TOPIC_DICT = TOPIC_DICT)
 
-@app.route('/profile')
-def profile():
-	# render the profile page
-	return render_template('profile.html', title='Profile')
 
 @app.route('/blog')
 def blog():
@@ -97,40 +84,6 @@ def upload_file():
             flash(filename + ' Uploaded!')
             return render_template('dashboard/upload.html', title='Dashboard', filename = filename)
     return render_template('dashboard/upload.html', title='Dashboard')
-
-@app.route('/dashboard')
-def dashboard():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
-        return render_template('dashboard.html', title='Dashboard')
-
-@app.route('/login', methods=['GET', 'POST'])
-def do_admin_login():
-    if request.method == 'POST':
-        if request.form['password'] == 'password' and request.form['username'] == 'admin':
-            session['logged_in'] = True
-            session['user'] = request.form['username']
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Invalid username and/or password!')
-            return render_template('login.html')
-    else:
-        return render_template('login.html')
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-	# render the view register page
-	return render_template('create_account.html')
-
-@app.route("/logout")
-def logout():
-    session['logged_in'] = False
-    return redirect(url_for('home'))
-
-
-
-
 
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][0][1], methods=['GET', 'POST'])
