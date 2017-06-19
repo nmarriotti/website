@@ -384,6 +384,11 @@ def Storing_User_Input_Perl():
 
 
 
+@app.route("/tutorials/ruby/"+TOPIC_DICT["Ruby"][0][1], methods=['GET', 'POST'])
+def Hello_World_in_Ruby():
+    return render_template("tutorials/Ruby/hello-world-in-ruby.html", curLink = TOPIC_DICT["Ruby"][0][1], curTitle=TOPIC_DICT["Ruby"][0][0], curTopic = "Ruby", title = TOPIC_DICT["Ruby"][0][0], TOPIC_DICT = TOPIC_DICT, nextTitle="None")
+
+
 
 	
 @app.route("/blog/"+BLOG_TOPIC_DICT["blog"][0][1], methods=['GET', 'POST'])

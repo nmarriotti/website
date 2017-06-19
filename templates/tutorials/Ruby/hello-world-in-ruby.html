@@ -1,0 +1,61 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="ruby, hello, world, program, tutorial" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Ruby is an object-oriented interpreted programming language developed in the 90's by Yukihiro Matsumoto. In this tutorial we'll cover creating a basic Hello World console program.</p>
+
+	  <p>Assuuming that you already have Ruby installed, create a file <code>hello.rb</code>. All Ruby source files end with the <code>.rb</code> extension.</p>
+
+
+<pre class="line-numbers"><code class="language-ruby">
+#! /usr/bin/env ruby
+
+puts "Hello World!";
+</code></pre>
+
+
+	  <p>The first line of our script is needed to allow our script to be turned into an executable file and to print <strong>Hello World!</strong> to the console we used <code>puts</code>.</p>
+
+	  <p>Open a terminal window and navigate to your <code>hello.rb</code> file and execute the following command to make the script executable.</p>
+
+<pre>
+chmod +x hello.rb
+</pre>
+
+	<p>To execute your script you can type:
+
+<pre>
+ruby hello.rb
+Hello World!
+</pre>
+
+	<p>Since we made our script executable we could also run it by typing:
+
+<pre>
+./hello.rb
+Hello World!
+</pre>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

@@ -11,7 +11,8 @@ def TutorialCategories():
     return TUTORIAL_CAT
 
 def Content():
-    TOPIC_DICT = {"Perl":[["Hello World in Perl","hello-world-in-perl"],
+    TOPIC_DICT = {"Ruby":[["Hello World in Ruby","hello-world-in-ruby"]],
+    "Perl":[["Hello World in Perl","hello-world-in-perl"],
     ["How to store information in variables","how-to-store-information-in-variables"],
     ["Storing User Input","storing-user-input"]],
     "Python":[["Getting Started with Python","getting-started-with-python"],
