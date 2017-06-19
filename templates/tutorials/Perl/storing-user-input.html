@@ -1,0 +1,68 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="perl, input, STDIN, variables, nickmarriotti" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Getting user input in Perl is very simple. In this tutorial we'll ask the user to enter some information and store the input in a variable.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+my $color;
+
+print("What's your favorite color? ");
+$color = &lt;STDIN&gt;;
+
+print("Your favorite color is $color\n");
+</code></pre>
+
+	  <p>In the above code, we created a variable called <code>color</code> and asked the user what their favorite color is, set our <code>color</code> variable equal to what was entered into the standard input <code>STDIN</code>, and finally printed out what the user entered.</p>
+
+	  <p>When we preview our code notice the blank line following our final print statement. Why is this happening?</p>
+
+<pre>
+What's your favorite color? Blue
+Your favorite color is Blue
+
+</pre>
+
+	<p>The blank line is due to the standard input adding a newline terminator <code>\n</code> when the <strong>ENTER</strong> key is pressed. We can fix this using <code>chomp</code> on our variable which will remove the newline terminator. Here is the modified code.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+my $color;
+
+print("What's your favorite color? ");
+$color = &lt;STDIN&gt;;
+chomp $color;
+
+print("Your favorite color is $color\n");
+</code></pre>
+
+
+<pre>
+What's your favorite color? Blue
+Your favorite color is Blue
+</pre>
+
+	<p>That concludes my tutorial on capturing user input in Perl. In the next tutorial we'll learn how arrays work in Perl.</p>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
