@@ -1,0 +1,54 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="perl, while, loop, condition" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <<p>While loops will execute code as many times as needed until a condition is false. Perl while loops are no different than they are in the C programming language.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+$i = 0;
+
+while ($i < 10) 
+{
+	print("i is $i\n");
+	$i += 1;
+}
+</code></pre>
+
+	<p>When we execute the above code we get the following result:</p>
+
+<pre>
+i is 0
+i is 1
+i is 2
+i is 3
+i is 4
+i is 5
+i is 6
+i is 7
+i is 8
+i is 9
+</pre>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
