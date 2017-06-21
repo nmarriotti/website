@@ -1,0 +1,66 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="perl, array, tutorial, index" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Arrays are used to store multiple values within a single variable. These values can then be referenced based on an index. The first value stored in an array will always be at index 0. Unlike regular variables that are declared using the dollar sign <code>$</code>, arrays are declared using the at sign <code>@</code>.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+@myArray = (1, 2, 3, 4);
+</code></pre>	  
+
+	<p>In the code above we created an array called <code>myArray</code> and loaded it with the values <code>1, 2, 3 and 4</code>.</p>
+
+	<p>If you wanted to pull the third value from the array we would use the <strong>2nd</strong> index.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+@myArray[2]
+</code></pre>
+
+	<p>To get the size of an array (number of values stored), we can do something like this.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+scalar(@myArray)
+</code></pre>
+
+	  <p>Lets use a for loop that we learned in the previous tutorial to print out all the values stored in our array.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+@myArray = (1, 2, 3, 4);
+
+for($index=0; index&lt;scalar(@myArray); $index++) 
+{
+	print("@myArray[$index]\n");
+}
+</code></pre>
+
+<pre>
+1
+2
+3
+4
+</pre>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
