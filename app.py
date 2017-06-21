@@ -392,7 +392,7 @@ def For_Loop():
 
 
 @app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][5][1], methods=['GET', 'POST'])
-def Arrays():
+def Perl_Arrays():
     return render_template("tutorials/Perl/arrays.html", curLink = TOPIC_DICT["Perl"][5][1], curTitle=TOPIC_DICT["Perl"][5][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
