@@ -1,0 +1,61 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="perl, loop, for, tutorial, condition" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	  <p>Syntax for a <code>for</code> loop in Perl are no different than they are in C. For loops are typically used if you know how many times you'd like a loop to iterate.</p>
+
+<pre>
+for (initialize; condition; increment) {
+	// Code to execute
+}
+</pre>
+
+	<p>The above outline shows the different parts of a for loop. The initialize section is where you can declare a loop control variable. The condition will determine how many times the loop should iterate and the last part is used to increment a variable, typically the variable you declared at the beginning of the loop.</p>
+
+	<p>Here is an example of a for loop in Perl.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+for ($i=0; $i&lt;0; $i++) {
+	print("$i\n");
+}
+</code></pre>
+
+	<p>The above loop produces the following output.</p>
+
+<pre>
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

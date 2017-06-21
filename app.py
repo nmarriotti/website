@@ -384,7 +384,12 @@ def Storing_User_Input_Perl():
 
 @app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][3][1], methods=['GET', 'POST'])
 def While_Loop():
-    return render_template("tutorials/Perl/while-loop.html", curLink = TOPIC_DICT["Perl"][3][1], curTitle=TOPIC_DICT["Perl"][3][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Perl/while-loop.html", curLink = TOPIC_DICT["Perl"][3][1], curTitle=TOPIC_DICT["Perl"][3][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= TOPIC_DICT["Perl"][4][0], nextLink=TOPIC_DICT["Perl"][4][1])
+
+@app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][4][1], methods=['GET', 'POST'])
+def For_Loop():
+    return render_template("tutorials/Perl/for-loop.html", curLink = TOPIC_DICT["Perl"][4][1], curTitle=TOPIC_DICT["Perl"][4][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][4][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 
