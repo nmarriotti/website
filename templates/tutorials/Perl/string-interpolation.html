@@ -1,0 +1,41 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="concatenate, string, interpolation, variables" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+
+	 <p>When using double quotes around strings you can use variable interpolation to replace the variable name with the actual value stored in the variable.</p>
+
+	 <p>There are only a couple ways to include variables in strings. We can concatenate using the <code>dot (.)</code> operator or use interpolation and include the variable name directly inside the double quoted strings. Here are a few examples.</p>
+
+<pre class="line-numbers"><code class="language-perl">
+$food = 'steak';
+
+print 'Fred ate a $food \n';  # WRONG. Will print $food and \n
+print 'Fred ate a ' . $food . "\n"; # RIGHT. Uses concatenation
+print "Fred ate a $steak \n"; # RIGHT. Uses interpolation.
+</code></pre>
+
+	  <p>Using interpolation, in my opinion, is the most efficient way to include variables in strings. It also requires less code compared to using concatenation. When using single quotes, what is included inside the single quotes is printed except a backslash followed by a single quote (if you want a single quote printed), which is why our newline characters<code>\n</code> are wrapped in double quotes. </p>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

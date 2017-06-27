@@ -393,8 +393,12 @@ def For_Loop():
 
 @app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][5][1], methods=['GET', 'POST'])
 def Perl_Arrays():
-    return render_template("tutorials/Perl/arrays.html", curLink = TOPIC_DICT["Perl"][5][1], curTitle=TOPIC_DICT["Perl"][5][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Perl/arrays.html", curLink = TOPIC_DICT["Perl"][5][1], curTitle=TOPIC_DICT["Perl"][5][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][5][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Perl"][6][0], nextLink=TOPIC_DICT["Perl"][6][1])
 
+
+@app.route("/tutorials/perl/"+TOPIC_DICT["Perl"][6][1], methods=['GET', 'POST'])
+def String_Interpolation():
+    return render_template("tutorials/Perl/string-interpolation.html", curLink = TOPIC_DICT["Perl"][6][1], curTitle=TOPIC_DICT["Perl"][6][0], curTopic = "Perl", title = TOPIC_DICT["Perl"][6][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 
