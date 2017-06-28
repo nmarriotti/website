@@ -15,7 +15,7 @@
 python myscript.py -i sample.txt
 </pre>
 
-	<p>The above example is saving set our input file (referenced by -i) as sample.txt. In this tutorial I'll show you have to add this functionality and we'll do it using the <code>argpase</code> python module.</p>
+	<p>The above example is saying set our input file (referenced by -i) as sample.txt. In this tutorial I'll show you have to add this functionality and we'll do it using the <code>argparse</code> python module.</p>
 
 	<p>First thing we'll need to do is import the argparse module.</p>
 
@@ -23,7 +23,7 @@ python myscript.py -i sample.txt
 import argparse
 </code></pre>
 
-	  <p>Next we'll create an object an <code>ArgumentParser</code> object. We can also set a description which will be displayed if the user adds the <code>-h</code> flag to view the help options for your script.</p>
+	  <p>Next we'll create an <code>ArgumentParser</code> object. We can also set a description which will be displayed if the user adds the <code>-h</code> flag to view the scripts help options.</p>
 
 <pre class="line-numbers"><code class="language-python">
     parser = argparse.ArgumentParser(description='This is the description')
@@ -33,19 +33,19 @@ import argparse
 
 <pre class="line-numbers"><code class="language-python">
     parser.add_argument('-i', '--input', type=str, help='Input file')
-    parser.add_argument('-o', '--output', type=str, default='output.txt', help='Output file')
+    parser.add_argument('-o', '--output', type=str, default='sample.txt', help='Output file')
     parser.add_argument('-b', '--birthyear', type=int, help='Birth year')
 </code></pre>
 
 	<p>We specified a shorthand version of our flags to -i, -o, -b and long versions to --input, --output and --birthyear. It's up to the user which one they choose to use. Next we specified the type of value that is expected, either a string or an integer. Notice for our output argument we set a default as <code>sample.txt</code>. Finally we added some help strings to guide the user on what is expected.</p>
 
-	<p>Once we have all of our arguments specified we need to store parse them all out.</p>
+	<p>Once we have all of our arguments specified we need to parse them all out.</p>
 
  <pre class="line-numbers"><code class="language-python">
     args = parser.parse_args()
 </code></pre>
 
-	<p>Now all of our arguments can be referenced using the <code>args</code> variable we just created and we cant bring out the values.</p>
+	<p>Now all of our arguments can be referenced using the <code>args</code> variable we just created and we reference each value.</p>
 
 <pre class="line-numbers"><code class="language-python">
     print args           	# print all arguments out
