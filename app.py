@@ -172,8 +172,11 @@ def Processing_Queue_with_Multi_threading():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][17][1], methods=['GET', 'POST'])
 def Zip_Files():
-    return render_template("tutorials/Python/zip-files.html", curLink = TOPIC_DICT["Python"][17][1], curTitle=TOPIC_DICT["Python"][17][0], curTopic = "Python", title = TOPIC_DICT["Python"][17][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/zip-files.html", curLink = TOPIC_DICT["Python"][17][1], curTitle=TOPIC_DICT["Python"][17][0], curTopic = "Python", title = TOPIC_DICT["Python"][17][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][18][0], nextLink=TOPIC_DICT["Python"][18][1])
 
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][18][1], methods=['GET', 'POST'])
+def Command_Line_Arguments_using_argparse():
+    return render_template("tutorials/Python/command-line-arguments-using-argparse.html", curLink = TOPIC_DICT["Python"][18][1], curTitle=TOPIC_DICT["Python"][18][0], curTopic = "Python", title = TOPIC_DICT["Python"][18][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][0][1], methods=['GET', 'POST'])
