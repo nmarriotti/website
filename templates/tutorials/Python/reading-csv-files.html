@@ -1,0 +1,67 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="python, csv, reader" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	<p>In this tutorial we'll use the <code>csv</code> module to read a CSV file. The sample csv we'll be using contains the following information.</p>
+
+<pre>
+3,4
+1,2
+7,8
+4,3
+1,9
+5,6
+</pre>
+
+	  <p>We'll start by creating a file object supplying the filename of our csv and set it to read-only.</p>
+
+<pre class="line-numbers"><code class="language-python">
+f = open('sample.csv', 'r')
+</code></pre>
+
+	<p>Next we'll use the csv module to create a csv reader object and pass our file to it. Our csv is comma-delimited so we can specifiy the delimiter the csv reader should use.</p>
+
+<pre class="line-numbers"><code class="language-python">
+data = csv.reader(f,delimiter=',')
+</code></pre>
+
+	<p>Now we're ready to print out the contents of our file. To do this we'll use a for loop.</p>
+
+<pre class="line-numbers"><code class="language-python">
+for eachline in data:
+	print eachline
+</code></pre>
+
+	<p>Here is the output.</p>
+	
+<pre>
+['3', '4']
+['1', '2']
+['7', '8']
+['4', '3']
+['1', '9']
+['5', '6']
+</pre>
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

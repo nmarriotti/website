@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from content import Content
 
 TOPIC_DICT = Content()

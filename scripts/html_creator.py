@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from content import Content
 import os
 

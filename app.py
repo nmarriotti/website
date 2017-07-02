@@ -176,7 +176,13 @@ def Zip_Files():
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][18][1], methods=['GET', 'POST'])
 def Command_Line_Arguments_using_argparse():
-    return render_template("tutorials/Python/command-line-arguments-using-argparse.html", curLink = TOPIC_DICT["Python"][18][1], curTitle=TOPIC_DICT["Python"][18][0], curTopic = "Python", title = TOPIC_DICT["Python"][18][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Python/command-line-arguments-using-argparse.html", curLink = TOPIC_DICT["Python"][18][1], curTitle=TOPIC_DICT["Python"][18][0], curTopic = "Python", title = TOPIC_DICT["Python"][18][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["Python"][19][0], nextLink=TOPIC_DICT["Python"][19][1])
+
+
+@app.route("/tutorials/python/"+TOPIC_DICT["Python"][19][1], methods=['GET', 'POST'])
+def Reading_CSV_Files():
+    return render_template("tutorials/Python/reading-csv-files.html", curLink = TOPIC_DICT["Python"][19][1], curTitle=TOPIC_DICT["Python"][19][0], curTopic = "Python", title = TOPIC_DICT["Python"][19][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
 
 
 @app.route("/tutorials/c/"+TOPIC_DICT["C"][0][1], methods=['GET', 'POST'])
