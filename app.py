@@ -180,7 +180,7 @@ def Command_Line_Arguments_using_argparse():
 
 
 @app.route("/tutorials/python/"+TOPIC_DICT["Python"][19][1], methods=['GET', 'POST'])
-def Reading_CSV_Files():
+def Reading_CSV_Files_in_python():
     return render_template("tutorials/Python/reading-csv-files.html", curLink = TOPIC_DICT["Python"][19][1], curTitle=TOPIC_DICT["Python"][19][0], curTopic = "Python", title = TOPIC_DICT["Python"][19][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
