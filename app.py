@@ -316,9 +316,14 @@ def Classes_and_Objects():
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][12][1], methods=['GET', 'POST'])
 def Pointers_and_References():
-    return render_template("tutorials/C++/pointers-and-references.html", curLink = TOPIC_DICT["C++"][12][1], curTitle=TOPIC_DICT["C++"][12][0], curTopic = "C++", title = TOPIC_DICT["C++"][12][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/pointers-and-references.html", curLink = TOPIC_DICT["C++"][12][1], curTitle=TOPIC_DICT["C++"][12][0], curTopic = "C++", title = TOPIC_DICT["C++"][12][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["C++"][13][0], nextLink=TOPIC_DICT["C++"][13][1])
 
 	
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][13][1], methods=['GET', 'POST'])
+def Typedef():
+    return render_template("tutorials/C++/typedef.html", curLink = TOPIC_DICT["C++"][13][1], curTitle=TOPIC_DICT["C++"][13][0], curTopic = "C++", title = TOPIC_DICT["C++"][13][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+
+
 	
 @app.route("/tutorials/microsoft windows/"+TOPIC_DICT["Microsoft Windows"][0][1], methods=['GET', 'POST'])
 def How_to_use_Linux_terminal_commands_in_Windows():
