@@ -1,0 +1,36 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="typedef, C++, tutorial" />
+<meta name="description" content="How to change keyword for variable declarations." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	  <p>Typedef can be used to change we way we declare variables allowing use to create use user-defined names for data types like int, string, double, float, etc...</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+typedef int WHOLENUMBER;
+WHOLENUMBER x = 10;
+</code></pre>
+
+	<p>In the above example <code>WHOLENUMBER</code> is now considered the same as <code>int</code>.
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+
