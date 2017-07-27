@@ -1,0 +1,137 @@
+
+{% extends "tutorial-master.html" %}
+
+{% block metatags %}
+<meta name="keywords" content="template, classes, c++, objects, tutorial" />
+<meta name="description" content="Tutorial covering how to create and use template classes in C++." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+{% endblock %}
+
+{% block content %}
+
+	<p>Template classes allow your class variable data types to differ from object to object if necessary. In this tutorial we'll create a class that requires two variables be sent to the constructor.</p>
+
+	<p>Here is the template we'll be using:</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+template &lt;typename TYPE1=int, typename TYPE2=double&gt; /* Default is int, double */
+</code></pre>
+
+	<p>Here is the class we'll use:</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+class Example {
+    private:
+        TYPE1 value1;
+        TYPE2 value2;
+
+    public:
+        Example(TYPE1 val1, TYPE2 val2) {
+            cout << "Constructor" << endl;
+            value1 = val1;
+            value2 = val2;
+        }
+
+        TYPE1 get_value1() {
+            return value1;
+        }
+
+        TYPE2 get_value2() {
+            return value2;
+        }
+};
+</code></pre>
+
+	  <p>When we created our templete we set our <code>TYPE1</code> and <code>TYPE2</code> to our default data types of <code>int</code> and <code>double</code>. When we create an object using our class we can change these data types if needed.</p>
+
+	  <h3>Creating objects</h3>
+
+	  <p>Now it's time to use our template and class to create some objects. In the first example we'll use the default data types. In the second example we'll pass in a string to the constructor.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+    Example&lt;&gt; object1 (29, 49.99); /* use default data types */
+    cout << object1.get_value1() << endl;
+    cout << object1.get_value2() << endl;
+
+    Example&lt;int, string&gt; object2 (29, "Learning templates in C++"); /* use int, string data type */
+    cout << object2.get_value1() << endl;
+    cout << object2.get_value2() << endl;
+</code></pre>
+
+<pre>
+Constructor
+29
+49.99
+Constructor
+29
+Learning templates in C++
+</pre>
+
+
+	  <h3>Complete code</h3>
+
+	  <p>Here is the complete source code for this tutorial.</p>
+
+<pre class="line-numbers"><code class="language-cpp">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+/*
+Class templates allow you to pick which data type is used for variables.
+*/
+
+template &lt;typename TYPE1=int, typename TYPE2=double&gt; /* Default is int, double */
+class Example {
+    private:
+        TYPE1 value1;
+        TYPE2 value2;
+
+    public:
+        Example(TYPE1 val1, TYPE2 val2) {
+            cout << "Constructor" << endl;
+            value1 = val1;
+            value2 = val2;
+        }
+
+        TYPE1 get_value1() {
+            return value1;
+        }
+
+        TYPE2 get_value2() {
+            return value2;
+        }
+};
+
+int main()
+{
+    Example&lt;&gt; object1 (29, 49.99); /* use default data types */
+    cout << object1.get_value1() << endl;
+    cout << object1.get_value2() << endl;
+
+    Example&lt;int, string&gt; object2 (29, "Learning templates in C++"); /* use int, string data type */
+    cout << object2.get_value1() << endl;
+    cout << object2.get_value2() << endl;
+
+
+    return 0;
+}
+</code></pre>
+
+
+<br>
+
+
+<div class="post-pagination">
+   {% if nextTitle != "None" %}
+  <center><a title="{{nextTitle}}" href="{{nextLink}}" class="btn btn-color-hover hover-animate next"> Next Tutorial: {{nextTitle}}</a></center>
+  {% else %}
+  You've reached the last tutorial for now. Check back later for more.
+  <a title="Home" href="/" class="btn btn-color-hover hover-animate">Home</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}
+
+

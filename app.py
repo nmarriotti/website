@@ -321,7 +321,12 @@ def Pointers_and_References():
 	
 @app.route("/tutorials/c++/"+TOPIC_DICT["C++"][13][1], methods=['GET', 'POST'])
 def Typedef():
-    return render_template("tutorials/C++/typedef.html", curLink = TOPIC_DICT["C++"][13][1], curTitle=TOPIC_DICT["C++"][13][0], curTopic = "C++", title = TOPIC_DICT["C++"][13][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/C++/typedef.html", curLink = TOPIC_DICT["C++"][13][1], curTitle=TOPIC_DICT["C++"][13][0], curTopic = "C++", title = TOPIC_DICT["C++"][13][0], TOPIC_DICT = TOPIC_DICT, nextTitle=TOPIC_DICT["C++"][14][0], nextLink=TOPIC_DICT["C++"][14][1])
+
+
+@app.route("/tutorials/c++/"+TOPIC_DICT["C++"][14][1], methods=['GET', 'POST'])
+def Template_Classes():
+    return render_template("tutorials/C++/template-classes.html", curLink = TOPIC_DICT["C++"][14][1], curTitle=TOPIC_DICT["C++"][14][0], curTopic = "C++", title = TOPIC_DICT["C++"][14][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 	
