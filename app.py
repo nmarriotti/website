@@ -19,17 +19,6 @@ app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'some_secret'
 
-
-@app.before_request
-def before_request():
-	# create db if needed and connect
-	initialize_db()
-
-@app.teardown_request
-def teardown_request(exception):
-	# close the db connection
-	db.close()
-
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('404.html'), 404
