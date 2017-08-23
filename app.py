@@ -327,10 +327,20 @@ def How_to_use_Linux_terminal_commands_in_Windows():
 @app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][0][1], methods=['GET', 'POST'])
 def How_to_install_Exodus_on_Kodi():
     return render_template("tutorials/Miscellaneous/how-to-install-exodus-on-kodi.html", curLink = TOPIC_DICT["Miscellaneous"][0][1], curTitle=TOPIC_DICT["Miscellaneous"][0][0], nextTitle=TOPIC_DICT["Miscellaneous"][1][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][0][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Miscellaneous"][1][1])
-	
+
 @app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][1][1], methods=['GET', 'POST'])
 def How_to_setup_DoD_CACPKI_on_Chrome_Ubunutu_Linux():
-    return render_template("tutorials/Miscellaneous/how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux.html", curLink = TOPIC_DICT["Miscellaneous"][1][1], curTitle=TOPIC_DICT["Miscellaneous"][1][0], nextTitle = TOPIC_DICT["Miscellaneous"][2][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][1][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Miscellaneous"][2][1])
+    return render_template("tutorials/Miscellaneous/how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux.html", nextLink=TOPIC_DICT["Miscellaneous"][2][1], curLink = TOPIC_DICT["Miscellaneous"][1][1], curTitle=TOPIC_DICT["Miscellaneous"][1][0], nextTitle = TOPIC_DICT["Miscellaneous"][2][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][1][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Miscellaneous"][2][1])
+
+@app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][2][1], methods=['GET', 'POST'])
+def How_to_install_Covenant_on_Kodi():
+    return
+    render_template("tutorials/Miscellaneous/how-to-install-covenant-on-kodi.html",
+    curLink = TOPIC_DICT["Miscellaneous"][2][1],
+    curTitle = TOPIC_DICT["Miscellaneous"][2][0], curTopic = "Miscellaneous",
+    title = TOPIC_DICT["Miscellaneous"][2][0],
+    TOPIC_DICT = TOPIC_DICT,
+    nextTitle= "None")
 
 
 @app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][2][1], methods=['GET', 'POST'])
