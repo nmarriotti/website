@@ -330,11 +330,11 @@ def How_to_install_Exodus_on_Kodi():
 
 @app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][1][1], methods=['GET', 'POST'])
 def How_to_setup_DoD_CACPKI_on_Chrome_Ubunutu_Linux():
-    return render_template("tutorials/Miscellaneous/how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux.html", nextLink=TOPIC_DICT["Miscellaneous"][2][1], curLink = TOPIC_DICT["Miscellaneous"][1][1], curTitle=TOPIC_DICT["Miscellaneous"][1][0], nextTitle = TOPIC_DICT["Miscellaneous"][2][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][1][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Miscellaneous"][2][1])
+    return render_template("tutorials/Miscellaneous/how-to-setup-dod-cac-pki-on-chrome-ubuntu-linux.html", nextLink=TOPIC_DICT["Miscellaneous"][2][1], curLink = TOPIC_DICT["Miscellaneous"][1][1], curTitle=TOPIC_DICT["Miscellaneous"][1][0], nextTitle = TOPIC_DICT["Miscellaneous"][3][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][1][0], TOPIC_DICT = TOPIC_DICT, nextLink=TOPIC_DICT["Miscellaneous"][3][1])
 
-@app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][2][1], methods=['GET', 'POST'])
+@app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][3][1], methods=['GET', 'POST'])
 def How_to_install_Covenant_on_Kodi():
-    return render_template("tutorials/Miscellaneous/how-to-install-covenant-on-kodi.html", curLink = TOPIC_DICT["Miscellaneous"][2][1], curTitle = TOPIC_DICT["Miscellaneous"][2][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][2][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
+    return render_template("tutorials/Miscellaneous/how-to-install-covenant-on-kodi.html", curLink = TOPIC_DICT["Miscellaneous"][3][1], curTitle=TOPIC_DICT["Miscellaneous"][3][0], curTopic = "Miscellaneous", title = TOPIC_DICT["Miscellaneous"][3][0], TOPIC_DICT = TOPIC_DICT, nextTitle= "None")
 
 
 @app.route("/tutorials/miscellaneous/"+TOPIC_DICT["Miscellaneous"][2][1], methods=['GET', 'POST'])
